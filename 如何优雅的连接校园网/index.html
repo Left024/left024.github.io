@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>如何优雅的连接校园网 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="校园网">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        如何优雅的连接校园网
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/09/" class="post-meta__date button">2020-09-14</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%BD%95%E5%8E%9F%E7%90%86"><span class="toc-text">校园网登录原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E7%AB%AF"><span class="toc-text">电脑端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E7%AB%AF"><span class="toc-text">手机端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IOS"><span class="toc-text">IOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%BD%95%E5%8E%9F%E7%90%86"><span class="toc-text">校园网登录原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E7%AB%AF"><span class="toc-text">电脑端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E7%AB%AF"><span class="toc-text">手机端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IOS"><span class="toc-text">IOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li></ol></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-06-11"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>我来大学第一年的校园网还是非常垃圾的，跑满只有 1m/s，这个跑满指的是运气非常好的时候，无线的校园网也并没有全覆盖。</p>
+<p>大二上学期出去租房了，同学说校园网升级了，三大运营商都有了，也基本全校覆盖了，不过我在外面用不到所以也没啥感觉。</p>
+<p>到了上学期因为疫情要上网课，学校的网又小小的升级了一下，我也搬回宿舍了，所以总算体验到了全新的校园网。</p>
+<p>真的挺不错的，很容易就能跑到 10m/s，Steam 下载也是如此。但是直到现在我们这栋宿舍楼还没网线，不过每个宿舍都装了 wifi ，也没啥影响。</p>
+<p>不过肉中刺的来了，升级后的校园网并没有一个自动连接的客户端，所以你每次开机还得打开浏览器去登陆，虽然不是特别麻烦，但就像一根刺一样让人很不爽。</p>
+<p>于是便有了今天这篇文章</p>
+<h2 id="校园网登录原理"><a href="#校园网登录原理" class="headerlink" title="校园网登录原理"></a>校园网登录原理</h2><p>想要自动化登录校园网自然要搞清楚它是如何请求的，用 Chrome 的 F12 抓了一下，发现登录的时候浏览器发送了一个这样的请求：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/IMG_20200914_201132_314_Mosaic_20_11_38.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/IMG_20200914_201132_314_Mosaic_20_11_38.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这就很爽了啊，没有任何加密，甚至不是 POST 请求，经过拆解，请求长这样：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;210.29.79.141:801&#x2F;eportal&#x2F;?c&#x3D;Portal&amp;a&#x3D;login&amp;callback&#x3D;dr1003&amp;login_method&#x3D;1&amp;user_account&#x3D;%%2C1%%2C账号%%40运营商&amp;user_password&#x3D;密码&amp;wlan_user_ip&amp;wlan_user_ip&#x3D;本地wifiIP地址&amp;wlan_user_ipv6&#x3D;&amp;wlan_user_mac&#x3D;000000000000&amp;wlan_ac_ip&#x3D;&amp;wlan_ac_name&#x3D;&amp;jsVersion&#x3D;3.3.2&amp;v&#x3D;123</span><br></pre></td></tr></table></figure>
+
+<p>其中运营商：移动cmcc  联通unicom  电信telecom</p>
+<p>手机端也是同样的请求方式，只是略有不同：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;210.29.79.141:801&#x2F;eportal&#x2F;?c&#x3D;Portal&amp;a&#x3D;login&amp;callback&#x3D;dr1003&amp;login_method&#x3D;1&amp;user_account&#x3D;%2C1%2C账号%40运营商&amp;user_password&#x3D;密码&amp;wlan_user_ip&#x3D;本地wifiIP地址&amp;wlan_user_ipv6&#x3D;&amp;wlan_user_mac&#x3D;000000000000&amp;wlan_ac_ip&#x3D;&amp;wlan_ac_name&#x3D;&amp;jsVersion&#x3D;3.3.2&amp;v&#x3D;3654</span><br></pre></td></tr></table></figure>
+
+<p>所以接下来只要把逻辑串起来就好了</p>
+<h2 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h2><p>2020/12/14更新：<a target="_blank" rel="noopener" href="https://left.pink/archives/3379">C语言版客户端</a></p>
+<p>电脑端我写了个客户端，是用 VB 写的（我只会VB），大概长这样</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-09-14_20-21-14.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-09-14_20-21-14.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>文件在这里下载：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1p1p0vCz4DuihzEszciFAtg">https://pan.baidu.com/s/1p1p0vCz4DuihzEszciFAtg</a> 提取码: qahz</p>
+<p>因为 VB 过于古老，所以需要你一些依赖文件，文件里的说明都写清楚了，如果你安装依赖以后仍然使用不了，可以试试这个<a target="_blank" rel="noopener" href="https://github.com/skyland22/NTU_Network_Auto-Login_OneStep-Logout">脚本</a>，虽然能用，但没我这个软件优雅。</p>
+<p>等我学会了 Java 我一定重新写一个客户端（鬼知道什么时候）</p>
+<h2 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h2><h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><p>先从简单的开始，IOS 的捷径可以轻松实现连接，没啥好讲的，放张图：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/IMG_20200914_203249_403_Mosaic_20_33_19.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/IMG_20200914_203249_403_Mosaic_20_33_19.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>演示</p>
+<p><video src="https://video.left.pink/QQ%e8%a7%86%e9%a2%9120200914193029.mp4" width="50%" height="50%" controls="" preload="metadata" ></video></p>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>Android 当然还是使用 tasker，但是问题就很多了，因为未登录状态下连接校园网 wifi 并不会被系统认定为 “连接” 上了 wifi ，所以在 tasker 把连接上 wifi 作为触发条件是没有用的</p>
+<p>并且，因为并没有连接上 WIFI ，如果你的移动数据是开启的状态，那么你发送的请求也并不会发送到校园网，所以为了保证我们能<strong>优雅</strong>的连接上校园网，Tasker 上的流程应该是这样的：</p>
+<p>连上wifi → 回到桌面（因为会自动跳转到登录页面且没有选项关闭）→ 关闭梯子（如果你有的话）→ 关闭移动数据 → 发送登陆请求 → 连接成功 → 开启数据（保证离开校园网后依然有网）→ 开启梯子</p>
+<p>前面说了，连接 wifi 并不能作为 tasker 的判断依据，那么如何判断呢？</p>
+<p><strong>Log Entry</strong></p>
+<p>这是 tasker 新更新的一个功能，直白点讲就是系统无论执行什么都会有个日志去记录，而 tasker 就是通过这个日志来判断是否触发任务，使用如下：</p>
+<p><video src="https://video.left.pink/screen-20200914-204759.mp4" width="50%" height="50%" controls="" preload="metadata" ></video></p>
+<p>如视频演示的那样我抓到了具体连接校园网的那一条日志，接下来只需要写逻辑就好了：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Screenshot_20200914-205319-1.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Screenshot_20200914-205319-1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>记得要将获取到本机ip变量替换到相应的位置上去</p>
+<p>效果：</p>
+<p><video src="https://video.left.pink/screen-20200914-192628.mp4" width="50%" height="50%" controls="" preload="metadata" ></video></p>
+<hr>
+<p>其实我挺好奇会不会有同校的人看到这篇文章</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-06-11</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" class="post-tags__link button"># 校园网</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E4%B8%80%E6%AC%A1-surface-%E9%80%81%E4%BF%AE%E7%BB%8F%E5%8E%86/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            一次 Surface 送修经历
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/surface-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Surface 使用心得
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

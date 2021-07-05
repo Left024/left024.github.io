@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>愿做一场永不醒来的梦 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="游戏, 评测, ns">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        愿做一场永不醒来的梦
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2019/10/" class="post-meta__date button">2019-10-07</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%B8%B8%E6%88%8F/" class="button">游戏</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E9%9D%A2"><span class="toc-text">画面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%83%85"><span class="toc-text">剧情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90"><span class="toc-text">音乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E7%8E%A9"><span class="toc-text">游玩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E9%9D%A2"><span class="toc-text">画面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%83%85"><span class="toc-text">剧情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90"><span class="toc-text">音乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E7%8E%A9"><span class="toc-text">游玩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-06-11"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>我最早接触到塞尔达系列游戏是在买了 3DS 之后，在那种“3DS 必玩游戏”文章上看到了塞尔达时之笛，查了下这居然是 MC 排名第一的游戏：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Snipaste_2019-10-06_16-55-24.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Snipaste_2019-10-06_16-55-24.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>于是好奇的我打算试试，但鉴于那个画质过于远古，我还是没有坚持玩下来。</p>
+<p>我真正游玩的塞尔达系列游戏就是 <strong>旷野之息</strong>，那是高考完的暑假，我完全陷进去了，玩了整整两个月，任天堂真的是世界的主宰。</p>
+<p>所以这次的 <strong>织梦岛</strong> 早在发售之前我就预定了，虽然是重置版，但我没玩过前作，对于我来说完全的新游戏，收到游戏后我也没有马上开始玩，而是留到了这个国庆假期，好好地享受了这个游戏。在通关之后我还是要再说一遍：</p>
+<p><strong>任天堂就是世界的主宰！</strong></p>
+<h2 id="画面"><a href="#画面" class="headerlink" title="画面"></a>画面</h2><p>这个画面我就很喜欢，是一种精致的粘土人风格，看着就很有玩具的感觉：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/2019092116460100-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019092116460100-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>仔细看画面的边缘是有一种朦胧的感觉的，跟梦境的感觉很像。</p>
+<p>还有豆豆眼的林克过于可爱，为此我还买了他的 amibo ：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/O1CN01b7K9pC2DPJ6ueW01t_3544598601.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/O1CN01b7K9pC2DPJ6ueW01t_3544598601.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>说起画面，就不得不提这个游戏惟一的缺点，在加载时，比如说进房子出房子，这段加载数据的时间游戏会被锁在30帧，所以每次进出房子都会有明显的卡顿感。还是有点影响体验的。</p>
+<h2 id="剧情"><a href="#剧情" class="headerlink" title="剧情"></a>剧情</h2><p>剧情其实非常简单，通过八个迷宫，获得八个乐器，最后唤醒风鱼，梦醒。</p>
+<p>这一作在整个塞尔达的时间上没有任何作用，就是林克的一个梦，相当于一个外传。</p>
+<h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><p>音乐非常棒，不同的场景对应不同的音乐，总体来说偏向欢快，听着很舒服，毕竟这是林克的一场梦。</p>
+<h2 id="游玩"><a href="#游玩" class="headerlink" title="游玩"></a>游玩</h2><p>接下来就是最棒的游玩部分了，据说这是完全重置的老板织梦岛，没有改变任何东西，在我玩下来感觉即使是20年前的游戏，在现在玩下来依旧不过时。</p>
+<p>这一作的重点就是解谜，主要就体现在八个迷宫，虽然塞尔达系列就是每一作都有解谜，例如旷野之息的神庙，但是织梦岛的迷宫和神庙还是不一样的。</p>
+<p>每一个迷宫都像一个精巧的机关一样，需要你耐心的去探索，一点点的去把它解开，这个过程简直太美妙了，它在每一个限定空间的迷宫里塞下了远超空间大小的内容。</p>
+<p><video src="https://video.left.pink/2019100514294400-9129043EF2AAD7F1157CF852BACB8F7D.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>需要你停下来思考一会儿的“推箱子”</p>
+<p>不仅如此，迷宫的难度层层递进，每一个迷宫都有新的机制，每一个迷宫的解密都与这个新的机制有关系，层层相扣，循序渐进。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/EGL3yAKUwAEdpNX.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/EGL3yAKUwAEdpNX.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/EGL3yAKUwAEdpNX.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/EGL3yAHUYAIjDqg.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/EGL3yAHUYAIjDqg.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/EGL3yAHUYAIjDqg.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>这是游戏的主体部分，但这一部分还需要另外一条线的辅助才能完场，这条线非常有趣，我称他为“换物线”</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/2019100311412500-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100311412500-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>在最开始的村子里聊天，你会了解到有家人想要一个耀西娃娃，你需要去抓娃娃的店里面去抓，这就是换物线的开始，你每给一个人一个东西，它会回报你一个东西，而这个东西是另一个人所需要的，如此循环。</p>
+<p><video src="https://video.left.pink/2019092116470400-9129043EF2AAD7F1157CF852BACB8F7D.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>这个抓娃娃的小游戏非常有意思，他虽然不会像街边的娃娃机一样按概率时而有力时而无力，但它的难度依然很高，有时物品会从爪子的空隙画出来，有时因为判定问题不从传送带上下来，可以看看这篇文章：<a target="_blank" rel="noopener" href="https://media.weibo.cn/article?jumpfrom=weibocom&id=2309404420115025231883">谁能想到林克为了把耀西抱回家，几乎倾家荡产</a></p>
+<p><video src="https://video.left.pink/2019100311434300-9129043EF2AAD7F1157CF852BACB8F7D.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>另一个有趣的地方就是商店，你可以偷东西：</p>
+<p><video src="https://video.left.pink/2019092921234900-9129043EF2AAD7F1157CF852BACB8F7D.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>在偷完东西后，你就会被 NPC 叫成小偷：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/2019092921240400-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019092921240400-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>游戏中还有很多任天堂的其它角色出现，毕竟是一场梦，有啥都不奇怪：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/2019100411210700-9129043EF2AAD7F1157CF852BACB8F7D.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/2019100411210700-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100411210700-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/2019100411444200-9129043EF2AAD7F1157CF852BACB8F7D.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/2019100411444200-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100411444200-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/2019100516144200-9129043EF2AAD7F1157CF852BACB8F7D.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/2019100516144200-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100516144200-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>这一作同样有着收集要素，限制于地图大小当然不会像900个呀哈哈那么恐怖，但想要全收集还是要花些时间的。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/2019100601170700-9129043EF2AAD7F1157CF852BACB8F7D.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/2019100601170700-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100601170700-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/2019100601170900-9129043EF2AAD7F1157CF852BACB8F7D.jpg"><img src="https://chevereto.left.pink/images/2021/02/09/2019100601170900-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100601170900-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>流程真的太短了，我都舍不得玩，每天玩一点，玩这个游戏就像在经历一场美梦，毕竟现实没有那么快乐，要面对巨大的恶魔，还有公主等着自己去救，在被现实摧残的疲惫不堪后，谁又不想一直留在美梦中呢？</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/2019100615353900-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100615353900-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/2019100615353200-9129043EF2AAD7F1157CF852BACB8F7D.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/2019100615353200-9129043EF2AAD7F1157CF852BACB8F7D.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-06-11</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-cats__link button">游戏</a><a href="/categories/%E8%AF%84%E4%BB%B7/" class="post-cats__link button">评价</a><a href="/tags/%E6%B8%B8%E6%88%8F/" class="post-tags__link button"># 游戏</a><a href="/tags/%E8%AF%84%E6%B5%8B/" class="post-tags__link button"># 评测</a><a href="/tags/ns/" class="post-tags__link button"># ns</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0%EF%BC%9A%E6%A1%8C%E9%9D%A2%E6%97%B6%E9%92%9F/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            开发日记：桌面时钟
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/shadowsocks-%E5%AE%89%E8%A3%85-v2ray-plugin/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Shadowsocks 安装 v2ray-plugin
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

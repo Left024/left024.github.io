@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Tag: 学习 | Left&#39;s blog</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+    <div class="cover">
+        <div class="cover__logo">
+            
+                <h1>备用站点</h1>
+            
+        </div>
+        
+        
+            <div class="cover__intro">
+                <p>其实我觉得比主站好看</p>
+ 
+            </div>
+        
+    </div>
+
+            
+
+    
+        <main class="main">
+            
+    <div class="post-list">
+        
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        如何优雅地记笔记
+    </h2>
+    
+        <p>
+            前言我从来都没有记笔记的习惯，从小学到现在，每次都是买个笔记本，坚持了一两个星期后就放弃了。
+到了大学，我终于坚持下来记笔记了，但跟我所学习的专...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/10/" class="post-meta__date button">2020-10-31</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+<a href="/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B0/" class="post-entry__link">如何优雅地记笔记</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        【完美版】自动下载B站收藏视频
+    </h2>
+    
+        <p>
+            之前写的那个 脚本 虽然能用，但我依然有很多不满意的地方，比如说4K下载，封面图下载，完成下载后邮件通知，下载完成自动同步到onedrive，自动将 xml 文件转换为 ass 。
+...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-31</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/%E8%84%9A%E6%9C%AC/" class="post-tags__link button"># 脚本</a></div> 
+<a href="/%E3%80%90%E5%AE%8C%E7%BE%8E%E7%89%88%E3%80%91%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDb%E7%AB%99%E6%94%B6%E8%97%8F%E8%A7%86%E9%A2%91/" class="post-entry__link">【完美版】自动下载B站收藏视频</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Ubuntu 18.04 搭建 ASF
+    </h2>
+    
+        <p>
+            昨天我的 Mountain 游戏时间破万了，所以写个搭建挂卡庆祝下（其实我也不熟，当个笔记写），另外还有一些使用的小技巧
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/05/" class="post-meta__date button">2020-05-17</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+<a href="/ubuntu-18-04-%E6%90%AD%E5%BB%BA-asf/" class="post-entry__link">Ubuntu 18.04 搭建 ASF</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        自动下载油管收藏视频至VPS
+    </h2>
+    
+        <p>
+            上次那篇自动下载B站收藏视频评论有人想让我做个油管的
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/05/" class="post-meta__date button">2020-05-02</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+<a href="/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E6%B2%B9%E7%AE%A1%E6%94%B6%E8%97%8F%E8%A7%86%E9%A2%91%E8%87%B3vps/" class="post-entry__link">自动下载油管收藏视频至VPS</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        自动下载B站收藏视频至VPS
+    </h2>
+    
+        <p>
+            [admonition icon=”exclamation”]改良版脚本戳：https://left.pink/archives/3073 [/admonition]
+昨晚吃饭的时候...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-02</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+<a href="/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDb%E7%AB%99%E6%94%B6%E8%97%8F%E8%A7%86%E9%A2%91%E8%87%B3vps/" class="post-entry__link">自动下载B站收藏视频至VPS</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        土豆泥
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/01/" class="post-meta__date button">2020-01-17</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%83%B9%E9%A5%AA/" class="button">烹饪</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/%E5%81%9A%E8%8F%9C/" class="post-tags__link button"># 做菜</a><a href="/tags/%E7%BE%8E%E9%A3%9F/" class="post-tags__link button"># 美食</a></div> 
+<a href="/%E5%9C%9F%E8%B1%86%E6%B3%A5/" class="post-entry__link">土豆泥</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        懒人红烧肉
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/01/" class="post-meta__date button">2020-01-15</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%83%B9%E9%A5%AA/" class="button">烹饪</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/%E5%81%9A%E8%8F%9C/" class="post-tags__link button"># 做菜</a><a href="/tags/%E7%BE%8E%E9%A3%9F/" class="post-tags__link button"># 美食</a></div> 
+<a href="/%E6%87%92%E4%BA%BA%E7%BA%A2%E7%83%A7%E8%82%89/" class="post-entry__link">懒人红烧肉</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        工程训练体验日记
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/01/" class="post-meta__date button">2020-01-03</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E4%BD%93%E9%AA%8C/" class="post-tags__link button"># 体验</a><a href="/tags/%E7%94%9F%E6%B4%BB/" class="post-tags__link button"># 生活</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+<a href="/%E5%B7%A5%E7%A8%8B%E8%AE%AD%E7%BB%83%E4%BD%93%E9%AA%8C%E6%97%A5%E8%AE%B0/" class="post-entry__link">工程训练体验日记</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        番茄工作法半个月体验
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2019/12/" class="post-meta__date button">2019-12-21</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%94%9F%E6%B4%BB/" class="post-tags__link button"># 生活</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+<a href="/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95%E5%8D%8A%E4%B8%AA%E6%9C%88%E4%BD%93%E9%AA%8C/" class="post-entry__link">番茄工作法半个月体验</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        开发日记：桌面时钟
+    </h2>
+    
+        <p>
+            最近在自学 Android 开发，突发灵感想做一个桌面时钟，把之前 像素时钟 的功能做出一个手机版，边做边学习，感觉这样效率会高点。
+每天做一点，这篇文章更新一点，然后顶部菜单新加了一...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2019/10/" class="post-meta__date button">2019-10-08</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" class="button">开发日记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/Android%E5%BC%80%E5%8F%91/" class="post-tags__link button"># Android开发</a></div> 
+<a href="/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0%EF%BC%9A%E6%A1%8C%E9%9D%A2%E6%97%B6%E9%92%9F/" class="post-entry__link">开发日记：桌面时钟</a>
+                </div>
+            
+        
+    </div>
+    
+        <div class="nav">
+            <div class="nav__prev">
+                
+            </div>
+            <div class="nav__next">
+                
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/page/2/" class="nav__link">
+                        <div>
+                            <div class="nav__label">
+                                Next
+                            </div>
+                            <div class="nav__title">
+                                Page 2
+                            </div>
+                        </div>
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                        </div>
+                    </a>
+                
+            </div>
+        </div>
+    
+
+
+        </main>
+    
+
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>ubuntu 搭建私有云盘 nextcloud | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        ubuntu 搭建私有云盘 nextcloud
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/02/" class="post-meta__date button">2020-02-11</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPS-%E5%95%86%E5%AE%B6%E6%8E%A8%E8%8D%90"><span class="toc-text">VPS 商家推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA"><span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-apache2"><span class="toc-text">安装 apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-MySQL"><span class="toc-text">配置 MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-PHP"><span class="toc-text">配置 PHP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-phpMyAdmin"><span class="toc-text">安装 phpMyAdmin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-nextcloud"><span class="toc-text">安装 nextcloud</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3"><span class="toc-text">一些问题的解决</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPS-%E5%95%86%E5%AE%B6%E6%8E%A8%E8%8D%90"><span class="toc-text">VPS 商家推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA"><span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-apache2"><span class="toc-text">安装 apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-MySQL"><span class="toc-text">配置 MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-PHP"><span class="toc-text">配置 PHP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-phpMyAdmin"><span class="toc-text">安装 phpMyAdmin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-nextcloud"><span class="toc-text">安装 nextcloud</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3"><span class="toc-text">一些问题的解决</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>百度云不好用且有审查，google drive空间太小切要翻墙，我寻思着为啥不自己整一个呢？</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-27-02.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-27-02.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="VPS-商家推荐"><a href="#VPS-商家推荐" class="headerlink" title="VPS 商家推荐"></a>VPS 商家推荐</h2><p>云盘要求自然是存储空间大，网络不翻墙速度过得去就行。最重要的是还得便宜，这两天我试用了两个，感觉还不错，建议你先买一个月试试，好用再年付。</p>
+<p><a target="_blank" rel="noopener" href="https://secure.hostsolutions.ro/cart.php?gid=31">Hostsolutions</a>.月付5.4刀，年付55刀，1T空间，10t流量。</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/21/20201021181543.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/20201021181543.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>优点是抗投诉，无版权，存什么都没问题，缺点是商家在罗马尼亚，ip也是罗马尼亚且不可选，我家移动网网速很差，裸连几乎不能用，所以我选择了另一家。</p>
+<p><a target="_blank" rel="noopener" href="https://crowncloud.net/clients/cart.php?gid=36">Crowncloud</a>.月付5刀，年付50刀，500g存储，3T流量。</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_14-30-06.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_14-30-06.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>美国ip，除了晚高峰速度都是正常的，晚高峰可以用梯子解决，这样梯子的流量不会消耗很大，对于这个价格来说我觉得已经很棒了。</p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>搭建过程其实和 <a target="_blank" rel="noopener" href="https://left.pink/archives/1035">Wordpress</a> 没啥区别，但为了文章的整体性还是把整个流程写一遍。</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y<br>sudo apt-get install unzip dpkg wget -y</p>
+<h3 id="安装-apache2"><a href="#安装-apache2" class="headerlink" title="安装 apache2"></a>安装 apache2</h3><p>sudo apt-get install apache2 -y</p>
+<p>将 /var/www/html 中的 index.html 删除</p>
+<h3 id="配置-MySQL"><a href="#配置-MySQL" class="headerlink" title="配置 MySQL"></a>配置 MySQL</h3><p>使用apt命令无法直接获取最新8.0版本的MySQL，需要手动下载deb包（<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/apt/%EF%BC%89%E5%AE%89%E8%A3%85%E3%80%82">https://dev.mysql.com/downloads/repo/apt/）安装。</a> 以下命令在未来可能会有所不同，自行去网站获取最新</p>
+<p>mkdir /temp<br>cd /temp<br>wget <a target="_blank" rel="noopener" href="https://dev.mysql.com/get/mysql-apt-config/_0.8.14-1/_all.deb">https://dev.mysql.com/get/mysql-apt-config\_0.8.14-1\_all.deb</a><br>sudo dpkg -i mysql-apt-config_0.8.14-1_all.deb #版本号可能会更新 </p>
+<p>运行完之后，使用命令安装配置好的 MySQL 版本<br>apt update<br>sudo apt-get install mysql-server </p>
+<p>安装完成后查看安装好的 MySQL 用户名和密码</p>
+<p>cd /etc/mysql<br>sudo cat debian.cnf  </p>
+<h3 id="配置-PHP"><a href="#配置-PHP" class="headerlink" title="配置 PHP"></a>配置 PHP</h3><p>sudo apt-get install php7.2 -y<br>sudo apt-get install libapache2-mod-php7.2<br>sudo apt-get install php7.2-gd php7.2-json php7.2-mysql php7.2-curl php7.2-mbstring<br>sudo apt-get install php7.2-intl php-imagick php7.2-xml php7.2-zip </p>
+<p>service apache2 restart </p>
+<h3 id="安装-phpMyAdmin"><a href="#安装-phpMyAdmin" class="headerlink" title="安装 phpMyAdmin"></a>安装 phpMyAdmin</h3><p>官网：<a target="_blank" rel="noopener" href="https://www.phpmyadmin.net/">https://www.phpmyadmin.net</a> 以下命令未来可能会不同</p>
+<p>cd /var/www/html<br>wget <a target="_blank" rel="noopener" href="https://files.phpmyadmin.net/phpMyAdmin/5.0.1/phpMyAdmin-5.0.1-all-languages.zip">https://files.phpmyadmin.net/phpMyAdmin/5.0.1/phpMyAdmin-5.0.1-all-languages.zip</a><br>unzip phpMyAdmin-5.0.1-all-languages.zip<br>rm phpMyAdmin-5.0.1-all-languages.zip </p>
+<p>解压下来的文件夹重命名为phpmyadmin。</p>
+<p>访问 <a target="_blank" rel="noopener" href="http://ip/phpmyadmin">http://ip/phpmyadmin</a> ，填入刚刚查看的用户名和密码，然后创建 nextcloud 数据库</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-13-03.png"><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-13-03.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-13-03.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-13-48.png"><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-13-48.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-13-48.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<h3 id="安装-nextcloud"><a href="#安装-nextcloud" class="headerlink" title="安装 nextcloud"></a>安装 nextcloud</h3><p>官网： <a target="_blank" rel="noopener" href="https://nextcloud.com/">https://nextcloud.com/</a> ，以下命令未来可能不同</p>
+<p>cd /var/www/html<br>wget <a target="_blank" rel="noopener" href="https://download.nextcloud.com/server/releases/nextcloud-18.0.0.zip">https://download.nextcloud.com/server/releases/nextcloud-18.0.0.zip</a><br>unzip nextcloud-18.0.0.zip<br>rm nextcloud-18.0.0.zip</p>
+<p>sudo chown www-data nextcloud -Rf<br>sudo chmod 770 nextcloud -Rf</p>
+<p>接下来访问 <a target="_blank" rel="noopener" href="http://ip/nextcloud">http://ip/nextcloud</a> 就安装完成了</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-20-19.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-20-19.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>用户和密码输入上面查看的数据库用户和密码，数据库名字填刚刚创建的nextcloud。等待初始化完成即可开始使用</p>
+<h2 id="一些问题的解决"><a href="#一些问题的解决" class="headerlink" title="一些问题的解决"></a>一些问题的解决</h2><p>Nextcloud 自带一个安全检查，检查完后会有一堆问题</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_13-54-26.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_13-54-26.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><em>您的数据目录和文件可以从互联网直接访问。.htaccess 文件不起作用。强烈建议您配置 Web 服务器，以便数据目录不再可访问，或者您可以将数据目录移动到 Web 服务器文档根目录。</em></p>
+<p>sudo a2enmod rewrite<br>cd /etc/apache2<br>sudo vim apache2.conf<br>复制进去<br>&lt;Directory /var/www/html/nextcloud/&gt;<br>         Options Indexes FollowSymLinks<br>         AllowOverride All<br>         Require all granted<br></Directory></p>
+<p>重启<br>sudo service apache2 restart</p>
+<p>后面两个 <em>“……未正确设置以解析……..”</em> 也会因为这个解决而被解决</p>
+<p><em>PHP 内存限制低于建议值 512MB。</em></p>
+<p>vim /etc/php/7.2/apache2/php.ini<br>找到 memory_limit 改为512mb</p>
+<p>sudo service apache2 restart </p>
+<p><em>通过HTTP访问网站不安全。</em></p>
+<p>需要域名，证书可以申请 Let’s Encrypt 免费 ssl 证书</p>
+<p>wget <a target="_blank" rel="noopener" href="https://dl.eff.org/certbot-auto">https://dl.eff.org/certbot-auto</a><br>chmod a+x certbot-auto<br>sudo ./certbot-auto –apache</p>
+<p>申请完还需要，去 nextcloud 设置中添加域名<br>vim /var/www/html/nextcloud/config/config.php</p>
+<p>array (<br>           0 =&gt; ‘xxx.xxx.xxx.xxx’,<br>           1 =&gt; ‘xxx.com’<br>   ),</p>
+<p><em>HTTP的请求头 “Strict-Transport-Security” 未设置为至少 “15552000” 秒。</em></p>
+<p>申请完证书就会有这个错误</p>
+<p>a2enmod headers<br>vim /etc/apache2/sites-enabled/000-default-le-ssl.conf #文件可能有所不同<br>在域名的下一行添加<br>Header always set Strict-Transport-Security “max-age=15552000; includeSubDomains”</p>
+<p><em>内存缓存未配置，为了提升使用体验，请尽量配置内存缓存。</em></p>
+<p>apt install php-apcu<br>service apache2 restart<br>vim /var/www/html/nextcloud/config/config.php</p>
+<p>添加<br>‘memcache.local’ =&gt; ‘\OC\Memcache\APCu’,</p>
+<p><em>数据库丢失了一些索引。由于给大的数据表添加索引会耗费一些时间，因此程序没有自动对其进行修复。</em></p>
+<p>cd /var/www/html/nextcloud/<br>sudo -u www-data php occ db:add-missing-indices</p>
+<p><em>数据库中的一些列由于进行长整型转换而缺失。由于在较大的数据表重改变列类型会耗费一些时间，因此程序没有自动对其更改。</em></p>
+<p>cd /var/www/html/nextcloud/<br>sudo -u www-data php occ db:convert-filecache-bigint</p>
+<p>完成</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-11_15-45-02.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-11_15-45-02.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E5%A6%82%E4%BD%95%E7%BB%99%E7%88%B6%E6%AF%8D%E9%80%89%E7%94%B5%E5%BD%B1/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            如何给父母选电影
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/sex-education/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Sex Education
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

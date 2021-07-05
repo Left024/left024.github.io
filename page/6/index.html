@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Left&#39;s blog</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+    <div class="cover">
+        <div class="cover__logo">
+            
+                <h1>备用站点</h1>
+            
+        </div>
+        
+        
+            <div class="cover__intro">
+                <p>其实我觉得比主站好看</p>
+ 
+            </div>
+        
+    </div>
+
+            <main class="main">
+    
+    <div class="post-list">
+        
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        倍思 Screen bar
+    </h2>
+    
+        <p>
+            因为宿舍的结构设计，灯光是照不到我的桌子的（因为HDR，实际上更暗）
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-26</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E5%89%81%E6%89%8B/" class="button">剁手</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%94%B5%E5%AD%90%E6%95%B0%E7%A0%81/" class="button">电子数码</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%B4%A5%E5%AE%B6/" class="post-tags__link button"># 败家</a><a href="/tags/%E7%94%9F%E6%B4%BB/" class="post-tags__link button"># 生活</a></div> 
+<a href="/%E5%80%8D%E6%80%9D-screen-bar/" class="post-entry__link">倍思 Screen bar</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        开学记
+    </h2>
+    
+        <p>
+            昨天开学了，身边广东的全都这学期不开学，我一个江苏的开学，心里那个苦的啊。
+疫情下的开学还是蛮值得记录一下的，稍微写写吧
+返校是自愿的，你可以申请暂缓返校，我家在广东离得太远，未来太多不确定性，所以我还是按照学校规定返校了，准备了100个口罩，一天一个也能坚持...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-20</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a></div> 
+<a href="/%E5%BC%80%E5%AD%A6%E8%AE%B0/" class="post-entry__link">开学记</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        那些我买过的 VPS
+    </h2>
+    
+        <p>
+            接触 VPS 快一年了，也算是体验了蛮多家 VPS 了，是时候写一篇小小的使用体验了；应当是有那么一点参考价值的。
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-15</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E5%89%81%E6%89%8B/" class="button">剁手</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E4%BD%93%E9%AA%8C/" class="post-tags__link button"># 体验</a><a href="/tags/%E8%B4%A5%E5%AE%B6/" class="post-tags__link button"># 败家</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a></div> 
+<a href="/%E9%82%A3%E4%BA%9B%E6%88%91%E4%B9%B0%E8%BF%87%E7%9A%84-vps/" class="post-entry__link">那些我买过的 VPS</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        炒牛肉
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-09</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%83%B9%E9%A5%AA/" class="button">烹饪</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a><a href="/tags/%E5%81%9A%E8%8F%9C/" class="post-tags__link button"># 做菜</a><a href="/tags/%E7%BE%8E%E9%A3%9F/" class="post-tags__link button"># 美食</a></div> 
+<a href="/%E7%82%92%E7%89%9B%E8%82%89/" class="post-entry__link">炒牛肉</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        简评生化危机3重制
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-04</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%B8%B8%E6%88%8F/" class="button">游戏</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%94%9F%E5%8C%96%E5%8D%B1%E6%9C%BA/" class="post-tags__link button"># 生化危机</a></div> 
+<a href="/%E7%AE%80%E8%AF%84%E7%94%9F%E5%8C%96%E5%8D%B1%E6%9C%BA3%E9%87%8D%E5%88%B6/" class="post-entry__link">简评生化危机3重制</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        自动下载B站收藏视频至VPS
+    </h2>
+    
+        <p>
+            [admonition icon=”exclamation”]改良版脚本戳：https://left.pink/archives/3073 [/admonition]
+昨晚吃饭的时候...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-02</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+<a href="/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDb%E7%AB%99%E6%94%B6%E8%97%8F%E8%A7%86%E9%A2%91%E8%87%B3vps/" class="post-entry__link">自动下载B站收藏视频至VPS</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        记第一次vps被攻击
+    </h2>
+    
+        <p>
+            早上起来发现我的大盘鸡流量不正常
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-01</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/" class="button">破事水</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a></div> 
+<a href="/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1vps%E8%A2%AB%E6%94%BB%E5%87%BB/" class="post-entry__link">记第一次vps被攻击</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Ubuntu 安装网页云探针
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/03/" class="post-meta__date button">2020-03-27</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a></div> 
+<a href="/ubuntu-%E5%AE%89%E8%A3%85%E7%BD%91%E9%A1%B5%E4%BA%91%E6%8E%A2%E9%92%88/" class="post-entry__link">Ubuntu 安装网页云探针</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        记第一次购买 BTC
+    </h2>
+    
+        <p>
+            前几天美股熔断，跟着 BTC 也暴跌了（俺也不知道有没有关系，应该有吧）；不过我是昨天才看到新闻说 BTC 跌了：
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/03/" class="post-meta__date button">2020-03-15</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E5%89%81%E6%89%8B/" class="button">剁手</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%B4%A5%E5%AE%B6/" class="post-tags__link button"># 败家</a><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a><a href="/tags/BTC/" class="post-tags__link button"># BTC</a></div> 
+<a href="/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%B4%AD%E4%B9%B0-btc/" class="post-entry__link">记第一次购买 BTC</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        解决 Wordpress 经典编辑器下视频无法播放
+    </h2>
+    
+        <p>
+            前两天把主题换到了 Argon ，因为这个主题的一些特性会导致之前的文章阅读有问题，所以我把所有文章重新搞了下排版；然后我就发现之前我刚开始搭建博客时用经典编辑器写的文章里的视...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/03/" class="post-meta__date button">2020-03-12</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/wordpress/" class="post-tags__link button"># wordpress</a></div> 
+<a href="/%E8%A7%A3%E5%86%B3-wordpress-%E7%BB%8F%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8B%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE/" class="post-entry__link">解决 Wordpress 经典编辑器下视频无法播放</a>
+                </div>
+            
+        
+    </div>
+    
+        <div class="nav">
+            <div class="nav__prev">
+                
+                    <a href="/page/5/" class="nav__link">
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                        </div>
+                        <div>
+                            <div class="nav__label">
+                                Previous
+                            </div>
+                            <div class="nav__title">
+                                Page 5
+                            </div>
+                        </div>
+                    </a>
+                
+            </div>
+            <div class="nav__next">
+                
+                    <a href="/page/7/" class="nav__link">
+                        <div>
+                            <div class="nav__label">
+                                Next
+                            </div>
+                            <div class="nav__title">
+                                Page 7
+                            </div>
+                        </div>
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                        </div>
+                    </a>
+                
+            </div>
+        </div>
+    
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

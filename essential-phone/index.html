@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Essential Phone | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="手机, 捡垃圾">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        Essential Phone
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/05/" class="post-meta__date button">2020-05-30</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E5%89%81%E6%89%8B/" class="button">剁手</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%94%B5%E5%AD%90%E6%95%B0%E7%A0%81/" class="button">电子数码</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E4%BD%BF%E7%94%A8%E5%89%8D%E7%9A%84%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95"><span class="toc-text">正式使用前的操作记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%94%81"><span class="toc-text">解锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9recovery"><span class="toc-text">第三方recovery</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7rom"><span class="toc-text">刷rom</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="toc-text">使用体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E4%BD%BF%E7%94%A8%E5%89%8D%E7%9A%84%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95"><span class="toc-text">正式使用前的操作记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%94%81"><span class="toc-text">解锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9recovery"><span class="toc-text">第三方recovery</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7rom"><span class="toc-text">刷rom</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="toc-text">使用体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>记得上一次捡垃圾还是高二买 Nexus 6，那次是为了在学校用手机（父母不让带手机去学校）。</p>
+<p>这次就是存粹的收藏了；首先手机的名号就很大嘛：安卓之父的手机，虽然现在公司倒闭了，但收藏价值也更高了。</p>
+<p>最重要的一点是我很喜欢他的外观：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-09-25_18-59-01.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-09-25_18-59-01.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>即使在买之前已经看过很多图片，但在拿在手上真正见到后，我还是被震撼到了。这真的非常难以形容，每个人的审美都是不一样的，我不喜欢异形屏，但我仍然对他爱不释手。</p>
+<p>对于我的手掌来说刚刚好，手感也不错，除了后背连接处有点割手。</p>
+<h2 id="正式使用前的操作记录"><a href="#正式使用前的操作记录" class="headerlink" title="正式使用前的操作记录"></a>正式使用前的操作记录</h2><h3 id="解锁"><a href="#解锁" class="headerlink" title="解锁"></a>解锁</h3><p>第一步自然是解锁啦，和谷歌的手机差不多，<a target="_blank" rel="noopener" href="https://www.essential.com/developer">官网</a>（居然还活着）推荐是直接使用谷歌的 fastboot 工具。同样在开发者选项打开oem按钮，关机后按住音量减开机进入 bootloader，执行命令解锁：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fastboot flashing unlock</span><br></pre></td></tr></table></figure>
+
+<p>还有一个深度解锁，建议也解了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fastboot flashing unlock_critical</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三方recovery"><a href="#第三方recovery" class="headerlink" title="第三方recovery"></a>第三方recovery</h3><p>如果你只想用官方系统，那么可以在 <a target="_blank" rel="noopener" href="https://www.essential.com/developer/current-builds">这里</a> 下载，不过安全补丁貌似是去年的，如果你想刷第三方包，那就需要刷入 twrp ，与 pixel ，这个还挺麻烦的。</p>
+<p>不要使用 Android Q的底包，twrp会有很多问题，建议先刷一个9的包，然后再刷twrp，<strong>初次先刷完系统进入系统后记得吧 twrp 的 install.zip 复制进根目录，之后要用</strong></p>
+<p>假设你已经拥有上述条件，进入 BootLoader，查看当前所在分区</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fastboot getvar current-slot</span><br></pre></td></tr></table></figure>
+
+<p>记住显示的分区，如果在a分区，你就要刷到b分区，反过来一样</p>
+<p>刷入twrp到相反的分区，如上面显示的a分区，这里刷入到b分区</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fastboot flash boot_b twrp.img</span><br></pre></td></tr></table></figure>
+
+<p>切换到刷入的分区</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fastboot --set-active&#x3D;b</span><br></pre></td></tr></table></figure>
+
+<p>接下来进入 recovery</p>
+<p>不出意外就可以正常使用了，刷入 install.zip ，返回 bootloader 将分区改回去，也能正常进入 twrp。</p>
+<p>当然也可能会出现触屏无法使用的情况，此时保持在 twrp 界面，保持连接电脑，用命令将 install.zip刷入进去</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adb shell twrp install twrp-installer-mata-3.2.3-0.zip</span><br></pre></td></tr></table></figure>
+
+<p>刷完后重启至BootLoader再进入recovery看能否使用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
+
+<p>如果还不能使用，再次重启回BootLoader，将当前分区改回之前的，应当就能使用了。</p>
+<h2 id="刷rom"><a href="#刷rom" class="headerlink" title="刷rom"></a>刷rom</h2><p>这里我也踩了蛮多坑的，ROM我比较推荐的是 <a target="_blank" rel="noopener" href="https://forum.xda-developers.com/essential-phone/development/rom-evolution-x-4-1-69-t4073153">Evolution</a> ，集成了 pixel 的很多功能，完善的也不错。</p>
+<p>接上面刷完 twrp ，接下来刷包，刷完之后开机<strong>不要设置锁屏密码</strong>，因为如果你在刷包的同时刷了 Magisk ，你会发现并没有 magisk，在你想要重启回recover 重刷时你会发现 twrp 也没了，这也是很蛋疼的一点。</p>
+<p>所以刷完后如果你想 root ，即使你不想 root 后续系统更新也是需要 twrp 的，你就要把上面刷 twrp 的流程再来一遍，不要设置锁屏密码是因为锁屏会加密data分区，这样的话你就无法刷入 twrp 的 install.zip 了。</p>
+<h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>拿到手后因为他的颜值和新鲜感我是拿来当了两天的主力的，最终还是换了回去。</p>
+<p>缺点还是蛮多的，最开始使用你能明显感受到的就是断触，这个是通病了，买之前我就知道了。还有一个就是震动做的很屎，感觉像是橡皮筋一样。不舒服，我用的时候是吧全部震动都关了的；还有一个是续航不行，真的是肉眼可见的掉电，如果是主力机充电宝是必不可少的。</p>
+<p>相机也不太行，evolution的相机还有bug，有时按下拍照并不会拍下来。我目前找到的一个解决办法是去 play store 下一个 google camera，虽然是个老版本，至少是没有 bug 的。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>总的来说还是很满意的，我这台成色近乎完美，你不说是看不出来是二手的，虽然比市场价高了些，但物有所值。</p>
+<p>最后来个对比图：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/QQ20200529205804.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/QQ20200529205804.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E5%89%81%E6%89%8B/" class="post-cats__link button">剁手</a><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/categories/%E7%94%B5%E5%AD%90%E6%95%B0%E7%A0%81/" class="post-cats__link button">电子数码</a><a href="/tags/%E6%89%8B%E6%9C%BA/" class="post-tags__link button"># 手机</a><a href="/tags/%E6%8D%A1%E5%9E%83%E5%9C%BE/" class="post-tags__link button"># 捡垃圾</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8-vps-%E7%9A%84%EF%BC%9F/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            我是怎么使用 VPS 的？
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%91%A8%E5%B9%B4%E5%95%A6%EF%BC%81/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            博客一周年啦！
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

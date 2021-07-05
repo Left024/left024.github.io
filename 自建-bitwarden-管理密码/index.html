@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>自建 Bitwarden 管理密码 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS, linux">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        自建 Bitwarden 管理密码
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/08/" class="post-meta__date button">2020-08-15</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%9A%84%E5%AF%86%E7%A0%81%E5%BA%94%E8%AF%A5%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="toc-text">一个好的密码应该是怎样的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Bitwarden"><span class="toc-text">搭建 Bitwarden</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%9A%84%E5%AF%86%E7%A0%81%E5%BA%94%E8%AF%A5%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="toc-text">一个好的密码应该是怎样的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA-Bitwarden"><span class="toc-text">搭建 Bitwarden</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>自从因为 SSD 损坏丢失过一次数据后，我就进入了一种无比焦虑的状态。</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_19-54-33.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_19-54-33.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>首先是把所有电脑上的数据通过 Nextcloud 随时备份，然后又入了 office365，每周再把服务器上的备份上传到 OneDrive。</p>
+<p>做完这一套之后也算是稍微安心了一些</p>
+<p>直到前几天看到一篇讲密码安全的文章，又让我焦虑了起来，文章中的容易破解的点我都中了：简单，无特殊字符，无大小写，全部账户同一套密码</p>
+<p>通过这个 <a target="_blank" rel="noopener" href="https://password.kaspersky.com/ch/">网站</a> 一测，发现我的密码非常不安全：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_20-00-43.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_20-00-43.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>于是我当即决定重新设定一个足够复杂的密码，然后把所有账户的密码都改了。</p>
+<p>然后使用自建的 Bitwarden 进行管理</p>
+<h2 id="一个好的密码应该是怎样的？"><a href="#一个好的密码应该是怎样的？" class="headerlink" title="一个好的密码应该是怎样的？"></a>一个好的密码应该是怎样的？</h2><p>一个好的密码应该满足以下几点：</p>
+<ul>
+<li>  长度应该足够长</li>
+<li>  组合足够复杂，包含大小写字母，数字，特殊字符</li>
+<li>  每一个账户都不一样</li>
+<li>  即便得知你的所有个人信息也无法推算出来</li>
+<li>  便于记忆</li>
+</ul>
+<p>其实最后一点可以不要，有许多工具的自动生成密码已经足够难以破解了，并且 Bitwarden 的自动填写密码足够好用。</p>
+<p>但便于记忆是为了防止万一 Bitwarden 服务挂了，那可就非常难受了</p>
+<p>根据以上几点，我想出了一套密码组合：<strong>特定地点+坐标+平台+特殊字符</strong></p>
+<p>这个特定地点只有你知道，字母大小写你可以任意设定，坐标这个数字即使你忘了也随时可查，每个平台都用你的方法记忆，也可以加大小写设定。</p>
+<p>当然顺序你也可以自行调换</p>
+<p>例如：</p>
+<p>qinghua40116Wx,.?</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_20-14-07.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_20-14-07.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>安全性提高了非常多：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_20-15-23.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-15_20-15-23.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="搭建-Bitwarden"><a href="#搭建-Bitwarden" class="headerlink" title="搭建 Bitwarden"></a>搭建 Bitwarden</h2><p>首先需要安装 Docker</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg-agent \</span><br><span class="line">    software-properties-common</span><br><span class="line"></span><br><span class="line">curl -fsSL https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu&#x2F;gpg  sudo apt-key add -</span><br><span class="line"></span><br><span class="line">sudo add-apt-repository \</span><br><span class="line">   &quot;deb [arch&#x3D;amd64] https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu \</span><br><span class="line">   $(lsb_release -cs) \</span><br><span class="line">   stable&quot;</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p>配置 https （不配置无法注册，不知道是不是只有我这样）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt install apache2</span><br><span class="line"></span><br><span class="line">启用如下模块</span><br><span class="line">sudo a2enmod ssl</span><br><span class="line">sudo a2enmod proxy</span><br><span class="line">sudo a2enmod proxy_wstunnel</span><br><span class="line">sudo a2enmod proxy_http</span><br><span class="line">sudo a2enmod rewrite</span><br><span class="line">sudo a2enmod headers</span><br><span class="line"></span><br><span class="line">vim &#x2F;etc&#x2F;apache2&#x2F;sites-available&#x2F;bitwarden.conf</span><br><span class="line"></span><br><span class="line">将以下内容复制进去</span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    # The ServerName directive sets the request scheme, hostname and port that</span><br><span class="line">    # the server uses to identify itself. This is used when creating</span><br><span class="line">    # redirection URLs. In the context of virtual hosts, the ServerName</span><br><span class="line">    # specifies what hostname must appear in the request&#39;s Host: header to</span><br><span class="line">    # match this virtual host. For the default virtual host (this file) this</span><br><span class="line">    # value is not decisive as it is used as a last resort host regardless.</span><br><span class="line">    # However, you must set it for any further virtual host explicitly.</span><br><span class="line">    ServerName xxxxx.com #域名</span><br><span class="line"></span><br><span class="line">    ServerAdmin webmaster@localhost</span><br><span class="line">    DocumentRoot &#x2F;var&#x2F;www&#x2F;</span><br><span class="line">    ProxyPass &quot;&#x2F;&quot; &quot;http:&#x2F;&#x2F;127.0.0.1:3112&#x2F;&quot;</span><br><span class="line"> #端口自行修改</span><br><span class="line"></span><br><span class="line">    # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,</span><br><span class="line">    # error, crit, alert, emerg.</span><br><span class="line">    # It is also possible to configure the loglevel for particular</span><br><span class="line">    # modules, e.g.</span><br><span class="line">    #LogLevel info ssl:warn</span><br><span class="line"></span><br><span class="line">    ErrorLog $&#123;APACHE_LOG_DIR&#125;&#x2F;error.log</span><br><span class="line">    CustomLog $&#123;APACHE_LOG_DIR&#125;&#x2F;access.log combined</span><br><span class="line"></span><br><span class="line">    # For most configuration files from conf-available&#x2F;, which are</span><br><span class="line">    # enabled or disabled at a global level, it is possible to</span><br><span class="line">    # include a line for only one particular virtual host. For example the</span><br><span class="line">    # following line enables the CGI configuration for this host only</span><br><span class="line">    # after it has been globally disabled with &quot;a2disconf&quot;.</span><br><span class="line">    #Include conf-available&#x2F;serve-cgi-bin.conf</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">启用配置文件</span><br><span class="line">cd &#x2F;etc&#x2F;apache2&#x2F;sites-enabled</span><br><span class="line">sudo ln -s ..&#x2F;sites-available&#x2F;bitwarden.conf</span><br><span class="line">sudo service apache2 restart</span><br><span class="line"></span><br><span class="line">获取证书</span><br><span class="line">wget https:&#x2F;&#x2F;dl.eff.org&#x2F;certbot-auto</span><br><span class="line">chmod a+x certbot-auto</span><br><span class="line">sudo .&#x2F;certbot-auto --apache</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull bitwardenrs&#x2F;server:latest</span><br><span class="line">docker run -d --name bitwarden -v &#x2F;bw-data&#x2F;:&#x2F;data&#x2F; -p 3112:80 bitwardenrs&#x2F;server:latest #端口和 apache2 保持一致</span><br></pre></td></tr></table></figure>
+
+<p>启动之后注册密码，如果你只是自己一个人用，注册完后禁止注册：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker stop bitwarden</span><br><span class="line"></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">删除</span><br><span class="line">docker rm id</span><br></pre></td></tr></table></figure>
+
+<p>禁止注册</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d --name bitwarden -e SIGNUPS_ALLOWED&#x3D;false -v &#x2F;bw-data&#x2F;:&#x2F;data&#x2F; -p 3112:80 bitwardenrs&#x2F;server:latest</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>至于使用没啥好说的，软件都写得很细，全平台都有，chrome也有插件。</p>
+<p>目前用了几天感觉很不错，尤其是两步验证也可以添加在 Bitwarden 上，每次登陆都不需要专门打开手机查看了，很舒服</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E7%BD%91%E6%98%93%E6%98%A5%E9%A3%8Etryfun%E4%BC%AA%E8%A3%85%E6%81%8B%E4%BA%BA%E6%85%A2%E7%8E%A9%E6%AC%BE-%E4%BD%93%E9%AA%8C/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            网易春风TryFun伪装恋人慢玩款 体验
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E5%8F%B0-surface/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            年轻人的第一台 Surface
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Tetris 99 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="游戏, ns">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        Tetris 99
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/03/" class="post-meta__date button">2020-03-10</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%B8%B8%E6%88%8F/" class="button">游戏</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A4%E4%BA%BA%E4%B8%8A%E7%98%BE"><span class="toc-text">令人上瘾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99"><span class="toc-text">游戏规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%98%E6%9C%AF"><span class="toc-text">战术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A4%E4%BA%BA%E4%B8%8A%E7%98%BE"><span class="toc-text">令人上瘾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99"><span class="toc-text">游戏规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%98%E6%9C%AF"><span class="toc-text">战术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>我心中的2019年度游戏</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/26/tetris1.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/tetris1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>说起来刚知道这游戏的时候，还是在任天堂会员刚出来之后，这个游戏作为吸引购买会员而推出的。</p>
+<p>因为当时有很多类吃鸡游戏，这个游戏我在微博上看到时也是被称作“俄罗斯方块吃鸡”而被宣传的。所以我的看法就是和那些“抄袭”吃鸡玩法的游戏差不多的感觉，就没怎么关注。</p>
+<p>后来我关注的主播开始玩这个游戏，我也跟着看，发现确实有意思，看这个主播玩这个游戏也成了我每天的习惯（当时临近期末，没有买游戏的想法）。</p>
+<p>到了暑假，马造2出了，我第一时间就入手了，为了线上模式我开了会员，这时，我才想起来这款游戏，下载下来后，没玩几局我就陷入进去了。</p>
+<p><strong>真香！</strong></p>
+<h2 id="令人上瘾"><a href="#令人上瘾" class="headerlink" title="令人上瘾"></a>令人上瘾</h2><p><img src="https://chevereto.left.pink/images/2020/09/26/ESrBkE6UwAAMRSE.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/ESrBkE6UwAAMRSE.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>俄罗斯方块大家都玩过，我小时候也玩过，不过也就是玩玩而已，并不会多么的令人上瘾。</p>
+<p>因为它的刺激点不够多，仅仅只有两个：堆满死亡和逐渐加快的速度</p>
+<p>但Tetris 99（以下简称“99”）不一样，它的刺激点是多方位的： 玩家对你造成的攻击，你对玩家造成的攻击，随着人数减少节奏加快的BGM，以及各种音效</p>
+<p>当你因为一个你认为很小的错误失败时，很自然的就会再来一把，一把接着一把，时间就是这么过去了。</p>
+<p>尤其是这个BGM实在太魔性了，它有这么多自定义主题我从来没用过，因为其它的氛围烘托远不及默认的主题。</p>
+<p>当仅剩十人，BGM切换为野蜂飞舞时，紧张的气氛提至顶点，再加上下落非常快的方块，简直让人不敢呼吸，以至于我在第一次吃鸡时异常激动，心跳快的不行，我第一次在PUBG吃鸡都没这么激动。即使现在我已经吃过很多次鸡了，但每次吃鸡99还是能带给我心跳加速的感觉，这是其它游戏都未曾带给我的。</p>
+<h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><p>说了这么多，肯定还是有人没玩过的，稍微讲讲游戏规则吧。</p>
+<p>全局规则自然是活到最后，其次是一些操作</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/26/ESrI9zFU0AAX9Xm.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/ESrI9zFU0AAX9Xm.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>上面四个分别的作用：</p>
+<p>反击：谁攻击你你就攻击谁</p>
+<p>随机：随机攻击玩家</p>
+<p>追击：攻击濒死的玩家</p>
+<p>瞄准勋章：攻击有勋章的玩家</p>
+<p>左上角可以存储一个方块，用的时候会和当前方块替换，左边的竖条代表其它玩家对你造成的攻击。</p>
+<p>当攻击力相等时，对方消一行你需要消一行才能抵消，如果不能抵消，就会上涨垃圾行。</p>
+<p>当你消灭玩家会得到徽章，多个徽章会合成一个完整徽章，每一个完整徽章会加25%的攻击力，意味着如果对方攻击力比你低，对方需要消更多的行数才能抵消你对他造成的攻击。</p>
+<p>徽章获取的难度也是指数级上涨的，第一个完整徽章只需要消灭两个玩家，第二个需要4个，第三个需要八个，第四个需要16个。当然，如果你消灭的玩家带有徽章，你可以直接继承他的遗产。</p>
+<p>攻击方法也有很多种，比如最简单的消行，消一行就是造成一行的攻击，如果连击则攻击会随着连击数增长。</p>
+<p>还有就是一个有点难的：T-spin，这个视频开头就展示了T-spin triple的搭法</p>
+<p>T-spin造成的攻击是双倍，也就是消三行造成的攻击是六行，是非常强的一个手段。</p>
+<p>但在我这种非专业玩家看来，T-spin并没有那么重要，更重要的是战术</p>
+<h2 id="战术"><a href="#战术" class="headerlink" title="战术"></a>战术</h2><p>我常用的战术就是“钓鱼”，利用上面的反击选项，在开局将自己置于濒死状态，让别人攻击你，积攒足够多的玩家，越多玩家攻击你，你的攻击力也会越高，打出高伤害，杀一堆人，不仅积攒了徽章，同时也很爽。</p>
+<p>但这个战术并不稳，毕竟游戏已经发售那么久了，玩家都成熟了，“钓鱼”一般钓到的都是新玩家。</p>
+<p>所以我更推荐另一个战术：连击</p>
+<p>当仅剩三人时世界第一用的战术，非常好用，如果操作得当吃鸡概率很高，因为只要你能一直连续消行，别人对你造成的攻击就不会上涨，这样就能防止暴毙，即使不能完全消完也能把危险降到最低。</p>
+<p>当然前提是你得非常熟练，不过即使我这种业余玩家都能吃鸡（文章头图是我真是的吃鸡次数，仅仅是一部分截图），勤加练习，你也可以的。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这篇文章主要是推荐游戏，其实这个游戏细节还是很多的，我也不是完全了解，只是希望大家都能试试，它真的很好玩很上瘾，我几乎每天没事都会来两把。</p>
+<p>说实在的我的ns已经和Tetris 99启动器没多大区别了</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-cats__link button">游戏</a><a href="/categories/%E8%AF%84%E4%BB%B7/" class="post-cats__link button">评价</a><a href="/tags/%E6%B8%B8%E6%88%8F/" class="post-tags__link button"># 游戏</a><a href="/tags/ns/" class="post-tags__link button"># ns</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E8%A7%A3%E5%86%B3-wordpress-%E7%BB%8F%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8B%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            解决 Wordpress 经典编辑器下视频无法播放
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E8%81%8A%E8%81%8A-b%E7%AB%99/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            聊聊 B站
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

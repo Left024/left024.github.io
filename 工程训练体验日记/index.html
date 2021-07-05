@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>工程训练体验日记 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="体验, 生活, 学习">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        工程训练体验日记
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/01/" class="post-meta__date button">2020-01-03</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-1"><span class="toc-text">Day 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-2"><span class="toc-text">Day 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-3"><span class="toc-text">Day 3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-4"><span class="toc-text">Day 4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-5"><span class="toc-text">Day 5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-6"><span class="toc-text">Day 6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-7"><span class="toc-text">Day 7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-8"><span class="toc-text">Day 8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-9"><span class="toc-text">Day 9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-1"><span class="toc-text">Day 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-2"><span class="toc-text">Day 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-3"><span class="toc-text">Day 3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-4"><span class="toc-text">Day 4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-5"><span class="toc-text">Day 5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-6"><span class="toc-text">Day 6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-7"><span class="toc-text">Day 7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-8"><span class="toc-text">Day 8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day-9"><span class="toc-text">Day 9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p><img src="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-12-26_21-46-32.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-12-26_21-46-32.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>期末考试之前一周是工程训练，感觉会很有意思，做个记录</p>
+<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h2><p>这天做钳工但只有下午，所以只讲了些基本的东西，和要做的东西：锤子</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/IMG_20191223_132901.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/IMG_20191223_132901.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这天下午也只做了一件事，累死了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-12-26_21-51-06.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-12-26_21-51-06.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><p>第二天一整天钳工，就是把锤子剩下的部分完成，然后我就经历了最操蛋的事情，按照图纸，应该斜向下把它锯下来一块</p>
+<p>然后，我锯歪了！我发现的时候已经贴着画的线了，如果再锯下去肯定就超出了规定的距离，于是我反过来锯，又锯歪了，但是是往另一边偏了。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205093456.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205093456.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>为了省点力气只能从中间下来锯</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205093547.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205093547.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>然后成了这样</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205093639.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205093639.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>总之最后费了九牛二虎之力终于把它切下来了，我真的带不容易了</p>
+<p>下一步是打孔，不过这步是老师来（为了安全），我们只要找到那个打孔点就好了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205093729.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205093729.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>最后成品</p>
+<h2 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h2><p><img src="https://chevereto.left.pink/images/2021/02/05/20210205093824.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205093824.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>数控机床，上午讲了些基础操作，怎么开怎么关，对刀，下午讲的是怎么编程，这是一个参考PPT</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205093906.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205093906.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>没什么难度，就是字母对应相关操作，就不细讲了，然后这是我设计的</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094024.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094024.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>其实就是对着PPT改了点东西（懒）</p>
+<h2 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h2><p>上午数控就是把前一天的编写的程序做出来</p>
+<p>做出来后：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094107.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094107.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>下午是车床，就是数控机床的手动操作版，只是讲了下基本操作，安全事项，主要是熟悉下</p>
+<p>我手动整了个锥子形</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094205.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094205.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h2><p>今天主要是按照图纸把东西做出来</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094247.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094247.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>做出来长这样</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094328.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094328.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="Day-6"><a href="#Day-6" class="headerlink" title="Day 6"></a>Day 6</h2><p>快速成型，就是自己设计然后3D打印出来，这是我设计的小恐龙：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094407.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094407.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>我还画了草图</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094447.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094447.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>打印出来长这样（花了接近一个小时时间打印）</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094530.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094530.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>浏览电脑文件发现了一个大佬的作品：</p>
+<ul>
+<li><img src="https://chevereto.left.pink/images/2021/02/05/20210205094647.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094647.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></li>
+<li><img src="https://chevereto.left.pink/images/2021/02/05/20210205094723.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094723.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></li>
+</ul>
+<h2 id="Day-7"><a href="#Day-7" class="headerlink" title="Day 7"></a>Day 7</h2><p>拆装，拆装自行车</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094800.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094800.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>上午拆前面的刹车，装回去，下午拆后轮的刹车，装回去。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/IMG_20191231_112017.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/IMG_20191231_112017.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>蛮困难的，没有想象中那么简单。</p>
+<h2 id="Day-8"><a href="#Day-8" class="headerlink" title="Day 8"></a>Day 8</h2><p>陶艺，说人话就是玩泥巴，上午讲概念，下午玩泥巴，和同学捏了个金拱门套餐：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205094932.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205094932.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="Day-9"><a href="#Day-9" class="headerlink" title="Day 9"></a>Day 9</h2><p>只有上午，用来上色，成品：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/05/20210205095011.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/05/20210205095011.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>玉米和薯条是我捏的</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说这一个多星期还是蛮有意思的，虽然没学到啥，但体验到了许多之前没体验过的东西，生活中许多看起来很简单的东西实际做起来没那么简单，这个真的是要自己体验了才能知道，感觉时间太紧了，没怎么体验就结束了，希望下学期还有吧。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-cats__link button">生活</a><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-cats__link button">学习</a><a href="/tags/%E4%BD%93%E9%AA%8C/" class="post-tags__link button"># 体验</a><a href="/tags/%E7%94%9F%E6%B4%BB/" class="post-tags__link button"># 生活</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E7%94%A8-tasker-%E8%AE%A9%E6%89%8B%E6%9C%BA%E6%9B%B4%E5%A5%BD%E7%94%A8/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            用 Tasker 让手机更好用
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%85%83%E6%97%A6%E5%BF%AB%E4%B9%90%EF%BC%81/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            元旦快乐！
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

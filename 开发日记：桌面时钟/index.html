@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>开发日记：桌面时钟 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="记录, 学习, Android开发">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        开发日记：桌面时钟
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2019/10/" class="post-meta__date button">2019-10-08</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" class="button">开发日记</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-4-5"><span class="toc-text">2020&#x2F;4&#x2F;5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-4-4"><span class="toc-text">2020&#x2F;4&#x2F;4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-28"><span class="toc-text">2020&#x2F;3&#x2F;28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-15"><span class="toc-text">2020&#x2F;3&#x2F;15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-11"><span class="toc-text">2020&#x2F;3&#x2F;11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-9"><span class="toc-text">2020&#x2F;3&#x2F;9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-8"><span class="toc-text">2020&#x2F;3&#x2F;8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-5"><span class="toc-text">2020&#x2F;3&#x2F;5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-29"><span class="toc-text">2020&#x2F;2&#x2F;29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-28"><span class="toc-text">2020&#x2F;2&#x2F;28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-26"><span class="toc-text">2020&#x2F;2&#x2F;26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-4"><span class="toc-text">2020&#x2F;2&#x2F;4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-2"><span class="toc-text">2020&#x2F;2&#x2F;2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-1-27"><span class="toc-text">2020&#x2F;1&#x2F;27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-1-8"><span class="toc-text">2020&#x2F;1&#x2F;8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-12-14"><span class="toc-text">2019&#x2F;12&#x2F;14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-30"><span class="toc-text">2019&#x2F;11&#x2F;30</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-29"><span class="toc-text">2019&#x2F;11&#x2F;29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-23"><span class="toc-text">2019&#x2F;11&#x2F;23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-19"><span class="toc-text">2019&#x2F;11&#x2F;19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-16"><span class="toc-text">2019&#x2F;11&#x2F;16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-13"><span class="toc-text">2019&#x2F;11&#x2F;13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-11"><span class="toc-text">2019&#x2F;11&#x2F;11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-9"><span class="toc-text">2019&#x2F;11&#x2F;9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-1"><span class="toc-text">2019&#x2F;11&#x2F;1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-28"><span class="toc-text">2019&#x2F;10&#x2F;28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-27"><span class="toc-text">2019&#x2F;10&#x2F;27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-26"><span class="toc-text">2019&#x2F;10&#x2F;26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-22"><span class="toc-text">2019&#x2F;10&#x2F;22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-20"><span class="toc-text">2019&#x2F;10&#x2F;20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-18"><span class="toc-text">2019&#x2F;10&#x2F;18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-17"><span class="toc-text">2019&#x2F;10&#x2F;17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-16"><span class="toc-text">2019&#x2F;10&#x2F;16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-15"><span class="toc-text">2019&#x2F;10&#x2F;15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-14"><span class="toc-text">2019&#x2F;10&#x2F;14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-13"><span class="toc-text">2019&#x2F;10&#x2F;13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-12"><span class="toc-text">2019&#x2F;10&#x2F;12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-10"><span class="toc-text">2019&#x2F;10&#x2F;10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-9"><span class="toc-text">2019&#x2F;10&#x2F;9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-8"><span class="toc-text">2019&#x2F;10&#x2F;8</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-4-5"><span class="toc-text">2020&#x2F;4&#x2F;5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-4-4"><span class="toc-text">2020&#x2F;4&#x2F;4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-28"><span class="toc-text">2020&#x2F;3&#x2F;28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-15"><span class="toc-text">2020&#x2F;3&#x2F;15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-11"><span class="toc-text">2020&#x2F;3&#x2F;11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-9"><span class="toc-text">2020&#x2F;3&#x2F;9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-8"><span class="toc-text">2020&#x2F;3&#x2F;8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-3-5"><span class="toc-text">2020&#x2F;3&#x2F;5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-29"><span class="toc-text">2020&#x2F;2&#x2F;29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-28"><span class="toc-text">2020&#x2F;2&#x2F;28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-26"><span class="toc-text">2020&#x2F;2&#x2F;26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-4"><span class="toc-text">2020&#x2F;2&#x2F;4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2-2"><span class="toc-text">2020&#x2F;2&#x2F;2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-1-27"><span class="toc-text">2020&#x2F;1&#x2F;27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-1-8"><span class="toc-text">2020&#x2F;1&#x2F;8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-12-14"><span class="toc-text">2019&#x2F;12&#x2F;14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-30"><span class="toc-text">2019&#x2F;11&#x2F;30</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-29"><span class="toc-text">2019&#x2F;11&#x2F;29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-23"><span class="toc-text">2019&#x2F;11&#x2F;23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-19"><span class="toc-text">2019&#x2F;11&#x2F;19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-16"><span class="toc-text">2019&#x2F;11&#x2F;16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-13"><span class="toc-text">2019&#x2F;11&#x2F;13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-11"><span class="toc-text">2019&#x2F;11&#x2F;11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-9"><span class="toc-text">2019&#x2F;11&#x2F;9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-11-1"><span class="toc-text">2019&#x2F;11&#x2F;1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-28"><span class="toc-text">2019&#x2F;10&#x2F;28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-27"><span class="toc-text">2019&#x2F;10&#x2F;27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-26"><span class="toc-text">2019&#x2F;10&#x2F;26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-22"><span class="toc-text">2019&#x2F;10&#x2F;22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-20"><span class="toc-text">2019&#x2F;10&#x2F;20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-18"><span class="toc-text">2019&#x2F;10&#x2F;18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-17"><span class="toc-text">2019&#x2F;10&#x2F;17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-16"><span class="toc-text">2019&#x2F;10&#x2F;16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-15"><span class="toc-text">2019&#x2F;10&#x2F;15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-14"><span class="toc-text">2019&#x2F;10&#x2F;14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-13"><span class="toc-text">2019&#x2F;10&#x2F;13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-12"><span class="toc-text">2019&#x2F;10&#x2F;12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-10"><span class="toc-text">2019&#x2F;10&#x2F;10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-9"><span class="toc-text">2019&#x2F;10&#x2F;9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-10-8"><span class="toc-text">2019&#x2F;10&#x2F;8</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>最近在自学 Android 开发，突发灵感想做一个桌面时钟，把之前 <a target="_blank" rel="noopener" href="https://left.pink/archives/815">像素时钟</a> 的功能做出一个手机版，边做边学习，感觉这样效率会高点。</p>
+<p>每天做一点，这篇文章更新一点，然后顶部菜单新加了一个 开发日记 的栏目，可以点进去看。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/20210209105050.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/20210209105050.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-4-5"><a href="#2020-4-5" class="headerlink" title="2020/4/5"></a>2020/4/5</h2><p>原本是非常轻松加愉快的一次新功能添加，但是不知道为什么在淡入淡出动画中的淡出动画时进度条会显示出来，在之前已经设置了progress.setVisibility(View.VISIBLE);，但是在淡出动画时依然会显示进度条（动画代码如下）</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Snipaste_2020-04-06_12-07-32.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Snipaste_2020-04-06_12-07-32.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>最后折腾了几个小时实在没办法了，只能把它的空间宽和高设置为1，只有一个像素点，算是曲线救国了吧</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200405-173808.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200405-173808.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-4-4"><a href="#2020-4-4" class="headerlink" title="2020/4/4"></a>2020/4/4</h2><p>如图</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Snipaste_2020-04-05_17-49-16.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Snipaste_2020-04-05_17-49-16.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-3-28"><a href="#2020-3-28" class="headerlink" title="2020/3/28"></a>2020/3/28</h2><p>多亏了 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69195418">这篇文章</a> ，把酷安粉丝数量给解决了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200331-141920.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200331-141920.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-3-15"><a href="#2020-3-15" class="headerlink" title="2020/3/15"></a>2020/3/15</h2><p>显示BTC价格，有美元和人民币，同时可以显示你持有币的价值</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20200315154938.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20200315154938.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-3-11"><a href="#2020-3-11" class="headerlink" title="2020/3/11"></a>2020/3/11</h2><p>天气加了个api，可以根据ip获取位置然后获取天气；</p>
+<p>排序可以直接点击进入相关的设置了</p>
+<p>联网的代码也缩减了</p>
+<h2 id="2020-3-9"><a href="#2020-3-9" class="headerlink" title="2020/3/9"></a>2020/3/9</h2><p>解决了颜文字刷新频次不准的问题</p>
+<p>之前实现是联网从我的服务器获取，感觉能直接改内容，挺好的。不过因为是联网，会有时间差，所以就会不准。</p>
+<p>还是换回本地了。。。。。。说实话感觉有比数组更好的方法，但是Google查不到。。。一个个添加累死我了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/20210209105443.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/20210209105443.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-3-8"><a href="#2020-3-8" class="headerlink" title="2020/3/8"></a>2020/3/8</h2><p>酷安评论区有人提建议加个保持亮屏开关，虽然我不知道有什么意义，不过还是加了，难得有人提建议。。。</p>
+<p>还有就是把一直想弄的小时钟动态显示给弄了。</p>
+<p>昨天又把布局改了一遍（布局这个东西太蛋疼了），这次感觉还行</p>
+<h2 id="2020-3-5"><a href="#2020-3-5" class="headerlink" title="2020/3/5"></a>2020/3/5</h2><p>一个特别麻烦的BUG，研究了好几个小时，总算解决了</p>
+<h2 id="2020-2-29"><a href="#2020-2-29" class="headerlink" title="2020/2/29"></a>2020/2/29</h2><p>加了个B站在线人数，昨天的颜文字加了个切换频次</p>
+<h2 id="2020-2-28"><a href="#2020-2-28" class="headerlink" title="2020/2/28"></a>2020/2/28</h2><p>加了个颜文字显示功能</p>
+<h2 id="2020-2-26"><a href="#2020-2-26" class="headerlink" title="2020/2/26"></a>2020/2/26</h2><p>摸了十几天的鱼后又开始写代码了，这次主要优化了一下用户体验，把应用设置直接放到首页，全局设置啥的放右上角，深一点的层级加了个返回首页</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215515.png"><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215515.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215515.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215531.png"><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215531.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215531.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://left.pink/wp-content/uploads/2020/02/Screenshot_20200226-215525.png"><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215525.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200226-215525.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<h2 id="2020-2-4"><a href="#2020-2-4" class="headerlink" title="2020/2/4"></a>2020/2/4</h2><p>今天把困扰我很久的字体大小自适应解决了，之前这个其实已经做好了，但是不完美，这次彻底完美了，同时 EditText 的字体大小自适应也趋于完美，农历的bug也修了，明天可以开始完全重写全部的布局了。</p>
+<p>这两天还是蛮充实的。</p>
+<h2 id="2020-2-2"><a href="#2020-2-2" class="headerlink" title="2020/2/2"></a>2020/2/2</h2><p>加了个农历显示，一开始以为农历他是自带的，没想到整个算法都要自己去写，当然我是抄别人的。。。</p>
+<p>然后重写了一部分布局，这个布局是真的蛋疼，怎么写怎么不舒服，慢慢学习吧</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20200203113806.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20200203113806.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2020-1-27"><a href="#2020-1-27" class="headerlink" title="2020/1/27"></a>2020/1/27</h2><p>放假了反而变懒了，在家窝着玩游戏太舒服了。。。</p>
+<p>加了个旋转支持，根据重力感应旋转，然后还有些小细节优化。</p>
+<p>还有很多想做的功能，再说吧。。。</p>
+<h2 id="2020-1-8"><a href="#2020-1-8" class="headerlink" title="2020/1/8"></a>2020/1/8</h2><p>明天考数电，还没复习，然后我写了一下午代码。。。。。</p>
+<p>新功能如图，早就想加了，今天算是没忍住把它搞定了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200108-173109.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20200108-173109.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>效果：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20200108173217.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20200108173217.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-12-14"><a href="#2019-12-14" class="headerlink" title="2019/12/14"></a>2019/12/14</h2><p>对，再次说话不算话，主要是天气 api 更新了，显示会出错，这个功能我是在用的，所以修了，顺带修了之前发现的一个 bug，还优化了排序的逻辑。</p>
+<h2 id="2019-11-30"><a href="#2019-11-30" class="headerlink" title="2019/11/30"></a>2019/11/30</h2><p>完成了 PUBG 的 K/D 显示，接下准备期末考试，应该一个半月都不会动了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191129235027.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191129235027.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-11-29"><a href="#2019-11-29" class="headerlink" title="2019/11/29"></a>2019/11/29</h2><p>忘记写日记了，前几天对功能部分进行了分类，今天完成了番茄工作法，主要是自己需要这个功能，接下来一个月要准备考试，而我又很难集中注意力学习，希望这个方法有用吧。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191129002327.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191129002327.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-11-23"><a href="#2019-11-23" class="headerlink" title="2019/11/23"></a>2019/11/23</h2><p>把界面按照谷歌标准全部重写完了，全绿了，舒服。优化了排序，只有打开了开关的功能才会显示，关闭的不显示。</p>
+<h2 id="2019-11-19"><a href="#2019-11-19" class="headerlink" title="2019/11/19"></a>2019/11/19</h2><p>今天优化了一堆代码，还有就是我的界面的写法是不恰当的，没有按照谷歌标准来，所以就慢慢改了。。。</p>
+<h2 id="2019-11-16"><a href="#2019-11-16" class="headerlink" title="2019/11/16"></a>2019/11/16</h2><p>今天写了一天，适配了5.0+的系统，新增了两个功能：PM2.5和少数派粉丝显示，然后因为一点失误软件下架，现在要等到周一才能恢复上架了，真是操蛋。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191116225842.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191116225842.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191116225838.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191116225838.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-11-13"><a href="#2019-11-13" class="headerlink" title="2019/11/13"></a>2019/11/13</h2><p>排序搞定了，写了一整天，累死了</p>
+<h2 id="2019-11-11"><a href="#2019-11-11" class="headerlink" title="2019/11/11"></a>2019/11/11</h2><p>上架惹，下载： <a target="_blank" rel="noopener" href="https://www.coolapk.com/apk/xyz.hdvjcvjff.deskclock">https://www.coolapk.com/apk/xyz.hdvjcvjff.deskclock</a></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20191111-214651.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20191111-214651.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-11-9"><a href="#2019-11-9" class="headerlink" title="2019/11/9"></a>2019/11/9</h2><p>完成了两个功能，申请了酷安的开发者</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191109234823.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191109234823.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191109234819.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191109234819.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191109234837.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191109234837.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-11-1"><a href="#2019-11-1" class="headerlink" title="2019/11/1"></a>2019/11/1</h2><p>微博粉丝数量的显示做完了，接下来几个星期要学习准备考试，所以更新会变成周更，下一个应用打算做计算某一个日期到另一个日期有多少天，做完这个就上架酷安，然后再做其它的慢慢更新，如果用的人多也能知道有啥bug。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191101203608.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191101203608.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-10-28"><a href="#2019-10-28" class="headerlink" title="2019/10/28"></a>2019/10/28</h2><p>今天解决了一个问题：测试机正常显示，其它手机不显示。排查了半天才解决，android 9.0 开始谷歌强制要求要使用 Https 访问，然后有几个应用的 api 是 http，所以我的主力机就没有显示。。。</p>
+<p>原本想这星期把微博粉丝解决的（api 涉及到了授权访问，这又是一堆新的东西要去学），然而这星期事情特别多，所以再说吧。。。</p>
+<h2 id="2019-10-27"><a href="#2019-10-27" class="headerlink" title="2019/10/27"></a>2019/10/27</h2><p>解决了字体和控件根据屏幕适配的问题，不过由于实现这个功能的代码只有 android 8.0 以上才能用，所以把软件的 API level 改到26了，其实7.0肯定也能自适应的，不过因为我懒，所以就不搞了。</p>
+<p>话说回来都9102年了，谁的设备还会停留在7.0.。。</p>
+<h2 id="2019-10-26"><a href="#2019-10-26" class="headerlink" title="2019/10/26"></a>2019/10/26</h2><p>忘记写日记了，几天前完成了显示任意一个你所拥有的steam游戏的时长，感觉没啥人对这个感兴趣，存粹是自己要用。然后今天解决了初次打开应用会闪退的问题，接着发现不同手机的字体大小显示会有问题，这个正在研究。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191026214611.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191026214611.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-10-22"><a href="#2019-10-22" class="headerlink" title="2019/10/22"></a>2019/10/22</h2><p>YouTube 完成</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191022222117.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191022222117.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-10-20"><a href="#2019-10-20" class="headerlink" title="2019/10/20"></a>2019/10/20</h2><p>摸了两天鱼，今天花了一个晚上把天气部分全整完了，这次效率很高，蛮开心的</p>
+<h2 id="2019-10-18"><a href="#2019-10-18" class="headerlink" title="2019/10/18"></a>2019/10/18</h2><p>全部设置啥的都弄完了，明天可以开始弄 YouTube 粉丝数量的显示了（天气太麻烦了晚点再搞）</p>
+<h2 id="2019-10-17"><a href="#2019-10-17" class="headerlink" title="2019/10/17"></a>2019/10/17</h2><p>B站粉丝数量的显示部分搞定了，明天写具体的设置部分</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191017215545.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191017215545.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-10-16"><a href="#2019-10-16" class="headerlink" title="2019/10/16"></a>2019/10/16</h2><p>今天把时间这个功能的显示周期和全局设置的逻辑都写完了，然后B站粉丝数量界面也搞定了，其实这部分的代码也差不多搞定了，但是好像因为访问它的api太频繁被封了，所以细节部分调教不了，明天再看看吧</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191016220120.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191016220120.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Snipaste_2019-10-16_22-09-18.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Snipaste_2019-10-16_22-09-18.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-10-15"><a href="#2019-10-15" class="headerlink" title="2019/10/15"></a>2019/10/15</h2><p>今天把时间对应的按钮的功能都实现了，明天可以开始做下一个应用了</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/Screenshot_20191015-205539.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/Screenshot_20191015-205539.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="2019-10-14"><a href="#2019-10-14" class="headerlink" title="2019/10/14"></a>2019/10/14</h2><p>今天搞定了淡入淡出动画</p>
+<h2 id="2019-10-13"><a href="#2019-10-13" class="headerlink" title="2019/10/13"></a>2019/10/13</h2><p>把时间这个应用的选项写完了，全局设置写了一个，选项的实现明天再写；今天迁移博客整的我太累了。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191013192932.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191013192932.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191013192932.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191013192937.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191013192937.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191013192937.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<h2 id="2019-10-12"><a href="#2019-10-12" class="headerlink" title="2019/10/12"></a>2019/10/12</h2><p>今天总算把循环搞定了</p>
+<h2 id="2019-10-10"><a href="#2019-10-10" class="headerlink" title="2019/10/10"></a>2019/10/10</h2><p>今天又把界面重新写了一遍，AS这个垃圾软件真的要气死我了，昨天保存屁事没有，今天打开来就报错，怎么搞都搞不好，同样一个操作，新开一个项目就没问题，在这个项目就会报错，气死我了。</p>
+<p>重写完后给底部加了个启动按钮，启动时钟的页面。</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191010212745.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191010212745.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>然后做了时间的显示，时间，日期，星期几。不过循环任务搞了半天没搞明白，明天再折腾。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191010213326.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191010213326.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191010213326.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191010213330.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191010213330.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191010213330.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191010213333.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191010213333.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191010213333.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<h2 id="2019-10-9"><a href="#2019-10-9" class="headerlink" title="2019/10/9"></a>2019/10/9</h2><p>今天把界面重新写了一遍，因为感觉之前的逻辑不太对，然后因为变量的问题花了好久解决（复制粘贴代码的弊端），所以总的来说啥也没干，今天事太多时间太少，游戏都没玩（嘤嘤嘤）。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191009212239.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191009212239.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191009212239.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191009212245.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191009212245.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191009212245.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191009212249.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191009212249.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191009212249.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<h2 id="2019-10-8"><a href="#2019-10-8" class="headerlink" title="2019/10/8"></a>2019/10/8</h2><p>完成了一部分主界面，点击时间跳转到时间的设置界面（待补全）</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191008201439.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191008201439.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191008201439.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li>  <a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/09/QQ20191008201444.png"><img src="https://chevereto.left.pink/images/2021/02/09/QQ20191008201444.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/09/QQ20191008201444.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-cats__link button">学习</a><a href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" class="post-cats__link button">开发日记</a><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/Android%E5%BC%80%E5%8F%91/" class="post-tags__link button"># Android开发</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E7%BB%9D%E5%91%BD%E6%AF%92%E5%B8%88%EF%BC%9A%E7%BB%AD%E5%91%BD%E4%B9%8B%E5%BE%92/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            绝命毒师：续命之徒
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E6%84%BF%E5%81%9A%E4%B8%80%E5%9C%BA%E6%B0%B8%E4%B8%8D%E9%86%92%E6%9D%A5%E7%9A%84%E6%A2%A6/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            愿做一场永不醒来的梦
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

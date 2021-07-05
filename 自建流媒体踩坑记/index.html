@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>自建流媒体踩坑记 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        自建流媒体踩坑记
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/06/" class="post-meta__date button">2020-06-30</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E9%80%89%E6%8B%A9"><span class="toc-text">方案选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E9%83%A8%E5%88%86%EF%BC%9A%E6%B7%BB%E5%8A%A0AV"><span class="toc-text">附加部分：添加AV</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E9%80%89%E6%8B%A9"><span class="toc-text">方案选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E9%83%A8%E5%88%86%EF%BC%9A%E6%B7%BB%E5%8A%A0AV"><span class="toc-text">附加部分：添加AV</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>Hostsolution 的 1T 已经用了几个月了，硬盘里面也已经积攒了好多部电影了，但是用起来还是不方便，每次想看片都只能复制 Webdav 地址到 Potplayer，然后再寻找相应外挂字幕，实在是麻烦：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-02-38.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-02-38.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>如果有一种更优雅的在线观看方法，能让我以低成本的方式随时浏览观看我 VPS 中的影片，那就非常舒服了。</p>
+<p>方法就如标题所示，自建流媒体。</p>
+<p>经过一个多星期的折腾我也算是完美搞定了，中间也踩了蛮多坑的，用这篇文章记录下。</p>
+<p><strong>注意</strong>：本篇文章全部基于VPS</p>
+<h2 id="方案选择"><a href="#方案选择" class="headerlink" title="方案选择"></a>方案选择</h2><p>市面上有三种方案：<a target="_blank" rel="noopener" href="https://jellyfin.org/">Jellyfin</a>，<a target="_blank" rel="noopener" href="https://emby.media/">Emby</a>，<a target="_blank" rel="noopener" href="https://www.plex.tv/">Plex</a></p>
+<p>jellyfin开源且免费，emby，plex部分功能需要付费会员。</p>
+<p>在经过多天的重装体验后，我最终选择了Emby，jellyfin虽然全部免费，但是解码性能不如emby，且无法加载ass字幕文件（中文方框，英文正常）。</p>
+<p>手机端UI，emby 的更好看。</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-09-25_18-50-41.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-09-25_18-50-41.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Emby的安装也更简单，虽然都很简单</p>
+<p>至于plex，没用过（因为安装完 emby 就满足我所有要求了，就没尝试plex），就不作评价了</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>虽然简单，但还是把安装流程写一遍</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;MediaBrowser&#x2F;Emby.Releases&#x2F;releases&#x2F;download&#x2F;4.4.3.0&#x2F;emby-server-deb_4.4.3.0_amd64.deb</span><br><span class="line">dpkg -i emby-server-deb_4.4.3.0_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>安装完后先把启动权限改一下，要不然无法访问本地文件，你也可以选择把文件所有者改为 emby，以下演示修改启动权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;emby-server.service</span><br><span class="line">[Unit]</span><br><span class="line">Description&#x3D;Emby Server is a personal media server with apps on just about every device.</span><br><span class="line">After&#x3D;network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">EnvironmentFile&#x3D;&#x2F;etc&#x2F;emby-server.conf</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;opt&#x2F;emby-server</span><br><span class="line">ExecStart&#x3D;&#x2F;opt&#x2F;emby-server&#x2F;bin&#x2F;emby-server</span><br><span class="line">RestartForceExitStatus&#x3D;3</span><br><span class="line">User&#x3D;emby</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br><span class="line"></span><br><span class="line">将 User&#x3D;emby 改为 User&#x3D;root</span><br><span class="line"></span><br><span class="line">保存</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">重启</span><br><span class="line">service emby-server restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装完后，访问<a href="http://ip:8096，配置域名就不讲了，网上到处都是。">http://ip:8096，配置域名就不讲了，网上到处都是。</a></p>
+<p>第一次打开会有一个引导，根据提示走就行了。</p>
+<p>在设置媒体库之前，还需要注意命名格式，电影的命名格式应该遵循：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Name.2019.1080p.mkv</span><br><span class="line">Name.2019.1080p.chs&amp;eng.ass</span><br><span class="line">字幕文件命名和对应电影命名一致</span><br></pre></td></tr></table></figure>
+
+<p>更具体的规则可以看 <a target="_blank" rel="noopener" href="https://support.emby.media/support/solutions/articles/44001159102-movie-naming">官方说明</a></p>
+<p>剧集应该遵循：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\TV</span><br><span class="line">  \Glee (2009)</span><br><span class="line">     \Season 1</span><br><span class="line">        Glee S01E01.mp4</span><br><span class="line">        Glee S01E02.mp4</span><br></pre></td></tr></table></figure>
+
+<p>具体规则可以看 <a target="_blank" rel="noopener" href="https://support.emby.media/support/solutions/articles/44001159110-tv-naming">官方说明</a></p>
+<p>之后就是设置媒体库，这里也有些需要注意的：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-51-11.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-51-11.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><strong>注意</strong>图像的下载语言选英语会更好，因为中文的海报一般都是含有上映日期的那种不怎么简洁的海报，比较影响观感。</p>
+<p>接下来如图勾选</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-51-20.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-51-20.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-51-30.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_15-51-30.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>再下面的字幕插件配置不建议选，自带的字幕匹配很屎，还不如自己去找翻译质量高的字幕</p>
+<p>完成后如图</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_16-01-56.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_16-01-56.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="附加部分：添加AV"><a href="#附加部分：添加AV" class="headerlink" title="附加部分：添加AV"></a>附加部分：添加AV</h2><p>既然是自建流媒体，那必须得能看收藏的AV啊，但 Emby 上没有AV的刮削器，所以需要用其他工具来获取元数据</p>
+<p>工具：<a target="_blank" rel="noopener" href="https://github.com/yoshiko2/AV_Data_Capture">AV DATA Capture</a></p>
+<p>以下讲 linux 下使用方法，在 release 部分下载 linux 文件至 vps，<strong>解压至存放 AV 的目录。</strong></p>
+<p>在使用前先编辑配置文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim config.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">main_mode&#x3D;1</span><br><span class="line">failed_output_folder&#x3D;failed</span><br><span class="line">success_output_folder&#x3D;JAV_output</span><br><span class="line">soft_link&#x3D;0</span><br><span class="line"></span><br><span class="line">[proxy]</span><br><span class="line">;proxytype: http or socks5</span><br><span class="line">type&#x3D;http</span><br><span class="line">proxy&#x3D;127.0.0.1:1080</span><br><span class="line">timeout&#x3D;10</span><br><span class="line">retry&#x3D;3</span><br><span class="line"></span><br><span class="line">[Name_Rule]</span><br><span class="line">location_rule&#x3D;actor+&#39;&#x2F;&#39;+number</span><br><span class="line">naming_rule&#x3D;number+&#39;-&#39;+title</span><br><span class="line"></span><br><span class="line">[update]</span><br><span class="line">update_check&#x3D;1</span><br><span class="line"></span><br><span class="line">[priority]</span><br><span class="line">website&#x3D;javbus,javdb,fanza,xcity,mgstage,fc2,avsox,jav321,javlib</span><br><span class="line"></span><br><span class="line">[escape]</span><br><span class="line">literals&#x3D;\()&#x2F;</span><br><span class="line">folders&#x3D;failed,JAV_output</span><br><span class="line"></span><br><span class="line">[debug_mode]</span><br><span class="line">switch&#x3D;0</span><br><span class="line"></span><br><span class="line">如果你是国内VPS，proxy需要设置下，国外VPS需要把proxy&#x3D;后的内容删除</span><br><span class="line">我还设置了如下命名规则，会根据女优名字自动分类文件夹。</span><br><span class="line"></span><br><span class="line">[Name_Rule]</span><br><span class="line">location_rule &#x3D; &#39;#&#39;+actor+&#39;&#x2F;&#39;+&#39;[&#39;+year+&#39;] &#39;+title+&#39; [&#39;+number+&#39;]&#39;</span><br><span class="line">naming_rule &#x3D; title</span><br></pre></td></tr></table></figure>
+
+<p>保存，在目录下运行程序即可抓取元数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;AV_Data_Capture</span><br></pre></td></tr></table></figure>
+
+<p>运行结束后会把抓取到数据的片转移到 JAV_output 文件夹，然后在 Emby 添加这个文件夹即可，其它选项不用动，只添加文件夹，完成后如图：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_17-11-02.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_17-11-02.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_17-11-40.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-06-28_17-11-40.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<hr>
+<p>其它的添加音乐什么的都差不多，没啥好讲的</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://emby.media/">官网</a></p>
+<p><a target="_blank" rel="noopener" href="https://pockies.github.io/2020/01/09/av-data-capture-jellyfin-kodi/">利用AV Data Capture+Jellyfin+Kodi打造更优雅的本地AV（毛片）+普通影片媒体库</a></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/covid-19-%E8%AE%B0%E5%BD%95%EF%BC%882019-12-82020-5-5%EF%BC%89/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            COVID-19 记录（2019.12.8~2020.5.5）
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E6%9C%80%E8%BF%91/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            最近
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

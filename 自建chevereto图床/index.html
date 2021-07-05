@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>自建Chevereto图床 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS, linux">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        自建Chevereto图床
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/10/" class="post-meta__date button">2020-10-07</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache2"><span class="toc-text">Apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql"><span class="toc-text">MySql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP"><span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache-%E9%85%8D%E7%BD%AE"><span class="toc-text">Apache 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-text">申请证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-chevereto"><span class="toc-text">安装 chevereto</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E5%90%88-picgo-%E4%B8%8A%E4%BC%A0"><span class="toc-text">配合 picgo 上传</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache2"><span class="toc-text">Apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql"><span class="toc-text">MySql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP"><span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache-%E9%85%8D%E7%BD%AE"><span class="toc-text">Apache 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-text">申请证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-chevereto"><span class="toc-text">安装 chevereto</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E5%90%88-picgo-%E4%B8%8A%E4%BC%A0"><span class="toc-text">配合 picgo 上传</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-06-11"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>博客体积越来越大了，备份的体积已经逼近3G了，大部分都是图片（还有根据每张图片生成的各种分辨率图片）</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/07/20201007165418.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/07/20201007165418.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>博客体积大的直接后果就是恢复/迁移成本很高，而且每次备份等于是把相同的图片又备份了一遍，浪费存储空间。</p>
+<p>思考再三，我决定搭建个图床，将图片转移至图床，减小博客体积。而且图片也只需要备份一份，减少空间占用。</p>
+<p>经过一番查询我决定使用 <a target="_blank" rel="noopener" href="https://chevereto.com/">Chevereto</a> 图床，足够成熟，免费版足够使用。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>LEMP 环境安装官方有一篇详细的<a target="_blank" rel="noopener" href="https://v3-docs.chevereto.com/setup/root-install.html">指导文章</a>，所以我这里就讲 LAMP 的安装方法</p>
+<h3 id="Apache2"><a href="#Apache2" class="headerlink" title="Apache2"></a>Apache2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install apache2 -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h3><p>在<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/apt/">官网</a>获取最新的deb包，然后安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">#创建数据库</span><br><span class="line">CREATE DATABASE chevereto;</span><br><span class="line">\q #退出数据库</span><br><span class="line"></span><br><span class="line">sudo mysql_secure_installation</span><br><span class="line">按照下面选择</span><br><span class="line">Set root password? [Y&#x2F;n] n</span><br><span class="line">Remove anonymous users? [Y&#x2F;n] y</span><br><span class="line">Disallow root login remotely? [Y&#x2F;n] y</span><br><span class="line">Remove test database and access to it? [Y&#x2F;n] y</span><br><span class="line">Reload privilege tables now? [Y&#x2F;n] y</span><br></pre></td></tr></table></figure>
+
+<p>修改验证方式（很重要，不做这一步初始化图床会出错）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;密码&#39;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install php-fpm php-zip php-curl php-mbstring php-gd php-mysql libapache2-mod-php</span><br></pre></td></tr></table></figure>
+
+<p>修改上传限制</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;php&#x2F;7.3&#x2F;apache2&#x2F;php.ini</span><br><span class="line"></span><br><span class="line">修改这两项</span><br><span class="line">upload_max_filesize &#x3D; 1024M</span><br><span class="line">post_max_size &#x3D; 1024M</span><br><span class="line">memory_limit &#x3D; 512M</span><br><span class="line"></span><br><span class="line">修改完后重启 apache</span><br><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="Apache-配置"><a href="#Apache-配置" class="headerlink" title="Apache 配置"></a>Apache 配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;var&#x2F;www&#x2F;chevereto&#x2F;</span><br><span class="line">sudo chown www-data:www-data &#x2F;var&#x2F;www&#x2F;chevereto&#x2F;</span><br><span class="line"></span><br><span class="line">nano &#x2F;etc&#x2F;apache2&#x2F;apache2.conf</span><br><span class="line"></span><br><span class="line">添加</span><br><span class="line">&lt;Directory &#x2F;var&#x2F;www&#x2F;chevereto&#x2F;&gt;</span><br><span class="line">Options FollowSymLinks</span><br><span class="line">DirectoryIndex index.php</span><br><span class="line">AllowOverride All</span><br><span class="line">Order allow,deny</span><br><span class="line">allow from all</span><br><span class="line">&lt;&#x2F;Directory&gt;</span><br><span class="line"></span><br><span class="line">nano &#x2F;etc&#x2F;apache2&#x2F;sites-available&#x2F;chevereto.conf</span><br><span class="line"></span><br><span class="line">加入如下内容</span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName xxx.com #域名</span><br><span class="line"></span><br><span class="line">    ServerAdmin webmaster@localhost</span><br><span class="line">    DocumentRoot &#x2F;var&#x2F;www&#x2F;chevereto</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    ErrorLog $&#123;APACHE_LOG_DIR&#125;&#x2F;error.log</span><br><span class="line">    CustomLog $&#123;APACHE_LOG_DIR&#125;&#x2F;access.log combined</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">cd &#x2F;etc&#x2F;apache2&#x2F;sites-enabled</span><br><span class="line">sudo ln -s ..&#x2F;sites-available&#x2F;chevereto.conf</span><br><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;dl.eff.org&#x2F;certbot-auto</span><br><span class="line">chmod a+x certbot-auto</span><br><span class="line">sudo .&#x2F;certbot-auto --apache</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-chevereto"><a href="#安装-chevereto" class="headerlink" title="安装 chevereto"></a>安装 chevereto</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo -u www-data wget -O &#x2F;var&#x2F;www&#x2F;chevereto&#x2F;installer.php https:&#x2F;&#x2F;chevereto.com&#x2F;download&#x2F;file&#x2F;installer</span><br></pre></td></tr></table></figure>
+
+<p>此时打开https://域名/installer.php即可开始初始化，按照你之前的设置填写信息即可</p>
+<h2 id="配合-picgo-上传"><a href="#配合-picgo-上传" class="headerlink" title="配合 picgo 上传"></a>配合 picgo 上传</h2><p>每次用网页上传图片然后手动复制粘贴图片还是太过麻烦且不够优雅，<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">picgo</a> 就可以将这个过程自动化。</p>
+<p>在 releasse 中下载软件，记得先安装好nodejs环境。</p>
+<p>打开软件后，在插件设置中搜索安装如图插件</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/07/20201007171859.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/07/20201007171859.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>具体插件设置如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">url : https:&#x2F;&#x2F;网址&#x2F;api&#x2F;1&#x2F;upload</span><br><span class="line">paramName: source</span><br><span class="line">jsonPath: image.url</span><br><span class="line">customBody: &#123;&quot;key&quot;:&quot;api&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>api 在这个位置</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/07/20201007172220.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/07/20201007172220.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>在 picgo 设置里面还能自定义上传完之后剪贴板的格式</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/07/20201007172421.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/07/20201007172421.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>演示</p>
+<p><video src="https://video.left.pink/202104131354.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<hr>
+<p>接下来就是慢慢把博客图片移到图床去了（巨大工程）</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-06-11</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E4%BA%BA%E7%94%9F%E7%9A%84%E5%A4%A7%E8%B5%B7%E5%A4%A7%E8%90%BD%E4%B8%8D%E8%BF%87%E5%A6%82%E6%AD%A4%E4%BA%86/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            人生的大起大落不过如此了
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%9B%BD%E5%BA%86%E5%BF%AB%E4%B9%90%EF%BC%81/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            国庆快乐！
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

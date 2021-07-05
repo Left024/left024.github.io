@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>【完美版】自动下载B站收藏视频 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS, 学习, 脚本">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        【完美版】自动下载B站收藏视频
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/07/" class="post-meta__date button">2020-07-31</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#4K-%E4%B8%8B%E8%BD%BD"><span class="toc-text">4K 下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%88%90%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5"><span class="toc-text">下载完成邮件通知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xml-%E8%BD%AC%E6%8D%A2%E4%B8%BA-ass%E5%AD%97%E5%B9%95"><span class="toc-text">xml 转换为 ass字幕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-text">更新日志</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#4K-%E4%B8%8B%E8%BD%BD"><span class="toc-text">4K 下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%88%90%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5"><span class="toc-text">下载完成邮件通知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xml-%E8%BD%AC%E6%8D%A2%E4%B8%BA-ass%E5%AD%97%E5%B9%95"><span class="toc-text">xml 转换为 ass字幕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-text">更新日志</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>之前写的那个 <a target="_blank" rel="noopener" href="https://left.pink/archives/2712">脚本</a> 虽然能用，但我依然有很多不满意的地方，比如说4K下载，封面图下载，完成下载后邮件通知，下载完成自动同步到onedrive，自动将 xml 文件转换为 ass 。</p>
+<p>于是这两天好好研究了下，算是把这个脚本优化到极致了，途中也算是学习了不少新知识，接下来就把遇到的坑记录下吧。</p>
+<p><strong>注意</strong>：本篇所有内容基于 Debian10 系统</p>
+<h2 id="4K-下载"><a href="#4K-下载" class="headerlink" title="4K 下载"></a>4K 下载</h2><p>原本我还以为 <a target="_blank" rel="noopener" href="https://github.com/soimort/you-get">you-get</a> 不支持4K下载，认真看了文档后才发现是我之前没认真看。</p>
+<p>当然，4K并不能白嫖，还是需要你有B站的大会员，在下载时使用你大会员的cookies来进行下载。</p>
+<p>获取cookies需要用到一个Chrome插件：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?utm_source=chrome-ntp-icon">EditThisCookie</a></p>
+<p>安装完插件后，在设置中将 cookies 格式改为如图所示：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-20-27.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-20-27.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>然后打开B站主页，登录账号，导出即可</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-22-27.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-22-27.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>导出后 cookies 自行创建 txt 文件粘贴即可，下载命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">you-get -c cookies.txt URL</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载完成邮件通知"><a href="#下载完成邮件通知" class="headerlink" title="下载完成邮件通知"></a>下载完成邮件通知</h2><p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-33-32.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-33-32.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这部分算是我头疼比较久的，因为 you-get 并不像 <a target="_blank" rel="noopener" href="https://left.pink/archives/3062">Aria</a> 有一个下载完成执行脚本的命令。再加上我自己也只是个半桶水，linux也是一知半解，处于有兴致的时候才会去学习的状态。</p>
+<p>琢磨了半天，我最后想到的解决办法是：监控进程；具体流程大概是这样：</p>
+<p>每2秒检测 you-get 进程 → 检测到进程 → 标记 → you-get 进程消失 → 判定下载完成</p>
+<p>当然这里还加了其它条件保证只有自动化下载的时候有效</p>
+<p>每秒检测是为了防止下载速度过快一分钟内就下载完了</p>
+<h2 id="xml-转换为-ass字幕"><a href="#xml-转换为-ass字幕" class="headerlink" title="xml 转换为 ass字幕"></a>xml 转换为 ass字幕</h2><p>you-get 在下载时会自动下载一个 xml 文件，其实就是弹幕文件，需要把它转换为 ass 才能正常播放。这里我用的是 <a target="_blank" rel="noopener" href="https://github.com/1299172402/danmu2ass-simply">danmu2ass</a> 这个项目</p>
+<p>需要安装 python3，下载到 vps 给予运行权限，用法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python3 danmaku2ass.py abc.xml</span><br></pre></td></tr></table></figure>
+
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>这次一共有两个脚本，一个是检查收藏列表更新，还有一个是检查 you-get 进程，建议放在一个文件夹下面，方便管理；第一个脚本:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line">you&#x3D;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;you-get</span><br><span class="line">#RSS地址自行修改</span><br><span class="line">content&#x3D;$(wget https:&#x2F;&#x2F;rsshub.app&#x2F;bilibili&#x2F;fav&#x2F;10385631&#x2F;928435831&#x2F;0 -q -O -)</span><br><span class="line">#获得时间戳</span><br><span class="line">subpubdate&#x3D;$&#123;content#*&lt;pubDate&gt;&#125;</span><br><span class="line">pubdate&#x3D;$&#123;subpubdate%%&lt;&#x2F;pubDate&gt;*&#125;</span><br><span class="line">#获得封面图下载链接</span><br><span class="line">subcontent&#x3D;$&#123;content#*&lt;img src&#x3D;\&quot;&#125;</span><br><span class="line">photolink&#x3D;$&#123;subcontent%%\&quot;*&#125;</span><br><span class="line">#如果时间戳记录文本不存在则创建（此处文件地址自行修改）</span><br><span class="line">if [ ! -f &quot;&#x2F;root&#x2F;bili&#x2F;date.txt&quot; ];then</span><br><span class="line">echo 313340 &gt; &#x2F;root&#x2F;bili&#x2F;date.txt</span><br><span class="line">fi</span><br><span class="line">#获得上一个视频的时间戳（文件地址自行修改）</span><br><span class="line">olddate&#x3D;$(cat &#x2F;root&#x2F;bili&#x2F;date.txt)</span><br><span class="line">#获得视频下载链接</span><br><span class="line">sublink&#x3D;$&#123;subpubdate#*&lt;link&gt;&#125;</span><br><span class="line">link&#x3D;$&#123;sublink%%&lt;&#x2F;link&gt;*&#125;</span><br><span class="line">av&#x3D;$&#123;link#*video&#x2F;&#125;</span><br><span class="line">#获得视频标题并记录（文件地址自行修改）</span><br><span class="line">content1&#x3D;$(wget https:&#x2F;&#x2F;rsshub.app&#x2F;bilibili&#x2F;video&#x2F;reply&#x2F;$av -q -O -)</span><br><span class="line">subname&#x3D;$&#123;content1#*\[CDATA\[&#125;</span><br><span class="line">name&#x3D;$&#123;subname%% 的 评*&#125;</span><br><span class="line">echo $name &gt; &#x2F;root&#x2F;bili&#x2F;title.txt</span><br><span class="line"></span><br><span class="line">#此处为视频存储位置，自行修改</span><br><span class="line">filename&#x3D;&quot;&#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$name&quot;&quot;</span><br><span class="line">#判断当前时间戳和上次记录是否相同，不同则代表收藏列表更新</span><br><span class="line">if [ $pubdate !&#x3D; $olddate ];</span><br><span class="line">then</span><br><span class="line">#判断文件是否存在（防止删除收藏导致的重复下载）</span><br><span class="line">if [ -d $filename ];then</span><br><span class="line">      echo $pubdate &gt; &#x2F;root&#x2F;bili&#x2F;date.txt</span><br><span class="line">else</span><br><span class="line">  #下载封面图（图片存储位置应和视频一致）</span><br><span class="line">  nohup wget -P &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$name&quot; $photolink &amp;</span><br><span class="line">  #记录时间戳</span><br><span class="line">      echo $pubdate &gt; &#x2F;root&#x2F;bili&#x2F;date.txt</span><br><span class="line">          #获取视频清晰度以及大小信息</span><br><span class="line">          stat&#x3D;$($you -i -c &#x2F;root&#x2F;cookies.txt $link)</span><br><span class="line">      substat&#x3D;$&#123;stat#*quality:&#125;</span><br><span class="line">      data&#x3D;$&#123;substat%%#*&#125;</span><br><span class="line">      quality&#x3D;$&#123;data%%size*&#125;</span><br><span class="line">      size&#x3D;$&#123;data#*size:&#125;</span><br><span class="line">  #发送开始下载邮件（自行修改邮件地址）</span><br><span class="line">          echo &quot;$name&lt;br&gt;Quality: $quality&lt;br&gt;Size: $size&quot;  mail -s &quot;$(echo -e &quot;&#x3D;?UTF-8?B?$(echo -n &#39;开始下载&#39;  base64)?&#x3D;\nContent-Type:text&#x2F;html;charset&#x3D;UTF-8&quot;)&quot; 1379771811@qq.com</span><br><span class="line">          #下载视频到指定位置（视频存储位置自行修改；you-get下载B站经常会出错，所以添加了出错重试代码）</span><br><span class="line">          while true</span><br><span class="line">      do</span><br><span class="line">      $you -k -l -c &#x2F;root&#x2F;cookies.txt -o &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$name&quot; $link</span><br><span class="line">          if [ $? -eq 0 ]; then</span><br><span class="line">        break;</span><br><span class="line">          else</span><br><span class="line">        sleep 2</span><br><span class="line">          fi</span><br><span class="line">      done</span><br><span class="line">    fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>第二个脚本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line">#每两秒检测</span><br><span class="line">step&#x3D;2</span><br><span class="line">for (( i &#x3D; 0; i &lt; 60; i&#x3D;(i+step) )); do</span><br><span class="line">#记录进程输出（文件位置自行修改）</span><br><span class="line">ps -f -C you-get &gt; &#x2F;root&#x2F;bili&#x2F;check.txt</span><br><span class="line">#获取视频标题（从上一个脚本存储位置获取，注意）</span><br><span class="line">title&#x3D;$(cat &#x2F;root&#x2F;bili&#x2F;title.txt)</span><br><span class="line">#根据条件判断进程状态（第二个判断条件是存储视频文件夹的文件名，自行修改）</span><br><span class="line">content&#x3D;$(cat &#x2F;root&#x2F;bili&#x2F;check.txt)</span><br><span class="line">result&#x3D;$(echo $content  grep &quot;you-get&quot;  grep &quot;Bilibili&quot;)</span><br><span class="line">if [ &quot;$result&quot; !&#x3D; &quot;&quot; ];then</span><br><span class="line">    #自动下载中，标记（文件位置自行修改）</span><br><span class="line">    echo y &gt; &#x2F;root&#x2F;bili&#x2F;check1.txt</span><br><span class="line">else</span><br><span class="line">    #下载完成</span><br><span class="line">    check1&#x3D;$(cat &#x2F;root&#x2F;bili&#x2F;check1.txt)</span><br><span class="line">    if [ &quot;$check1&quot; &#x3D; &quot;y&quot; ];then</span><br><span class="line">        #检查文件是否下载完成</span><br><span class="line">        mp4check&#x3D;$(find &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot; -name &quot;*.download&quot;)</span><br><span class="line">        if [ &quot;$mp4check&quot; &#x3D; &quot;&quot; ];then</span><br><span class="line">            #获取封面图文件名</span><br><span class="line">            content1&#x3D;$(wget https:&#x2F;&#x2F;rsshub.app&#x2F;bilibili&#x2F;fav&#x2F;10385631&#x2F;928435831&#x2F;0 -q -O -)</span><br><span class="line">            subcontent&#x3D;$&#123;content1#*&lt;img src&#x3D;\&quot;&#125;</span><br><span class="line">            photolink&#x3D;$&#123;subcontent%%\&quot;*&#125;</span><br><span class="line">            pname&#x3D;$&#123;photolink#*archive&#x2F;&#125;</span><br><span class="line">            #重命名封面图（封面图位置和上一个脚本位置一致）</span><br><span class="line">            result1&#x3D;$(echo $pname  grep &quot;jpg&quot;)</span><br><span class="line">            if [ &quot;$result1&quot; !&#x3D; &quot;&quot; ];then</span><br><span class="line">                mv &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot;&#x2F;$pname &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot;&#x2F;poster.jpg</span><br><span class="line">            else</span><br><span class="line">                mv &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot;&#x2F;$pname &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot;&#x2F;poster.png</span><br><span class="line">            fi</span><br><span class="line">            #xml转ass（同样是上一个脚本的存储位置）</span><br><span class="line">            filename&#x3D;$(find &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot; -name &quot;*.xml&quot;)</span><br><span class="line">            &#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;root&#x2F;bili&#x2F;danmaku2ass.py &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot;&#x2F;&quot;$filename&quot;</span><br><span class="line">            echo n &gt; &#x2F;root&#x2F;bili&#x2F;check1.txt</span><br><span class="line">            #获取下载完的视频文件大小</span><br><span class="line">            videoname&#x3D;$(find &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot; -name &quot;*.mp4&quot;)</span><br><span class="line">            if [ &quot;$videoname&quot; &#x3D; &quot;&quot; ];then</span><br><span class="line">                videoname&#x3D;$(find &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot; -name &quot;*.flv&quot;)</span><br><span class="line">            fi</span><br><span class="line">            videostat&#x3D;$(du -h &quot;$videoname&quot;)</span><br><span class="line">            videosize&#x3D;$&#123;videostat%%\&#x2F;*&#125;</span><br><span class="line">            #发送下载完成邮件（自行修改邮件地址）</span><br><span class="line">            echo &quot;$title&lt;br&gt;Size: $videosize&quot;  mail -s &quot;$(echo -e &quot;&#x3D;?UTF-8?B?$(echo -n &#39;下载完成&#39;  base64)?&#x3D;\nContent-Type:text&#x2F;html;charset&#x3D;UTF-8&quot;)&quot; 1379771811@qq.com</span><br><span class="line">            #上传至onedrive（自行修改文件位置）</span><br><span class="line">            while true</span><br><span class="line">            do</span><br><span class="line">                &#x2F;usr&#x2F;bin&#x2F;rclone copy &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili OneDrive:Bilibili</span><br><span class="line">            if [ $? -eq 0 ]; then</span><br><span class="line">            break;</span><br><span class="line">        else</span><br><span class="line">            sleep 2</span><br><span class="line">        fi</span><br><span class="line">        done</span><br><span class="line">            echo &quot;已成功上传至OneDrive&quot;  mail -s &quot;$(echo -e &quot;&#x3D;?UTF-8?B?$(echo -n &#39;上传完成&#39;  base64)?&#x3D;\nContent-Type:text&#x2F;html;charset&#x3D;UTF-8&quot;)&quot; 1379771811@qq.com</span><br><span class="line">            #上传完成删除本地文件（可选）</span><br><span class="line">            rm -rf &#x2F;var&#x2F;www&#x2F;webdav&#x2F;Bilibili&#x2F;&quot;$title&quot;</span><br><span class="line">        fi</span><br><span class="line">    fi</span><br><span class="line">fi</span><br><span class="line">sleep $step</span><br><span class="line">done</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+
+<p>具体的文件地址啥的自行修改，注释都写了，自行查看</p>
+<p>不想改也可以和我保持一致，自行创建相关文件夹</p>
+<p>编辑完脚本后，授予运行权限，crontab 设置为每分钟执行一次。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*&#x2F;1 * * * * &#x2F;bin&#x2F;bash &#x2F;root&#x2F;bili&#x2F;bili.sh &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1</span><br><span class="line">*&#x2F;1 * * * * &#x2F;bin&#x2F;bash &#x2F;root&#x2F;bili&#x2F;bilicheck.sh &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p>看视频时看到想要下载的视频，直接点击收藏：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-31_10-58-33.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-31_10-58-33.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>开始下载和结束下载会收到邮件提醒：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-01_20-00-03.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-01_20-00-03.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-01_20-00-17.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-08-01_20-00-17.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>下载完成后每一个视频单独文件夹，包含视频，视频封面以及转换好的弹幕文件</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-59-13.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_23-59-13.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>重命名封面图是为了让 emby 或者其它自建媒体库识别：</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_22-45-53.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_22-45-53.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>播放时加载ass字幕即有弹幕效果</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_22-47-18.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-07-30_22-47-18.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>可以说是无限接近于B站的播放体验了</p>
+<hr>
+<p>因为写这篇文章，我发现收藏列表好几个视屏都没了，好在之前都自动下载了，除了封面。</p>
+<p>所以，如果你是一个重度B站用户且经常收藏视频的话，那么这个脚本无疑是非常适合你的，即使视频没了，你依然可以怀念这个视频，并且味道也不会差多少。</p>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2020/8/1</p>
+<ul>
+<li>  开始和完成下载邮件增加显示文件大小，方便检查是否下载完</li>
+<li>  you-get进程检测增加条件更加精准判断是否下载完</li>
+<li>  下载部分增加出错自动重试</li>
+</ul>
+<p>2020/8/18</p>
+<ul>
+<li>  添加 flv 文件格式的识别</li>
+<li>  上传完成后删除本地文件</li>
+</ul>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/%E8%84%9A%E6%9C%AC/" class="post-tags__link button"># 脚本</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E6%84%89%E5%BF%AB%E7%9A%84%E4%B8%80%E5%A4%A9/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            愉快的一天
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E7%AE%80%E6%98%93%E5%86%B0%E6%B7%87%E6%B7%8B%E5%88%B6%E4%BD%9C/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            简易冰淇淋制作
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

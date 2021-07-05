@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>西部世界 第三季 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="美剧">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        西部世界 第三季
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/05/" class="post-meta__date button">2020-05-04</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E5%BD%B1-%E5%89%A7/" class="button">影/剧</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E8%88%9E%E5%8F%B0"><span class="toc-text">新舞台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%83%85"><span class="toc-text">剧情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BC%BA%E7%82%B9"><span class="toc-text">一些缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E8%88%9E%E5%8F%B0"><span class="toc-text">新舞台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%83%85"><span class="toc-text">剧情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BC%BA%E7%82%B9"><span class="toc-text">一些缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p><img src="https://chevereto.left.pink/images/2020/09/25/maxresdefault.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/maxresdefault.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>先是吐槽，等了两年才更新，居然八集就没了，真的气死个人；而且看消息 HBO 打算把它整成八季长剧，估计是为了打造第二个权游。但是美剧中长剧优秀的在我看过的里面貌似只有 绝命毒师 ，所以我是不看好的。</p>
+<p>说是这么说，出了还是会追着看的；吐槽就到这，接下来讲讲感受吧（剧透警告）</p>
+<h2 id="新舞台"><a href="#新舞台" class="headerlink" title="新舞台"></a>新舞台</h2><p>这一季的舞台搬到了现实世界，并且一整季都在这个现实世界；对于前两季都在园区内来说，是完全不一样的全新感受。</p>
+<p>剧中展现出来的是一个完全符合我们想象的未来都市，自动驾驶汽车啥的，透明玻璃板的显示器，其实这些都是老三样了，大家想象的未来都市都这样。</p>
+<p>但是有些地方还是感觉像经费不足一样，尤其是那个自动驾驶的车，即使有灯条装饰，但仍然是一种廉价的质感。</p>
+<p>本质上这些还是为剧情服务的，所以接下来我们聊聊剧情。</p>
+<h2 id="剧情"><a href="#剧情" class="headerlink" title="剧情"></a>剧情</h2><p>这次西部世界摒弃了之前打乱时间线的叙事手法，转而使用的不费脑的线性叙事；对我个人而言，第一季我的观看体验是很好的，最后一集确实震撼到我了；但第二季有一种“装逼”的感觉，用更乱的时间线显得自己好像很牛逼，但事实上并没有第一季自然的感觉，第二季观看体验并不好。</p>
+<p>第三季用线性叙事显然是为了讲好故事，虽然线性，但还是有很多条线在同步进行。节奏把控的很好，没有浪费时间的剧情，每一集都会有一个爆点，留下一个期待给观众去等下一集</p>
+<p>我这两个月的观看体验就是：播出 → 卧槽！牛逼！还能这样 → 就没了？又要等一个星期 → 回味。</p>
+<p>节奏确实紧凑，而且如果你看的时候不带脑子看（指不思考漏洞啥的），观看体验会更好</p>
+<p>说完叙事手法，回到剧情；这一季的重点就是：Dolores 将如何颠覆人类世界</p>
+<p>对应的这一季引出的 Boss Serac 就给这季带了点新瓶装老旧的味道，前两季聚焦的是 Dolores 等 Host 意识觉醒，出现自由意识并追逐自由。</p>
+<p>这一季 Serac 和他哥哥设计的 AI 为全人类规划好了未来，人类看似可以自己选择实际早已没了自由；这不是和西部世界一样嘛。</p>
+<p>事实上看到后期我觉得导演已经没啥想通过这个剧表达的了，第三季开始已经没什么深层次的东西了，因为上面说的这个剧中都明明白白的告诉你了。</p>
+<p>你所要做的就是期待剧情发展，可以思考的东西几乎没有了。而一二季不一样，一二季探讨的是意识到底是如何产生的，这里面导演探讨了非常多，可以思考的东西非常多，尤其是 S02E08，这一集虽然对剧情没有任何推动作用，甚至直接删掉都不会有任何影响，但里面表达了太多东西，当初我看完这集被震撼了好几天才缓过来，即使你没看过这部剧，我也强烈建议你看看。</p>
+<p>说了这么多我想表达的是第三季更多的是讲故事，而不是探讨什么了；但剧情依然很精彩。</p>
+<h2 id="一些缺点"><a href="#一些缺点" class="headerlink" title="一些缺点"></a>一些缺点</h2><p>剧中的缺点还是蛮多的，但最最让我无法忍受的是 Serac 这个大 BOSS 塑造的一点都不好，他可是掌控全人类未来的人，一点那种霸气都没有，BOSS 的气质也差很多，他跟 Dolores 对线的时候感觉气势上就输了一大截，反正看他的时候没有那种期待他会有什么牛逼大招的感觉。</p>
+<p>枪战，追逐战，战斗，这些表现得都不是很好，甚至感觉有点没劲；可能是没钱，也可能是我们这些观众看得大场面太多已经审美疲劳了。</p>
+<p>尤其是小粉（我还是喜欢这么叫）嗑药枪战那一段我感觉没啥意义，就算是把它当成导演的一种表现手法依然没觉得有什么加分的地方。</p>
+<p>还有就是 Charlotte 转变的有点突兀，对应它的转变应当是给她对应的剧情来慢慢推动她的转变，剧情确实给了，但是太少了，跟儿子的剧情也少，就显得这种转变很突兀，不自然；而且作为 Dolores 那么多个 Copy 中的一个，她与其他人的差别也太大了，感觉上就不是一个人，我觉得这是很大的一个缺点。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>Dolores 真的是太好看了，即使是我这种对欧美人不感冒得人也觉得她美得不像话，我真的吹爆！</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-04_19-09-47.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-04_19-09-47.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说还是非常值得一看的美剧，扣去上面的缺点，我给这部剧8.5分。</p>
+<p>还是很期待第四季的剧情走向的，希望不会让我失望，最重要的是一定还要有 Dolores 啊！</p>
+<p>不过应该有得等两年才有的看了。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E5%BD%B1-%E5%89%A7/" class="post-cats__link button">影/剧</a><a href="/categories/%E8%AF%84%E4%BB%B7/" class="post-cats__link button">评价</a><a href="/tags/%E7%BE%8E%E5%89%A7/" class="post-tags__link button"># 美剧</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%A4%E4%B8%AA%E6%9C%88-spotify-%E5%90%8E%EF%BC%8C%E6%88%91%E7%94%A8%E5%9B%9E%E4%BA%86%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            使用了两个月 Spotify 后，我用回了网易云音乐
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E6%B2%B9%E7%AE%A1%E6%94%B6%E8%97%8F%E8%A7%86%E9%A2%91%E8%87%B3vps/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            自动下载油管收藏视频至VPS
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

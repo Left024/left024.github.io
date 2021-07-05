@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>死亡搁浅 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="游戏, 评测">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        死亡搁浅
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/11/" class="post-meta__date button">2020-11-27</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%B8%B8%E6%88%8F/" class="button">游戏</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%B0%E8%B7%AF%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="toc-text">走路模拟器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%89%B9%E7%9A%84%E8%81%94%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">独特的联机系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%83%85"><span class="toc-text">剧情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E5%BB%BA"><span class="toc-text">基建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E8%B5%9E"><span class="toc-text">点赞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%B0%E8%B7%AF%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="toc-text">走路模拟器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%89%B9%E7%9A%84%E8%81%94%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">独特的联机系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%83%85"><span class="toc-text">剧情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E5%BB%BA"><span class="toc-text">基建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E8%B5%9E"><span class="toc-text">点赞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-06-11"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>前段时间我把《死亡搁浅》全成就了</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/26/Snipaste_2020-11-27_10-45-37.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/26/Snipaste_2020-11-27_10-45-37.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>从全成就这一点来说我还满喜欢这个游戏的（主要是因为全成就并不难）</p>
+<p>同时这也是2020年目前为止我唯一通关的游戏，玩完这个游戏感受还蛮多的，今天就来简单聊聊。</p>
+<h2 id="走路模拟器"><a href="#走路模拟器" class="headerlink" title="走路模拟器"></a>走路模拟器</h2><p>这个应该是游戏刚开始最大的争议了吧，但就我个人而言还好，我本身就是个欧卡玩家，我也很喜欢这种慢悠悠送货的感觉，况且地图本身也做的很好，风景很棒。</p>
+<p>在恰当的时候还会有音乐，代入感简直不要太棒。</p>
+<p>前期我玩的时候玩的非常慢，我不仅仅只是接主线送货任务，非主线任务我也会去接，就如同游戏内的文件说的一样，送货会刺激催产素分泌，带来快感。</p>
+<p>真的很上头，这种将货物保护好（中途没保护好直接读档重来）然后经历长途跋涉送到收件人手上的感觉真的非常美妙。</p>
+<p>以至于到了后来，我非常讨厌BT，我真的只想单纯的送货，不想受到一点影响。</p>
+<p>所以通关后刷全成就的时候我直接开挂把BT屏蔽了（一周目还是不建议开挂，BT带来的紧张刺激感还是非常不错的）</p>
+<h2 id="独特的联机系统"><a href="#独特的联机系统" class="headerlink" title="独特的联机系统"></a>独特的联机系统</h2><p>这个系统在早期就经常被小岛拿来宣传，实际上手之后也确实感觉不一样，玩家建造的建筑会在其它玩家的地图上出现，当你使用后会自动点一个赞，你也可以给他多点几个赞。</p>
+<p>具体到我的游戏体验就是，到了后面我几乎不需要建造东西了，就如同前文所说，我玩的很慢，当我玩到后面，每条必经之路的建筑都已经被其它玩家搭建完成了，玩起来真的非常舒服。</p>
+<p>第一次打BOSS即使因为不知道要打BOSS而没带装备也没关系，会有其它玩家给你送装备，而且这游戏本身BOSS站做的就很简单。</p>
+<p>虽然没有和玩家实时联机但同时又能感受到所有玩家的联机真的太棒了。</p>
+<h2 id="剧情"><a href="#剧情" class="headerlink" title="剧情"></a>剧情</h2><p>老实说剧情我没啥感觉，大部分原因是PS4版发售时我没忍住把剧情云完了，所以在自己体验时都知道后续剧情所以没啥感觉。</p>
+<p>但客观来讲剧情还是不错的，有起伏有反转，人物刻画也还行。</p>
+<p>关键是请了很多演员，面部表情都非常细致，真的有种在看电影的感觉。</p>
+<p>现在就很后悔，如果当初忍住完全以一张白纸的状态去体验整个游戏和故事的话，应该会非常圆满。</p>
+<h2 id="基建"><a href="#基建" class="headerlink" title="基建"></a>基建</h2><p>游戏中我主要建了两种：公路和索道</p>
+<p>有一说一建工路真的爽，而且我怀疑游戏本身会不同步大部分其它玩家的公路，就是为了让你自己建。</p>
+<p>从短短续续的公路到全部链接，这个真的太爽了，这个一定要自己体验。</p>
+<p>索道就更妙了，游戏中后期要爬雪山，而且是强制的，因为网还没链接所以建不了索道，当你历尽千幸万苦把雪山各个点的网络都打通后，再花点时间把索道建完，真的是爽的不行，成就感满满。</p>
+<iframe height="400" width="100%" src="//player.bilibili.com/player.html?aid=202931380&bvid=BV1wa411F7qL&cid=260147190&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="点赞"><a href="#点赞" class="headerlink" title="点赞"></a>点赞</h2><p>这个点赞系统我要单独拿出来吹一波，真的太牛逼了</p>
+<p>如上文所说，你使用了其它玩家的建筑，系统会自动给建造这个建筑的玩家点赞，你也可以手动给他点赞。同理其它玩家用了你的建筑，你也会收到点赞。</p>
+<p>但是在游戏中，赞没有任何用处，他就只是赞而已。</p>
+<p>但就是这个赞成为了我后期游戏的核心驱动力，因为它的反馈真的太强烈了，你辛辛苦苦建的索道，告诉公路，不仅仅是你自己要用而建，他还服务到了所有人。</p>
+<p>每次打开游戏收到赞的时刻就是我玩这个游戏最爽最有成就感的时刻</p>
+<p><video src="https://video.left.pink/Death-Stranding-2020.11.26-20.14.00.01_1.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>他还专门会用信息告诉你有多少玩家给你点了赞，这种大家都用了我搭建的设施的感觉真的太美妙了。</p>
+<p>没有这个点赞系统游戏要扣掉两分</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>虽然我一个劲的在吹，但这个游戏并不适合所有人，如果你本身是个欧卡玩家，那么这个游戏你一定会喜欢的；但如果你本能的就觉得走路模拟没啥意思，欧卡也觉得没意思，那么这款游戏你大概率也不会喜欢，即便如此，我依然会推荐你去尝试一下，在历史最低价格的时候入手（貌似这几天都在打折）。坚持个两三章，你应该就能体会到其中的乐趣了。</p>
+<p>在这个快节奏的时代，在这个游戏厂商都在为了直播看起来好玩而做游戏的时代。我十分佩服小岛秀夫做出了这样一款慢节奏，直播不友好的游戏。还十分固执的在游戏中加入了自己喜欢的东西。</p>
+<p>但就是这种种因素，造就了死亡搁浅的独特，让我愿意慢慢去品味它，感受它。</p>
+<p>我愿意给他 10/10 分</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-06-11</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-cats__link button">游戏</a><a href="/tags/%E6%B8%B8%E6%88%8F/" class="post-tags__link button"># 游戏</a><a href="/tags/%E8%AF%84%E6%B5%8B/" class="post-tags__link button"># 评测</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            开发：校园网客户端
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%EF%BC%88c%E8%AF%AD%E8%A8%80%E7%89%88%EF%BC%89/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            单片机原理及其应用基础实验（C语言版）
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

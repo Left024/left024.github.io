@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>自制像素时钟 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="败家, DIY">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        自制像素时钟
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2019/09/" class="post-meta__date button">2019-09-20</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-text">服务端的搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-Android-%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">在 Android 设备上搭建服务端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%92%9F%E5%9B%BA%E4%BB%B6%E5%88%B7%E5%85%A5"><span class="toc-text">时钟固件刷入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server-%E7%AB%AF%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">Server 端的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%EF%BC%9A%E8%BF%9C%E7%A8%8B%E9%81%A5%E6%8E%A7%E6%97%B6%E9%92%9F"><span class="toc-text">进阶：远程遥控时钟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS-%E7%AB%AF"><span class="toc-text">iOS 端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-%E7%AB%AF"><span class="toc-text">Android 端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="toc-text">服务端的搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-Android-%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">在 Android 设备上搭建服务端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%92%9F%E5%9B%BA%E4%BB%B6%E5%88%B7%E5%85%A5"><span class="toc-text">时钟固件刷入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server-%E7%AB%AF%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">Server 端的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%EF%BC%9A%E8%BF%9C%E7%A8%8B%E9%81%A5%E6%8E%A7%E6%97%B6%E9%92%9F"><span class="toc-text">进阶：远程遥控时钟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS-%E7%AB%AF"><span class="toc-text">iOS 端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-%E7%AB%AF"><span class="toc-text">Android 端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-06-11"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p><img src="https://chevereto.left.pink/images/2021/02/10/20210210112804.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/20210210112804.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>很久以前在看 <a target="_blank" rel="noopener" href="https://www.youtube.com/user/marquesbrownlee">MKBHD</a> 的一个 Volg 时，看到他的工作室上有一个像素时钟，上面不仅显示了时间，还显示了他的 YouTobe 的订阅数量，我觉得很酷，我马上去某宝搜了一下：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_19-05-59.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_19-05-59.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>看到这个价格我傻眼了，只能默默地把它加入了购物车</p>
+<p>直到一个<a target="_blank" rel="noopener" href="https://sspai.com/post/54225">偶然的机会</a> ，我了解到了 <a target="_blank" rel="noopener" href="https://docs.blueforcer.de/#/v2/">AWRITX</a> 这个项目，能够以相对低的成本自己 DIY 一个功能丰富的像素时钟：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_19-14-41.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_19-14-41.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>于是在经过一个多星期的折腾后，我 DIY 了一个属于我的像素时钟</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h2><ul>
+<li>  WS2812B 8x32 可编程软屏（110元）</li>
+<li>  杜邦线 公对母（3.38元）</li>
+<li>  ESP8266 WIFI模块CP2102 ESP-12E（27.83元）事实上这个开发板并不是这个项目最好的选择，但是如果闲麻烦用这个也没问题</li>
+<li>  3D打印，<a target="_blank" rel="noopener" href="https://www.thingiverse.com/thing:2791276">图纸下载</a>（全套约400元，我只打印了前盖板和光栅，约130元），光栅一定要打印，但是其它东西可以自己定制亚克力，比这个便宜多了</li>
+<li>  A3纸</li>
+<li>  深黑色半透明玻璃贴膜，用来把显示区域变成黑色，如文章头图（可选项目，18.9元200x60cm）</li>
+<li>  黑色喷漆，最便宜的3D打印会导致光栅透光，影响显示效果，所以建议买一个黑色喷漆把光栅喷黑（7.8元）</li>
+<li>  树莓派，安卓手机，云服务器或者任何运行Linux的设备（用于服务端的搭建，我用的是手机，不建议云服务器，延迟很高）</li>
+</ul>
+<p>以上是我 DIY 所购置的东西，总共花费约300元，相对来说很便宜了，对我来说 DIY 的过程才是最令人兴奋地，这是直接买买不来的。</p>
+<h2 id="服务端的搭建"><a href="#服务端的搭建" class="headerlink" title="服务端的搭建"></a>服务端的搭建</h2><p>首先讲一下树莓派等运行 Linux 设备的搭建，其实 <a target="_blank" rel="noopener" href="https://docs.blueforcer.de/#/v2/host">官方文档</a> 都有，我只不过是复读一遍罢了</p>
+<p>安装 Java<br>sudo apt install default-jre</p>
+<p>设置时区<br>sudo timedatectl set-timezone Asia/Shanghai</p>
+<p>下载 AWTRIX Server<br><code>sudo mkdir /usr/local/awtrix</code><br><code>cd /usr/local/awtrix</code><br><code>sudo wget https://blueforcer.de/downloads/awtrix.jar</code></p>
+<p>自动启动<br>创建自启文件<br>sudo nano /etc/systemd/system/awtrix.service<br>将下面代码复制进去<br>[Unit]<br>Description=AWTRIX<br>SERVER After=network.target</p>
+<p>[Service]<br>Type=simple<br>WorkingDirectory=/usr/local/awtrix/<br>ExecStart=/usr/bin/java -jar /usr/local/awtrix/awtrix.jar </p>
+<p>[Install]<br>WantedBy=multi-user.target</p>
+<p>Ctrl+x<br>y<br>回车退出保存</p>
+<p>启用自启<br>sudo systemctl enable awtrix<br>启动 AWTRIX<br>sudo systemctl start awtrix<br>停止 AWTRIX<br>sudo systemctl stop awtrix<br>重启 AWTRIX<br>sudo systemctl restart awtrix</p>
+<p>升级 AWTRIX<br><code>sudo -i</code><br><code>cd /usr/local/awtrix</code><br><code>systemctl stop awtrix.service</code><br><code>wget -N awtrix.jar https://blueforcer.de/downloads/awtrix.jar</code><br><code>systemctl start awtrix.service</code> </p>
+<h3 id="在-Android-设备上搭建服务端"><a href="#在-Android-设备上搭建服务端" class="headerlink" title="在 Android 设备上搭建服务端"></a>在 Android 设备上搭建服务端</h3><p>我用的服务端就是备用机搭建的，我也推荐这样，树莓派也行，这样延迟是最低的，像素时钟的显示也是最流畅的</p>
+<p>但是，<a target="_blank" rel="noopener" href="https://docs.blueforcer.de/#/v2/host?id=run-awtrix-on-android-device">官方文档</a> 在这一部分的说明是错误的，按照他的做法会出错，在我研究了一番后，参考 <a target="_blank" rel="noopener" href="https://github.com/MFDGaming/ubuntu-in-termux">这篇文章</a>，成功在 Android 设备上搭建了服务端。</p>
+<p>首先下载 <a target="_blank" rel="noopener" href="https://www.coolapk.com/apk/com.termux">Termux</a> ，打开后长这样：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Screenshot_20190920-195621.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Screenshot_20190920-195621.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>依次执行代码：</p>
+<p>apt-get update &amp;&amp; apt-get upgrade -y<br><code>apt-get install wget -y</code><br><code>apt-get install proot -y</code><br><code>apt-get install git -y</code><br><code>cd ~</code><br>git clone <code>https://github.com/MFDGaming/ubuntu-in-termux.git</code><br><code>cd ubuntu-in-termux</code><br><code>chmod +x ubuntu.sh</code><br><code>./ubuntu.sh</code><br><code>cp ~/ubuntu-in-termux/resolv.conf ~/ubuntu-in-termux/ubuntu-fs/etc/</code></p>
+<p>启动 Ubuntu<br><code>./start.sh</code></p>
+<p>启动之后执行<br>apt-get update<br>安装 wget<br>apt-get install wget -y<br>安装 Java<br>apt-get install default-jre -y<br>修改时区<br>apt-get install tzdata -y<br>根据自己所在地区输入数字选择：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Screenshot_20190920-204652.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Screenshot_20190920-204652.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>下载 AWTRIX<br>wget <a target="_blank" rel="noopener" href="https://blueforcer.de/downloads/awtrix.jar">https://blueforcer.de/downloads/awtrix.jar</a><br>运行 AWTRIX<br>java -jar awtrix.jar</p>
+<p>此时就能看到服务端的内网访问网址：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Screenshot_20190920-205225.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Screenshot_20190920-205225.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>服务器输入网址打开：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-54-31.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-54-31.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>始终没有连接，所以会有一个通知</p>
+<p>为了维持服务端的运行，Ctrl+c杀掉刚刚启动的服务端，重新用命令后台启动：</p>
+<p>nohup java -jar awtrix.jar &amp;</p>
+<p>接下来只要保证 termux 一直在手机上运行就能保持 Server 端的运行</p>
+<h2 id="时钟固件刷入"><a href="#时钟固件刷入" class="headerlink" title="时钟固件刷入"></a>时钟固件刷入</h2><p>硬件连接：用杜邦线连接， 像素屏上的 DIN 接 ESP8266 上的 D2 口，像素屏 GND 接 ESP8266 的 GND，像素屏 5V 接 ESP8266 的 vin</p>
+<ul>
+<li><img src="https://chevereto.left.pink/images/2021/02/10/20210210113300.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/20210210113300.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></li>
+<li><img src="https://chevereto.left.pink/images/2021/02/10/20210210113332.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/20210210113332.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></li>
+</ul>
+<p>安装 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-21-36.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-21-36.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>安装后打开，点击侧边栏的 Extensions：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-22-40.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-22-40.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>搜索 Platformio 并安装</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-25-05.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-25-05.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>下载固件：<a target="_blank" rel="noopener" href="https://github.com/awtrix/AWTRIX2.0-Controller">https://github.com/awtrix/AWTRIX2.0-Controller</a></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-27-06.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-27-06.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>解压下载好的zip，打开 Visual Studio Code，如图打开刚刚解压的文件夹</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-28-56.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-28-56.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>点击 awtrix-conf.h ，配置网络</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-31-18.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-31-18.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-32-47.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-32-47.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>SSID填连接的Wifi名字，Password填Wifi密码，Server填服务端IP，不需要填7000</p>
+<p>填完后保存：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-34-39.png"><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-34-39.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-34-39.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-34-53-1.png"><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-34-53-1.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-34-53-1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>用 micro-usb 将开发板连接到电脑，点击下面的箭头刷入固件</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/20210210113853.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/20210210113853.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-35-26-1.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_20-35-26-1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这个时候屏幕应该亮了，等一会儿连接上wifi就会显示时间，至此基本配置就已经完成</p>
+<h2 id="Server-端的使用"><a href="#Server-端的使用" class="headerlink" title="Server 端的使用"></a>Server 端的使用</h2><p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-05-12.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-05-12.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Home 可以控制软件的切换，以及发送一些命令，命令的使用<a target="_blank" rel="noopener" href="https://docs.blueforcer.de/#/v2/api?id=basic-controls">官方文档</a>有说明</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-05-24.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-05-24.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Myapps 管理自己已安装的软件：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-05-35.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-05-35.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Appstore 下载软件：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-11-03.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-11-03.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Status 显示连接状态：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-06-25.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-06-25.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Settings 可以设置字体，亮度等：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-06-36.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-06-36.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>Settings 的重启使用后要在手机端重新执行命令运行 AWTRIX</p>
+<h2 id="进阶：远程遥控时钟"><a href="#进阶：远程遥控时钟" class="headerlink" title="进阶：远程遥控时钟"></a>进阶：远程遥控时钟</h2><p><a target="_blank" rel="noopener" href="https://docs.blueforcer.de/#/v2/api?id=basic-controls">官方文档</a> 介绍了一些基本的控制命令：</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-14-40.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Snipaste_2019-09-20_21-14-40.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>利用这个可以实现远程操控，在 ios 和 android 端都可以实现，Android 端略为繁琐，下面以远程执行 打开/关闭 时钟为例</p>
+<h3 id="iOS-端"><a href="#iOS-端" class="headerlink" title="iOS 端"></a>iOS 端</h3><p>打开 <strong>快捷指令-创建快捷指令-搜索URL</strong>，选择 <strong>URL</strong>，填入：</p>
+<p>http://你的Server ip/api/v3/basics</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920212226-1.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920212226-1.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920212226-1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920212228-2.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920212228-2.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920212228-2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>再搜索 URL，选择 <strong>获取 URL 内容</strong>，方法选择 POST，请求体为 <strong>JSON</strong>，点击 <strong>添加“新字段”</strong>，选择文本，<strong>键</strong>填写 <strong>power</strong>，<strong>文本</strong>填写 false</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920212440.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920212440.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这是 关闭显示的命令，开启只需要将 false 改为 true 即可</p>
+<p>效果：</p>
+<p><video src="https://video.left.pink/VID_20190920_213028.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<h3 id="Android-端"><a href="#Android-端" class="headerlink" title="Android 端"></a>Android 端</h3><p>Android 端的思路是用一个小号 QQ 在那个用作 Server 端的运行，当他接收到“关”时，关闭时钟，接收到“开”时，打开时钟。</p>
+<p>这需要利用到 Tasker 和 Notification Listener这两个软件：</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15WkpXsVg8D1FN/_OzbKge9A">https://pan.baidu.com/s/15WkpXsVg8D1FN\_OzbKge9A</a> 提取码: su98</p>
+<p>安装完后打开将两个软件的权限全都给了，注意 <strong>通知使用权</strong> 一定要给</p>
+<p>打开 Tasker ，点击<strong>右下角+号</strong>，命名，选择<strong>事件</strong>，选择<strong>插件</strong>，选择 <strong>Notification Listener</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920215638.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920215638.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920215638.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920215649.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920215649.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920215649.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920215653.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920215653.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920215653.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920215657.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920215657.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920215657.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>点击右上角的笔，跳转到 <strong>Notification Listener</strong> ，点击 Apps 旁边的小九宫格选择 <strong>QQ</strong> ，Title <strong>不填</strong>，Text 填 <strong>关</strong>，点击右上角 DONE，回到 Tasker ，再返回</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920215806.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920215806.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920215806.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920215826.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920215826.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920215826.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920220117.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220117.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220117.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>右边弹出 <strong>新建任务</strong>，点击，命名，进入<strong>任务编辑</strong>，点击右下角+号，选择<strong>网络</strong>，选择 <strong>HTTP POST</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920220209.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220209.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220209.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920220217.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220217.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220217.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920220229.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220229.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220229.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/c7f6dbd0dae961c011b2ebd034c4a967.png"><img src="https://chevereto.left.pink/images/2021/02/10/c7f6dbd0dae961c011b2ebd034c4a967.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/c7f6dbd0dae961c011b2ebd034c4a967.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920220232.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220232.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220232.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2021/02/10/QQ20190920220511.png"><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220511.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220511.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>如图填写，服务器端口为你的服务器ip，同理如果是 开 则将 false 改为 true</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/QQ20190920220615.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/QQ20190920220615.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>效果：</p>
+<p><video src="https://video.left.pink/QQ%e8%a7%86%e9%a2%9120190920221450.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实大部分时间都是在等快递，真正折腾也只有两三天，但是自己 DIY 一个东西的成就感真的是买不到的，这就是肥宅最纯粹的快乐吧</p>
+<p>我还开发了一个和它有相同功能（也有些它没有的功能）的安卓软件，你可以<a target="_blank" rel="noopener" href="https://www.coolapk.com/apk/xyz.hdvjcvjff.deskclock">下载</a>来试试看</p>
+<p><img src="https://chevereto.left.pink/images/2021/02/10/Screenshot_20200302-100053.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2021/02/10/Screenshot_20200302-100053.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>少数派文章： <a target="_blank" rel="noopener" href="https://sspai.com/post/54225">https://sspai.com/post/54225</a></p>
+<p>B站up 黑影儿TV ： <a target="_blank" rel="noopener" href="https://space.bilibili.com/38995440">https://space.bilibili.com/38995440</a> （帮助巨大，非常感谢）</p>
+<p>官方文档： <a target="_blank" rel="noopener" href="https://docs.blueforcer.de/#/v2/">https://docs.blueforcer.de/#/v2/</a></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-06-11</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/%E8%B4%A5%E5%AE%B6/" class="post-tags__link button"># 败家</a><a href="/tags/DIY/" class="post-tags__link button"># DIY</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E6%93%85%E9%95%BF%E6%8D%89%E5%BC%84%E7%9A%84%E9%AB%98%E6%9C%A8%E5%90%8C%E5%AD%A6/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            擅长捉弄的高木同学
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/steam-%E6%96%B0%E7%89%88-%E6%B8%B8%E6%88%8F%E5%BA%93-%E4%BD%93%E9%AA%8C/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Steam 新版 游戏库 体验
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

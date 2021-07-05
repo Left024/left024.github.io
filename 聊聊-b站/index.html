@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>聊聊 B站 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="评价, 看法, 思考">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        聊聊 B站
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/03/" class="post-meta__date button">2020-03-04</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F"><span class="toc-text">商业模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-text">内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BE%A4%E4%BD%93"><span class="toc-text">用户群体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5"><span class="toc-text">未来</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F"><span class="toc-text">商业模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-text">内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BE%A4%E4%BD%93"><span class="toc-text">用户群体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5"><span class="toc-text">未来</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>刷B站已经成为了我的习惯，同时我也非常喜欢他的这种付费制度，所以我觉得是时候写篇文章聊聊它了。</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/26/bilibili.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/bilibili.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>我没学过经济运营管理啥的，文章内容全是我的个人看法，约等于个人瞎比比，所以文章内容一定会有错误。不要过度较真，善意的评论。</p>
+<h2 id="商业模式"><a href="#商业模式" class="headerlink" title="商业模式"></a>商业模式</h2><p>从消费者角度也就是我这边而言，这个付费模式我可太喜欢了</p>
+<p>一次会员付费，享受全站内容无广告（指网站在视频播放前的等待广告或者视频中途插播广告）。 比某某平台超前点播好到不知道哪里去了。</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/26/Snipaste_2020-02-20_13-52-28.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/Snipaste_2020-02-20_13-52-28.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>而且，这种付费模式也让用户更愿意付费，因为它的成本是显而易见的低；会员也非常容易通过各种方法白嫖得到或者是享受到折扣。</p>
+<p>以低成本的方式养成用户的会员习惯，后期付费就是水到渠成的事情了，我在B站刚更新大会员这个功能时就获得了赠送，后期就自然而然付费了。</p>
+<p>说起这种会员付费模式，就不得不提另一家公司</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/26/Netflix-increments-Subscription-Fee-for-UK-Customers-by-20.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/Netflix-increments-Subscription-Fee-for-UK-Customers-by-20.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>同样也是一次付费享受全站内容，但它就比B站差点，会员费比较贵，在手机上的高清晰度还需要满足一定条件了才能享受，毕竟 Netflix 的主力营收就是来自于会员付费，但B站并不是。</p>
+<p>B站的主要营收来自于手游，从B站2019 Q3 <a target="_blank" rel="noopener" href="http://ir.bilibili.com/news-releases/news-release-details/bilibili-inc-announces-third-quarter-2019-financial-results">财报</a>看有一半的收入都来自于手游。</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/26/Snipaste_2020-02-20_14-09-41.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/26/Snipaste_2020-02-20_14-09-41.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>手游的推广并不是直接的广告，B站在这方面是十分克制的，而是通过UP主来进行推广，也就是弹幕经常刷的“恰饭”。</p>
+<p>其实我觉得这条生态是非常健康的：UP主创造优质内容吸引关注，再通过广告将流量变现，维持优质内容产出，而用户也能理解这种行为，也不乏 <a target="_blank" rel="noopener" href="https://space.bilibili.com/258150656">回形针</a> 这种将广告做的好看的公司。</p>
+<p>所以这是三家共赢的，在我看来是非常健康且可持续发展的。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>内容是支撑上面商业模式最重要的部分，否则上面的商业模式都无法实现。</p>
+<p>我最开始看B站是因为一些 UP，并不看番剧，后来在《从零开始的异世界生活》火了才逐渐开始看番，但依旧不多，2019年算了算我也总共看了不到十部番，大部分还是补老番，怎么说呢，还是更喜欢美剧电影啥的。</p>
+<p>说回B站，我认为最核心的竞争力是番剧+UP主，番剧就不用说了，UP主是源源不断的自制内容。</p>
+<p>在这一点上 Netflix 是比不上的，它虽然有很多优质原创剧集，但很快就能看完，它生产自制剧的速度永远也追不上用户看的速度。</p>
+<p>而UP主就不一样了，人人都可以成为UP主，内容是源源不断的，优质的内容收货流量，劣质内容被淘汰，非常健康。</p>
+<p>B站本身也很重视，年年举办的百大UP就能看出来了，对创作者也非常的友好，我自己就上传了几个视频。B站也在鼓励人人都创作，你经常上B站的话就能发现它经常搞些活动，例如拍 Vlog 啥的，通过各种奖励激励用户创作。同时 UP 主所带来的粉丝文化进一步加强了用户粘性。</p>
+<p>随着用户群的扩大，最近B站也在不断扩大自己的内容，不断购买老番（例如jojo全系列），满足了因为无处不在的jojo梗而想要了解的需求。还有不断购买老电影经典电影，这些都是为了“把用户留在B站”。</p>
+<p>除此之外，还有自制内容，如B站春晚，拜年祭，这些都是利用自身独特文化而产出的内容，形成一种圈子将用户留住，用户也形成了观看内容的习惯，再自己传播安利给其他人，扩大用户。</p>
+<p>在我看来，B站内容生态已经很完美了，未来肯定会像 Netflix 一样出自制内容：自制番剧，现在也有了一些合作性质的番剧。又或者是像故事王一样出些自制综艺都不错。但是像故事王这种 UP 主偏对抗性质的有点不太好，毕竟会出现比较，粉丝会争吵。合家欢类的会更好一点。</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>在国内B站的功能也是走在前沿，很早就普及了60帧，虽然码率依旧有限制，但已经很不错了。</p>
+<p>互动视频也很早就做了，刚推出的时候也推广了一波，虽然现在看不到有什么人做，但是有总比没有好。</p>
+<p>以及一些提升用户体验的：和P站学的高能弹幕，智能防档弹幕，和油管学的外挂字幕功能。</p>
+<p>总体来看这些功能大多是还是以学习它家之所长为主。</p>
+<p>还有动态这个功能，类似于微博的社交平台，感觉B站没啥想要竞争的意思，纯粹就是用来解决UP信息和平台之间割裂的毛病的。</p>
+<p>会员购，自产自销，在平台看完番就能买相关手办，挺好的，不用担心被淘宝坑，我也买了好几次了，就是等待时间特别长，提醒你付尾款的时候你都忘了有这回事了。</p>
+<h2 id="用户群体"><a href="#用户群体" class="headerlink" title="用户群体"></a>用户群体</h2><p>总体来看用户群体主要还是青少年，而且低龄化越来越明显，我经常就能看到一些低龄言论。</p>
+<p>因为青少年人群，有大量官媒入驻，也是个不错的宣传手段</p>
+<h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><p>我是非常B站的未来的，甚至觉得会垄断。</p>
+<p>目前的主要问题还是电影和电视剧的内容扩充，以及如何吸引中老年人群，其实也没必要吸引，这一代到中老年不就全年龄了吗？</p>
+<p>问题不大。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%80%9D%E8%80%83/" class="post-cats__link button">思考</a><a href="/categories/%E8%AF%84%E4%BB%B7/" class="post-cats__link button">评价</a><a href="/tags/%E8%AF%84%E4%BB%B7/" class="post-tags__link button"># 评价</a><a href="/tags/%E7%9C%8B%E6%B3%95/" class="post-tags__link button"># 看法</a><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/tetris-99/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            Tetris 99
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%86%8D%E7%9C%8B-%E3%80%8A%E6%BA%90%E4%BB%A3%E7%A0%81%E3%80%8B/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            再看 《源代码》
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

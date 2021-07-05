@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>单片机原理及其应用基础实验（C语言版） | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="单片机">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        单片机原理及其应用基础实验（C语言版）
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/11/" class="post-meta__date button">2020-11-20</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验一 简单程序设计实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E7%BD%AE%E6%95%B0%E7%A8%8B%E5%BA%8F"><span class="toc-text">1、置数程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%8B%86%E5%AD%97%E7%A8%8B%E5%BA%8F"><span class="toc-text">2、拆字程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%86%85%E9%83%A8%E3%80%81%E5%A4%96%E9%83%A8RAM%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E7%A8%8B%E5%BA%8F"><span class="toc-text">3、内部、外部RAM数据传送程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%86%85%E9%83%A8RAM%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%EF%BC%9B"><span class="toc-text">(1) 内部RAM之间数据传送；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%86%85%E5%A4%96RAM%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%EF%BC%9B"><span class="toc-text">(2) 内外RAM之间数据传送；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A4%96RAM%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%EF%BC%9B"><span class="toc-text">(3) 外RAM之间数据传送；</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C-I-O%E5%8F%A3%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验二 I&#x2F;O口实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89-%E5%AE%9A%E6%97%B6%E5%99%A8%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验三 定时器实验</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验一 简单程序设计实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E7%BD%AE%E6%95%B0%E7%A8%8B%E5%BA%8F"><span class="toc-text">1、置数程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%8B%86%E5%AD%97%E7%A8%8B%E5%BA%8F"><span class="toc-text">2、拆字程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%86%85%E9%83%A8%E3%80%81%E5%A4%96%E9%83%A8RAM%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E7%A8%8B%E5%BA%8F"><span class="toc-text">3、内部、外部RAM数据传送程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%86%85%E9%83%A8RAM%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%EF%BC%9B"><span class="toc-text">(1) 内部RAM之间数据传送；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%86%85%E5%A4%96RAM%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%EF%BC%9B"><span class="toc-text">(2) 内外RAM之间数据传送；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A4%96RAM%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%EF%BC%9B"><span class="toc-text">(3) 外RAM之间数据传送；</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C-I-O%E5%8F%A3%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验二 I&#x2F;O口实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89-%E5%AE%9A%E6%97%B6%E5%99%A8%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验三 定时器实验</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-06-11"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>说来惭愧，大学三年来第一次靠自己完成的实验，刚开始做实验也没动脑，直接开始搜索，不过只搜到了汇编版，没办法只能自己试着做一下了，结果没想到自己做了出来。</p>
+<p>正好也写一写，方便后人</p>
+<p><strong>注意</strong>：不保证对，但是通过实验足以</p>
+<h2 id="实验一-简单程序设计实验"><a href="#实验一-简单程序设计实验" class="headerlink" title="实验一 简单程序设计实验"></a><strong>实验一 简单程序设计实验</strong></h2><h3 id="1、置数程序"><a href="#1、置数程序" class="headerlink" title="1、置数程序"></a>1、置数程序</h3><p>把2000H~20FFH的内容全部置成55H。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xdata unsigned char buffer[256] _at_ 0x2000;</span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line">unsigned char i;</span><br><span class="line">for(i&#x3D;0;i&lt;256;i++)</span><br><span class="line">&#123;</span><br><span class="line">buffer[i]&#x3D;85;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120205613.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120205613.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h3 id="2、拆字程序"><a href="#2、拆字程序" class="headerlink" title="2、拆字程序"></a>2、拆字程序</h3><p>把2000H的内容拆开，高位送2001H低位，低位送2002H低位，2001H、2002H高位清零，一般本程序用于把数据送显示缓冲区时用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">unsigned char x&#x3D;0x34;</span><br><span class="line">xdata unsigned char buffer[2] _at_ 0x2000;</span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line">unsigned char high&#x3D;(x-x%0x10)&#x2F;0x10;</span><br><span class="line">unsigned char low&#x3D;x%0x10;</span><br><span class="line">buffer[0]&#x3D;x;</span><br><span class="line">buffer[1]&#x3D;high;</span><br><span class="line">buffer[2]&#x3D;low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120205812.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120205812.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h3 id="3、内部、外部RAM数据传送程序"><a href="#3、内部、外部RAM数据传送程序" class="headerlink" title="3、内部、外部RAM数据传送程序"></a>3、内部、外部RAM数据传送程序</h3><h4 id="1-内部RAM之间数据传送；"><a href="#1-内部RAM之间数据传送；" class="headerlink" title="(1) 内部RAM之间数据传送；"></a>(1) 内部RAM之间数据传送；</h4><p>将内部RAM 40H<del>4FH单元内容传送到内部RAM 60H</del>6FH单元中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">unsigned char a&#x3D;0x00;</span><br><span class="line">data unsigned char buffer[16] _at_ 0x40;</span><br><span class="line">data unsigned char buffer1[16] _at_ 0x60;</span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line">  unsigned char i;</span><br><span class="line">for(i&#x3D;0;i&lt;16;i++)</span><br><span class="line">&#123;</span><br><span class="line">buffer[i]&#x3D;a;</span><br><span class="line">buffer1[i]&#x3D;buffer[i];</span><br><span class="line">a++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120210041.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120210041.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h4 id="2-内外RAM之间数据传送；"><a href="#2-内外RAM之间数据传送；" class="headerlink" title="(2) 内外RAM之间数据传送；"></a>(2) 内外RAM之间数据传送；</h4><p>将内部RAM 40H<del>4FH单元内容传送到外部RAM 2040H</del>204FH单元中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">unsigned char a&#x3D;0x00;</span><br><span class="line">data unsigned char buffer[16] _at_ 0x40;</span><br><span class="line">xdata unsigned char buffer1[16] _at_ 0x2040;</span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line">  unsigned char i;</span><br><span class="line">  for(i&#x3D;0;i&lt;16;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    buffer[i]&#x3D;a;</span><br><span class="line">    buffer1[i]&#x3D;buffer[i];</span><br><span class="line">    a++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120210216.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120210216.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120210253.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120210253.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h4 id="3-外RAM之间数据传送；"><a href="#3-外RAM之间数据传送；" class="headerlink" title="(3) 外RAM之间数据传送；"></a>(3) 外RAM之间数据传送；</h4><p>将外部RAM 1000H<del>1011H单元内容传送到外部RAM 2000H</del>2011H单元中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">unsigned char a&#x3D;0x00;</span><br><span class="line">xdata unsigned char buffer[18] _at_ 0x1000;</span><br><span class="line">xdata unsigned char buffer1[18] _at_ 0x2000;</span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line">  unsigned char i;</span><br><span class="line">  for(i&#x3D;0;i&lt;18;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    buffer[i]&#x3D;a;</span><br><span class="line">    buffer1[i]&#x3D;buffer[i];</span><br><span class="line">    a++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120210522.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120210522.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120210454.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120210454.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="实验二-I-O口实验"><a href="#实验二-I-O口实验" class="headerlink" title="实验二 I/O口实验"></a><strong>实验二 I/O口实验</strong></h2><p>P1口做输出口，接八只发光二极管，编写程序，使发光二极管循环点亮。</p>
+<p>（1）左移点亮1只发光二极管；</p>
+<p>（2）右移点亮1只发光二极管；</p>
+<p>（3）左移点亮2只相邻发光二极管；</p>
+<p>（4）右移点亮2只相邻发光二极管。</p>
+<p>（1）代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;reg51.h&gt;</span><br><span class="line">#include &lt;intrins.h&gt;</span><br><span class="line">#define uchar unsigned char</span><br><span class="line">#define uint unsigned int</span><br><span class="line">void  delay(uint i)</span><br><span class="line">&#123;</span><br><span class="line">  uchar t;</span><br><span class="line">  while (i--)</span><br><span class="line">  &#123;</span><br><span class="line">    for(t&#x3D;0;t&lt;120;t++);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void  main()  </span><br><span class="line">&#123;</span><br><span class="line">  P1&#x3D;0xfe;</span><br><span class="line">  while (1)</span><br><span class="line">  &#123;</span><br><span class="line">    delay( 500 );</span><br><span class="line">    P1&#x3D;_cror_(P1,1);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;reg51.h&gt;</span><br><span class="line">#include &lt;intrins.h&gt;</span><br><span class="line">#define uchar unsigned char</span><br><span class="line">#define uint unsigned int</span><br><span class="line">void  delay(uint i)</span><br><span class="line">&#123;</span><br><span class="line">  uchar t;</span><br><span class="line">  while (i--)</span><br><span class="line">  &#123;</span><br><span class="line">    for(t&#x3D;0;t&lt;120;t++);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void  main()  </span><br><span class="line">&#123;</span><br><span class="line">  P1&#x3D;0xfc;</span><br><span class="line">  while (1)</span><br><span class="line">  &#123;</span><br><span class="line">    delay( 500 );</span><br><span class="line">    P1&#x3D;_crol_(P1,2);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其余两问修改对应位置的代码即可</p>
+<p>Proteus如图连接</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120211500.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120211500.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>运行效果</p>
+<p><video src="https://video.left.pink/2020-11-20-21-15-48.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>单片机刷写</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120221823.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120221823.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>软件如图，下载：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1A7LneFUHcOyQMqU5uTaEnQ">https://pan.baidu.com/s/1A7LneFUHcOyQMqU5uTaEnQ</a> 提取码: 2ey6</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120223450.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120223450.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>插上板子后如果电脑没识别出端口就把文件中的驱动装一装</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/20/20201120223544.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/20/20201120223544.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>识别没问题的话，选好对应单片机型号，【打开程序文件】中选择编译好的hex文件，刷入即可。</p>
+<p>如果刷写卡住不动，可以开启/关闭板子上的电源试试</p>
+<p>效果</p>
+<p><video src="https://video.left.pink/PXL_20201120_144624805.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>另外根据板子的不同，需要修改代码，我的这块板子需要把P1修改为P2，LED才能正常亮灭。</p>
+<h2 id="实验三-定时器实验"><a href="#实验三-定时器实验" class="headerlink" title="实验三 定时器实验"></a><strong>实验三 定时器实验</strong></h2><p>编写程序，使定时器按一定间隔（500 ms~1s）对内部RAM某单元的内容加1，然后用8只发光二极管显示RAM单元中的二进制数值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include&lt;reg51.h&gt;</span><br><span class="line">char i&#x3D;100;</span><br><span class="line">unsigned char b&#x3D;0xff;</span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line">TMOD&#x3D;0x01;</span><br><span class="line">TH0&#x3D;0xee;</span><br><span class="line">TL0&#x3D;0x00;</span><br><span class="line">EA&#x3D;1;</span><br><span class="line">ET0&#x3D;1;</span><br><span class="line">TR0&#x3D;1;</span><br><span class="line">while(1);</span><br><span class="line">&#123;</span><br><span class="line">;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void timer0() interrupt 1</span><br><span class="line">&#123;</span><br><span class="line">TH0&#x3D;0xee;</span><br><span class="line">TL0&#x3D;0x00;</span><br><span class="line">i--;</span><br><span class="line">if(i&lt;&#x3D;0)</span><br><span class="line">&#123;</span><br><span class="line">P1&#x3D;b;</span><br><span class="line">b--;</span><br><span class="line">i&#x3D;100;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>proteus连接同上，运行：</p>
+<p><video src="https://video.left.pink/2020-11-20-22-54-10.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+<p>单片机刷写运行</p>
+<p><video src="https://video.left.pink/PXL_20201120_145816252.mp4" width="100%" height="100%" controls="" preload="metadata" ></video></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-06-11</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-cats__link button">学习</a><a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-tags__link button"># 单片机</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            死亡搁浅
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E6%97%A5%E8%AE%B0%EF%BC%9A%E6%97%A5%E6%96%99%E5%92%8C%E8%A1%97%E6%9C%BA%E5%8E%85/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            日记：日料和街机厅
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

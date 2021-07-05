@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Category: 思考 | Left&#39;s blog</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+    <div class="cover">
+        <div class="cover__logo">
+            
+                <h1>备用站点</h1>
+            
+        </div>
+        
+        
+            <div class="cover__intro">
+                <p>其实我觉得比主站好看</p>
+ 
+            </div>
+        
+    </div>
+
+            
+<main class="main">
+    
+        
+            
+    <div class="post-list">
+        
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        博客一周年啦！
+    </h2>
+    
+        <p>
+            
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/05/" class="post-meta__date button">2020-05-23</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/" class="button">破事水</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%AE%B0%E5%BD%95/" class="post-tags__link button"># 记录</a></div> 
+<a href="/%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%91%A8%E5%B9%B4%E5%95%A6%EF%BC%81/" class="post-entry__link">博客一周年啦！</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        20岁
+    </h2>
+    
+        Here's something encrypted, password is required to continue reading.
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-29</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%94%9F%E6%97%A5/" class="post-tags__link button"># 生日</a></div> 
+<a href="/20%E5%B2%81/" class="post-entry__link">20岁</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        聊聊 B站
+    </h2>
+    
+        <p>
+            刷B站已经成为了我的习惯，同时我也非常喜欢他的这种付费制度，所以我觉得是时候写篇文章聊聊它了。
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/03/" class="post-meta__date button">2020-03-04</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E8%AF%84%E4%BB%B7/" class="button">评价</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%AF%84%E4%BB%B7/" class="post-tags__link button"># 评价</a><a href="/tags/%E7%9C%8B%E6%B3%95/" class="post-tags__link button"># 看法</a><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+<a href="/%E8%81%8A%E8%81%8A-b%E7%AB%99/" class="post-entry__link">聊聊 B站</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        如何给父母选电影
+    </h2>
+    
+        <p>
+            放假这么久了，每天两部电影（午饭和晚饭）都是我选的，给父母选电影并不是一件简单的事，为了保证他们能看进去并开心满意非常困难，你不能以自己为标准，得多方面考量。
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/02/" class="post-meta__date button">2020-02-13</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/" class="button">破事水</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%94%B5%E5%BD%B1/" class="post-tags__link button"># 电影</a><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+<a href="/%E5%A6%82%E4%BD%95%E7%BB%99%E7%88%B6%E6%AF%8D%E9%80%89%E7%94%B5%E5%BD%B1/" class="post-entry__link">如何给父母选电影</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        元旦快乐！
+    </h2>
+    
+        <p>
+            今天搬回学校了，先聊聊租房感受，再总结下今年。
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/01/" class="post-meta__date button">2020-01-01</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%94%9F%E6%B4%BB/" class="button">生活</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/" class="button">破事水</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%94%9F%E6%B4%BB/" class="post-tags__link button"># 生活</a><a href="/tags/%E7%A0%B4%E4%BA%8B%E6%B0%B4/" class="post-tags__link button"># 破事水</a><a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-tags__link button"># 碎碎念</a></div> 
+<a href="/%E5%85%83%E6%97%A6%E5%BF%AB%E4%B9%90%EF%BC%81/" class="post-entry__link">元旦快乐！</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        工具定律
+    </h2>
+    
+        <p>
+            “ 工具人”为当代生活中一个带有贬义的形容性词语，一般代指被剥夺正当利益，只会像工具一样干活的人。笔者经过长期的社会观察以及实践，认为“工具人”指被剥夺正当利益这一描述并不正确，并提出“工具定律”，以下为详细说明：
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2019/10/" class="post-meta__date button">2019-10-28</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/" class="button">破事水</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+<a href="/%E5%B7%A5%E5%85%B7%E5%AE%9A%E5%BE%8B/" class="post-entry__link">工具定律</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        当互联网世界不再真实
+    </h2>
+    
+        <p>
+            01
+最近火热的“乔碧萝事件”以她的直播间被封缓缓冷却下来，在吃瓜看戏之余，有很多问题着实令人深思。
+从直播这一行业兴起，互联网上似乎就没多少真实可言了，直播的成本仅仅只需要一张身份证，带摄像头的电脑，化化妆，开个美颜，身材不好再整个大胸衣，开个变声器，一个美...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2019/08/" class="post-meta__date button">2019-08-06</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%84%9F%E5%8F%97/" class="post-tags__link button"># 感受</a><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+<a href="/%E5%BD%93%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%96%E7%95%8C%E4%B8%8D%E5%86%8D%E7%9C%9F%E5%AE%9E/" class="post-entry__link">当互联网世界不再真实</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        我不应该再这样下去了
+    </h2>
+    
+        <p>
+            我一直都知道自己是怎样的一个人：突然心血来潮想要做某事，刚开始毫不犹豫，一定要做，再后来越想越多，想到要实现目的的麻烦事，成本，时间，就开始踌躇，想要放弃。大多数时候，几乎每一次，对，我放弃了。 我想，我现在这样想，我不能再这样下去了 就像是建博客这件事一样，记得开学的时候我就想弄了，但...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2019/06/" class="post-meta__date button">2019-06-13</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+<a href="/%E6%88%91%E4%B8%8D%E5%BA%94%E8%AF%A5%E5%86%8D%E8%BF%99%E6%A0%B7%E4%B8%8B%E5%8E%BB%E4%BA%86/" class="post-entry__link">我不应该再这样下去了</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        我是如此的不懂得将心比心
+    </h2>
+    
+        <p>
+            我的宿舍有一位十分令人讨厌的人，他有一堆坏习惯，吃东西吧唧嘴（超大声），看视频外放（还全TM是土味），熄灯后依然吵闹，最近发展出了平均每分钟咳痰一次（依然非常大声），浑身上下散发出的气质没有一点大学生的感觉，更像是一个地痞流氓，没错，他就是如此的令我讨厌；但今天洗澡时突然想到，在有一点上...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2019/05/" class="post-meta__date button">2019-05-31</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%84%9F%E5%8F%97/" class="post-tags__link button"># 感受</a><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+<a href="/%E6%88%91%E6%98%AF%E5%A6%82%E6%AD%A4%E7%9A%84%E4%B8%8D%E6%87%82%E5%BE%97%E5%B0%86%E5%BF%83%E6%AF%94%E5%BF%83/" class="post-entry__link">我是如此的不懂得将心比心</a>
+                </div>
+            
+        
+    </div>
+    
+
+
+        
+    
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

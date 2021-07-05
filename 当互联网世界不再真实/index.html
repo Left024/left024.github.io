@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>当互联网世界不再真实 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="感受, 思考">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        当互联网世界不再真实
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2019/08/" class="post-meta__date button">2019-08-06</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%80%9D%E8%80%83/" class="button">思考</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>01</p>
+<p>最近火热的“乔碧萝事件”以她的直播间被封缓缓冷却下来，在吃瓜看戏之余，有很多问题着实令人深思。</p>
+<p>从直播这一行业兴起，互联网上似乎就没多少真实可言了，直播的成本仅仅只需要一张身份证，带摄像头的电脑，化化妆，开个美颜，身材不好再整个大胸衣，开个变声器，一个美女主播，就成了。</p>
+<p>得益于科技发展，只要人不是太丑，美颜都能让你变美。不说美颜，说回乔碧萝，仅仅只是一个萝莉音，就足以构建出让人愿意刷上十万礼物的美好形象。</p>
+<p>这种娱乐还非常的没有营养，浏览一圈某鱼的球区主播，其实内容都很单一，大多都是聊聊天，唱唱歌，再穿的少点打打色情的擦边球。就这种在我看来毫无技术毫无内容的直播，也能收获很多礼物。不仅是直播，同样火热的如抖音，快手这些短视频平台，漂亮的小姐姐或者是普通的小姐姐开美颜，衣服少点，配个流行音乐，随便扭两下，就能获得大量关注，大量关注就是大量流量，就能变现。</p>
+<p>这种确实很吸引人，我有时都会忍不住点进去看一下，即使我深知这个没质量，低俗，漂亮小姐姐可能还是个坦克，但我依然点进去了，毕竟我是个俗人。这种低质量的泛滥排挤着高质量的内容，你看得多了，各大平台推荐给你的也变成了这种低质量内容，你就越来越难以发现优质内容，优质内容创作者发现自己创作的优质内容得不到平台的推荐，为了吃饭他也只能去做低质量的内容，这就是一个循环。</p>
+<p>这也只是我所描绘的一种情况，在快手和抖音上比较普遍，长视频平台如B站还是有很多优秀的内容的。</p>
+<p>这种互联网上的流行已经影响了现实世界，在我以前的记忆中，只有在重要场合时才会去化妆，但从我有明显感知佛最近这两年开始，已经很难见到出门不化妆的女孩了，大学我也仅仅在军训的时候看过同班女同学的素颜，在那之后便没有了，高中同学在高中时天天都是素颜，如今毕业，在朋友圈的她们，已经是明显的修饰。并不是说我不赞成，这是她们的选择，我尊重。</p>
+<p>但我想起现在大一同班的一个女同学，她长相普通，属于平时不化妆的那种，突然有一天她化妆了，明显是第一次，因为她化了比不化还丑了不少。你说，她是怀着怎样的心态尝试了这样一件以前她从未尝试的事。可能是因为周围的女孩都化妆，在她们讨论化妆品时无法加入的难过吧，也可能看到身边女孩都漂漂亮亮，希望自己也漂亮些。</p>
+<p>所有的女孩都是爱美的，对于我这个屌丝来说，出门看到的美女更多了，总归是件赏心悦目的事。</p>
+<p>02　　  
+　　</p>
+<p>网民们最喜欢的，就是明星的八卦了。今天xxxx结婚，明天xxxx离婚，明星的私生活，就这样被消费着，营销号翻找出两人的过往，马后炮的评论一番，赚一波流量，事实上根本没人在意他们。而且久了你会发现，这些好像是周期发生的一般，过那么久就会有一对结婚/离婚，几乎没有同时发生的，好像商量好的一样。  
+　　</p>
+<p>娱乐圈也有一些模范夫妻，但我在微博刷到她们甜蜜互动时，时常会想，她们是真心的吗？又或者当他们已经没有感情，但模范夫妻的人设已经家喻户晓，是不是还得继续这么演下去？当然这都是我的一家之言，我也没什么资格这么评判人家的感情，但我确实也会经常这么想。  
+　　</p>
+<p>说起人设，也是个互联网的虚假产物，微博使得明星与粉丝距离拉近，粉丝也更像知道自己喜欢的明星到底是个怎样的人，于是便有了人设这种美好的东西来满足粉丝的幻想。记得去年有段时期就是各种明星人设集体崩塌，然后你就发现明星也是普通人，有趣的是，有些人设崩塌的及其厉害的，仍然还有大量拥趸，但他们显然是清楚自己粉的明星是个什么样，我真的很好奇，她们是怎么催眠自己继续喜欢这个明星的，亦或是粉丝滤镜已经让他看不清现实了？  
+　　</p>
+<p>蔡徐坤应该是整个互联网最“假”的明星了吧，他的数据是假的，没有任何才能，我每次想到他总是觉得很奇怪，甚至我的朋友圈里还有粉她的两位女同学，这两个女同学我认为是情商和智商非常高的，然而还是粉他。我也不能说是讨厌他，只能说是不爽吧，第一的明星应当是最有能力的，你说长的帅，我寻思着他长的也不帅啊。  
+　　</p>
+<p>记得之前看过一篇文章分析他为什么这么火，说是因为年轻少女周围的人都在说他，聊他，自然就这样盲目从众的粉她，甚至于采访的时候问为什么喜欢他，支支吾吾半天也只能说出来一个帅。这是多么可笑的一件事，然而他就发生了，在这个流量为王的时代。  
+　　</p>
+<p>写到这儿我发现了我对他不爽的点是带一点嫉妒的，你看，同样是没有才能，为啥火的就是他？</p>
+<hr>
+<p>互联网就像个变种的楚门的世界一样，人人都在里面，人人都能看到所有的事，身在其中，知真假，又或者是不想知道真假，不管怎样，这都是真实的世界，虽然我们从未谋面，但还是祝你早上好，中午好，晚上好。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%80%9D%E8%80%83/" class="post-cats__link button">思考</a><a href="/tags/%E6%84%9F%E5%8F%97/" class="post-tags__link button"># 感受</a><a href="/tags/%E6%80%9D%E8%80%83/" class="post-tags__link button"># 思考</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/pixel-2-xl-%E6%9B%B4%E6%8D%A2%E5%B1%8F%E5%B9%95/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            Pixel 2 XL 更换屏幕
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E7%95%AA%E8%8C%84%E5%9C%9F%E8%B1%86%E7%82%96%E7%89%9B%E8%85%A9/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            番茄土豆炖牛腩
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

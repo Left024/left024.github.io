@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>如何优雅地记笔记 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS, 学习, linux">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        如何优雅地记笔记
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/10/" class="post-meta__date button">2020-10-31</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-text">方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Wikitten%E4%B8%BB%E9%A2%98"><span class="toc-text">安装Wikitten主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E4%B8%BB%E9%A2%98"><span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81Katex"><span class="toc-text">支持Katex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%94%BE%E5%9C%A8%E4%BE%A7%E8%BE%B9%E6%A0%8F"><span class="toc-text">目录放在侧边栏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Systemctl%E5%90%AF%E5%8A%A8%E7%BD%91%E7%AB%99"><span class="toc-text">通过Systemctl启动网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttps"><span class="toc-text">配置https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache2"><span class="toc-text">apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-text">申请证书</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%8A%A0%E5%AF%86"><span class="toc-text">网站加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-1"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache2-1"><span class="toc-text">apache2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-text">开始记笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-text">方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Wikitten%E4%B8%BB%E9%A2%98"><span class="toc-text">安装Wikitten主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E4%B8%BB%E9%A2%98"><span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81Katex"><span class="toc-text">支持Katex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%94%BE%E5%9C%A8%E4%BE%A7%E8%BE%B9%E6%A0%8F"><span class="toc-text">目录放在侧边栏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Systemctl%E5%90%AF%E5%8A%A8%E7%BD%91%E7%AB%99"><span class="toc-text">通过Systemctl启动网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttps"><span class="toc-text">配置https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache2"><span class="toc-text">apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6"><span class="toc-text">申请证书</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%8A%A0%E5%AF%86"><span class="toc-text">网站加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-1"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache2-1"><span class="toc-text">apache2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-text">开始记笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-14"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我从来都没有记笔记的习惯，从小学到现在，每次都是买个笔记本，坚持了一两个星期后就放弃了。</p>
+<p>到了大学，我终于坚持下来记笔记了，但跟我所学习的专业并没有关系，是因为博客；Linux 是我自己摸索着学习的，用的时候属于需要什么就去查什么，它有很多命令是经常重复使用的，每次去查也太麻烦了，所以我就建了个文件夹，用记事本去记录。</p>
+<p>算是被迫养成了记笔记的习惯</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/15/20201016091021.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/15/20201016091021.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这样并不优雅，查看也并不方便，不过能用我也就没管那么多，这时我已经开始留意有没有好的笔记方案。</p>
+<p>暑假的时候我发现了 <a target="_blank" rel="noopener" href="https://docs.requarks.io/">wikijs</a> 这个项目，它的 UI 挺不错的（装完就是图片这个样子，我的已经删了，之前没截图）</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/15/20201016091626.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/15/20201016091626.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>最重要的是他是以网站的形式呈现内容，这意味着记录的笔记在任何联网的设备上都可以查看，看到这里我已经心动了。</p>
+<p>安装并不复杂，我迅速安装好了开始使用，首先我就把我之前记录的 Linux 笔记迁移到了上面，目前的 wikijs 支持 markdown 和 html，我使用的是 markdown ，编辑完成后，自带的标题跳转以及代码块显示都非常直观方便。</p>
+<p>UI 也非常符合我的审美，在仔细查看设置选项后，我发现它还支持数学公式的显示，我的专业是自动化，有许多公式需要记录。</p>
+<p>这个暑假我还挂科了，开学就要补考。</p>
+<p>于是我决定用它来记笔记，试试效果。</p>
+<p>开始是非常舒服的，网站的编辑界面是“所见即所得”的样式，左侧代码区，右侧为渲染完成之后的样子，我很喜欢这个样式。</p>
+<p>然而好景不长，几周后，我发现问题了：</p>
+<ul>
+<li>  文章目录仅显示一级和二级标题</li>
+<li>  个别数学公式渲染不符合标准</li>
+<li>  全局搜索基本没有（有用的需要依靠第三方，但要收钱）</li>
+<li>  随着数学公式的增多，编辑会逐渐变得卡顿</li>
+</ul>
+<p>前几条我都还可以忍受，但最后一条我真的忍不了，后期真的太卡了，打一个字要卡一秒，真的无法忍受。</p>
+<p>几天卡顿的编辑体验后，我忍无可忍，决定换一种方案。</p>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>我的要求是这样的：</p>
+<ul>
+<li>  优秀的无卡顿编辑体验</li>
+<li>  “所见即所得”的Markdown编辑</li>
+<li>  完整的数学公式支持</li>
+<li>  网站的展现形式，任何联网设备随时可查</li>
+<li>  全局搜索</li>
+</ul>
+<p>为了保证不卡顿且编辑体验优秀，最好就是在本地编辑，我选择了VScode加上Markdown插件（markdown-all-in-one），还有语法检查插件（markdownlint）</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/31/20201031140447.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/31/20201031140447.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>本地编辑的体验完美了，但同时也给网站显示带来了新的问题：</p>
+<ul>
+<li>  文件实时同步</li>
+<li>  VScode编辑显示什么样子，网站也应该显示什么样子</li>
+</ul>
+<p>经过一番研究，我选择了Hexo+<a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">Wikitten</a>主题</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/31/20201031141157.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/31/20201031141157.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>呈现效果非常完美，左侧多层目录，全局搜索也非常快</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/31/20201031141320.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/31/20201031141320.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>并且这个网站是实时渲染的，只要把修改好的文件上传到对应目录即可完成修改，完全不需要重启等等的操作。</p>
+<p>同步软件我是用的是 Goodsync，具体可以看看<a target="_blank" rel="noopener" href="https://left.pink/archives/3263">这篇文章</a>。</p>
+<p>接下来我会讲讲怎么搭建这个网站，我所展示的功能并不是即装即用的，需要很多修改，我也踩了很多的坑。</p>
+<p>以下安装基于Ubuntu18.04</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装git-core</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+
+<p>Hexo需要<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">nodejs</a>版本为12及以上</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x  sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>安装Hexo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">mkdir /hexo</span><br><span class="line">hexo init /hexo</span><br><span class="line"><span class="built_in">cd</span> /hexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Wikitten主题"><a href="#安装Wikitten主题" class="headerlink" title="安装Wikitten主题"></a>安装Wikitten主题</h2><p>在hexo根目录执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zthxxx/hexo-theme-Wikitten.git themes/Wikitten</span><br><span class="line"></span><br><span class="line">cp -rf themes/Wikitten/_source/* <span class="built_in">source</span>/</span><br><span class="line">cp -rf themes/Wikitten/_scaffolds/* scaffolds/</span><br><span class="line"></span><br><span class="line">cp -f themes/Wikitten/_config.yml.example themes/Wikitten/_config.yml</span><br><span class="line"></span><br><span class="line">npm i -S hexo-autonofollow hexo-directory-category hexo-generator-feed hexo-generator-json-content hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>修改/hexo/_config.yml</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme：Wikitten</span><br></pre></td></tr></table></figure>
+
+<h3 id="支持Katex"><a href="#支持Katex" class="headerlink" title="支持Katex"></a>支持Katex</h3><p>默认的mathjax渲染会有很大问题，在/hexo下执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-markdown-it-plus --save</span><br><span class="line">npm install hexo-math --save</span><br></pre></td></tr></table></figure>
+
+<p>安装完后在/hexo/themes/Wikitten/_config.yml中按照如下修改：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">将plugin中的mathjax改为<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">末尾添加</span><br><span class="line">math:</span><br><span class="line">    <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">    specific: <span class="literal">true</span></span><br><span class="line">    engine: katex</span><br></pre></td></tr></table></figure>
+
+<p>由于这里将specific的值设为了true，所以在需要进行数学公式渲染的文章的font-matter中添加一条math: true，采用这种方法可以不影响不需要进行数学公式渲染的页面的加载速度。</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/31/20201031142840.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/31/20201031142840.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h3 id="目录放在侧边栏"><a href="#目录放在侧边栏" class="headerlink" title="目录放在侧边栏"></a>目录放在侧边栏</h3><p>文档首页需要添加字段才能开启目录显示（如上图）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">toc: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>删除旧文件（目的：不在文章正文内显示TOC）<br>删除/hexo/themes/Wikitten/layout/common/article.ejs文件内关于toc的内容：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;% if (post.toc) &#123; %&gt;</span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;toc&quot;</span> <span class="attr">class</span>=<span class="string">&quot;toc-article&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">strong</span> <span class="attr">class</span>=<span class="string">&quot;toc-title&quot;</span>&gt;</span>&lt;%= __(&#x27;article.catalogue&#x27;) %&gt;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">           &lt;%- toc(post.content) %&gt;</span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在/hexo/themes/Wikitten/layout/widget添加文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano toc.ejs</span><br></pre></td></tr></table></figure>
+
+<p>粘贴如下内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&lt;% if (page.toc) &#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;widget-wrap&quot;</span> <span class="attr">id</span>=<span class="string">&#x27;toc&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;widget-title&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&lt;%= __(&#x27;目录&#x27;) %&gt;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="symbol">&amp;nbsp;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&#x27;tocExpand&#x27;</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-angle-double-&lt;%- theme.customize.category_perExpand ? &#x27;up&#x27; : &#x27;down&#x27; %&gt; fa-2x&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">     &lt;%- toc(page.content, &#123;list_number: true&#125;) %&gt;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">     <span class="comment">//添加小图标</span></span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> $itemHasChild = $(<span class="string">&quot;#toc .toc-item:has(&gt; .toc-child)&quot;</span>);</span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> $titleHasChild = $itemHasChild.children(<span class="string">&quot;.toc-link&quot;</span>);</span></span><br><span class="line"><span class="handlebars"><span class="xml">     $itemHasChild.prepend(&quot;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&#x27;fa fa-caret-down&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&#x27;fa fa-caret-right&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&quot;);</span></span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> $opentoc = $(<span class="string">&quot;.toc-item &gt; .fa-caret-down&quot;</span>);</span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> $closetoc = $(<span class="string">&quot;.toc-item &gt; .fa-caret-right&quot;</span>);</span></span><br><span class="line"><span class="javascript">     $closetoc.addClass(<span class="string">&quot;hide&quot;</span>).hide();</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">     <span class="comment">// 点击小图标</span></span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> clickIcon = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">         $(<span class="string">&quot;#toc .toc-item &gt; i&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">             $(<span class="built_in">this</span>).hide();</span></span><br><span class="line"><span class="javascript">             $(<span class="built_in">this</span>).siblings(<span class="string">&quot;.toc-child&quot;</span>).slideToggle(<span class="number">100</span>);</span></span><br><span class="line"><span class="javascript">             $(<span class="built_in">this</span>).toggleClass(<span class="string">&quot;hide&quot;</span>);</span></span><br><span class="line"><span class="javascript">             $(<span class="built_in">this</span>).siblings(<span class="string">&quot;i&quot;</span>).toggleClass(<span class="string">&quot;hide&quot;</span>);</span></span><br><span class="line"><span class="javascript">             <span class="keyword">if</span>( $(<span class="built_in">this</span>).siblings(<span class="string">&quot;i&quot;</span>).hasClass(<span class="string">&quot;hide&quot;</span>) )&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="comment">// 执行隐藏</span></span></span><br><span class="line"><span class="javascript">                    $(<span class="built_in">this</span>).siblings(<span class="string">&quot;i&quot;</span>).hide();</span></span><br><span class="line"><span class="javascript">                &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="comment">// 显示</span></span></span><br><span class="line"><span class="javascript">                    $(<span class="built_in">this</span>).siblings(<span class="string">&quot;i&quot;</span>).show();</span></span><br><span class="line">                &#125;</span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;()</span><br><span class="line"></span><br><span class="line"><span class="javascript">     <span class="comment">// 展开关闭所有目录</span></span></span><br><span class="line"><span class="javascript">     <span class="keyword">var</span> clickTocTitle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> $subToc = $titleHasChild.next(<span class="string">&quot;.toc-child&quot;</span>);</span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> $tocTitle = $(<span class="string">&quot;#tocExpand&quot;</span>);</span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> iconAllExpandClass = <span class="string">&#x27;fa-angle-double-down&#x27;</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> iconAllPackClass = <span class="string">&#x27;fa-angle-double-up&#x27;</span>;</span></span><br><span class="line"><span class="javascript">         <span class="comment">// 当包含多级目录时再执行</span></span></span><br><span class="line">         if ($titleHasChild.length) &#123;</span><br><span class="line"><span class="javascript">             $tocTitle.addClass(<span class="string">&quot;clickable&quot;</span>);</span></span><br><span class="line"><span class="javascript">             $tocTitle.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                 <span class="keyword">var</span> icon = $(<span class="built_in">this</span>).children(<span class="string">&#x27;.fa&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                 <span class="keyword">if</span> ($subToc.is(<span class="string">&quot;:hidden&quot;</span>)) &#123;</span></span><br><span class="line">                     $subToc.show(100);</span><br><span class="line"><span class="javascript">                     $closetoc.addClass(<span class="string">&quot;hide&quot;</span>).hide();</span></span><br><span class="line"><span class="javascript">                     $opentoc.removeClass(<span class="string">&quot;hide&quot;</span>).show();</span></span><br><span class="line">                     icon.removeClass(iconAllPackClass).addClass(iconAllExpandClass);</span><br><span class="line"><span class="javascript">                 &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">                     $subToc.hide(100);</span><br><span class="line"><span class="javascript">                     $opentoc.addClass(<span class="string">&quot;hide&quot;</span>).hide();</span></span><br><span class="line"><span class="javascript">                     $closetoc.removeClass(<span class="string">&quot;hide&quot;</span>).show();</span></span><br><span class="line">                     icon.removeClass(iconAllExpandClass).addClass(iconAllPackClass);</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;)</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;()</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在侧边栏的样式文件（/hexo/themes/Wikitten/source/css/_partial/sidebar.styl）内添加toc插件的自定义样式（末尾添加）：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*小图标*/</span></span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">li</span><span class="selector-class">.toc-item</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">0.9em</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0.9em</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">li</span><span class="selector-class">.toc-item</span> <span class="selector-tag">i</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*关联图标的Class*/</span></span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">li</span><span class="selector-class">.toc-item</span> <span class="selector-tag">i</span><span class="selector-class">.hide</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*关联总标题的Class*/</span></span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-id">#tocExpand</span><span class="selector-class">.clickable</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-id">#tocExpand</span><span class="selector-class">.clickable</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#88acdb</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-id">#tocExpand</span><span class="selector-class">.clickable</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#d3d3d3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*其他目录相关*/</span></span><br><span class="line"><span class="selector-id">#toc</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.9em</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.8em</span>;</span><br><span class="line"> <span class="attribute">float</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">1.2em</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">0</span>;</span><br><span class="line"> <span class="attribute">max-height</span>: <span class="number">380px</span>;</span><br><span class="line"> <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">li</span><span class="selector-class">.toc-item</span> &#123;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">li</span><span class="selector-class">.toc-item</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">a</span><span class="selector-class">.toc-link</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line"> <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">a</span><span class="selector-class">.toc-link</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#88acdb</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">158</span>,<span class="number">188</span>,<span class="number">226</span>,<span class="number">0.21</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc-child</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">1.25em</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">4px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc</span> <span class="selector-tag">ol</span><span class="selector-class">.toc-child</span> <span class="selector-tag">a</span><span class="selector-class">.toc-link</span> &#123;</span><br><span class="line"> <span class="attribute">color</span>: <span class="number">#38b7ea</span>;</span><br><span class="line"> <span class="attribute">font-weight</span>:normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在主题的配置文件（/hexo/themes/Wikitten/_config.yml）添加该widget：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">widgets: <span class="comment"># default use category only</span></span><br><span class="line">    - category</span><br><span class="line">    - toc                           <span class="comment"># 新增，设置开关</span></span><br><span class="line">    <span class="comment"># - recent_posts</span></span><br><span class="line">    <span class="comment"># - archive</span></span><br><span class="line">    <span class="comment"># - tag</span></span><br><span class="line">    <span class="comment"># - tagcloud</span></span><br><span class="line">    <span class="comment"># - links</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="通过Systemctl启动网站"><a href="#通过Systemctl启动网站" class="headerlink" title="通过Systemctl启动网站"></a>通过Systemctl启动网站</h2><p>创建service文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano /etc/systemd/system/hexo.service</span><br></pre></td></tr></table></figure>
+
+<p>粘贴以下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=hexo</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/bin/hexo server</span><br><span class="line">Restart=always</span><br><span class="line">User=root</span><br><span class="line">Environment=NODE_ENV=production</span><br><span class="line">WorkingDirectory=/hexo</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start hexo</span><br></pre></td></tr></table></figure>
+
+<p>开机自启</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> hexo</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置https"><a href="#配置https" class="headerlink" title="配置https"></a>配置https</h2><h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get install nginx</span><br><span class="line">nano /etc/nginx/conf.d/hexo.conf</span><br></pre></td></tr></table></figure>
+
+<p>粘贴如下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  xxxxx.com;</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:4000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="apache2"><a href="#apache2" class="headerlink" title="apache2"></a>apache2</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get install apache2</span><br></pre></td></tr></table></figure>
+
+<p>启用模块</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo a2enmod ssl</span><br><span class="line">sudo a2enmod proxy</span><br><span class="line">sudo a2enmod proxy_wstunnel</span><br><span class="line">sudo a2enmod proxy_http</span><br><span class="line">sudo a2enmod rewrite</span><br><span class="line">sudo a2enmod headers</span><br><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure>
+
+<p>创建配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano /etc/apache2/sites-available/hexo.conf</span><br></pre></td></tr></table></figure>
+
+<p>粘贴如下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName xxxxxxx.com</span><br><span class="line"></span><br><span class="line">    ServerAdmin webmaster@localhost</span><br><span class="line">    DocumentRoot /var/www/</span><br><span class="line">    ProxyPass <span class="string">&quot;/&quot;</span> <span class="string">&quot;http://127.0.0.1:4000/&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    ErrorLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/error.log</span><br><span class="line">    CustomLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/access.log combined</span><br><span class="line"></span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<p>启用配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/apache2/sites-enabled</span><br><span class="line">sudo ln -s ../sites-available/hexo.conf</span><br><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line">chmod a+x certbot-auto</span><br><span class="line">sudo ./certbot-auto --apache</span><br><span class="line">sudo ./certbot-auto --nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="网站加密"><a href="#网站加密" class="headerlink" title="网站加密"></a>网站加密</h2><p>如果你不希望你的笔记被别人看到则可以把它加密</p>
+<p><img src="https://chevereto.left.pink/images/2020/10/31/20201031145317.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/10/31/20201031145317.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h3 id="nginx-1"><a href="#nginx-1" class="headerlink" title="nginx"></a>nginx</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install apache2-utils</span><br></pre></td></tr></table></figure>
+
+<p>添加用户</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo htpasswd -c /etc/nginx/.htpasswd left</span><br></pre></td></tr></table></figure>
+
+<p>在上面的配置文件中添加</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:4000;</span><br><span class="line">    auth_basic <span class="string">&quot;Restricted&quot;</span>;</span><br><span class="line">    auth_basic_user_file /etc/nginx/.htpasswd;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="apache2-1"><a href="#apache2-1" class="headerlink" title="apache2"></a>apache2</h3><p>添加用户</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo htpasswd -c /etc/apache2/.htpasswd left</span><br></pre></td></tr></table></figure>
+
+<p>配置文件中添加</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;Proxy *&gt;</span><br><span class="line">        AuthType Basic</span><br><span class="line">        AuthName <span class="string">&quot;wiki&quot;</span></span><br><span class="line">        AuthUserFile <span class="string">&quot;/etc/apache2/.htpasswd&quot;</span></span><br><span class="line">        Require valid-user</span><br><span class="line">    &lt;/Proxy&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="开始记笔记"><a href="#开始记笔记" class="headerlink" title="开始记笔记"></a>开始记笔记</h2><p>每一篇文章的开头都要添加如下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">toc: <span class="literal">true</span></span><br><span class="line">math: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>网站显示的文章名字是上面的标题而不是文件名字，toc是目录的显示，math是数学公式渲染。</p>
+<p>文章存储在/hexo/source/_posts下，图片存储在/hexo/source/images，或者是可以使用图床，具体可以看看这篇<a target="_blank" rel="noopener" href="https://left.pink/archives/3321">文章</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li>  <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">https://github.com/zthxxx/hexo-theme-Wikitten</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://lingr7.github.io/2019/10/03/hexo+next%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81---%E9%87%87%E7%94%A8Katex">https://lingr7.github.io/2019/10/03/hexo+next%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81---%E9%87%87%E7%94%A8Katex</a></li>
+<li>  <a target="_blank" rel="noopener" href="http://rennesong.com/2020/06/08/hexo-math-support-tuto/">http://rennesong.com/2020/06/08/hexo-math-support-tuto/</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://kuang.netlify.app/blog/hexo.html">https://kuang.netlify.app/blog/hexo.html</a></li>
+</ul>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-14</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-cats__link button">学习</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a><a href="/tags/linux/" class="post-tags__link button"># linux</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E6%97%A5%E8%AE%B0%EF%BC%9A%E6%97%A5%E6%96%99%E5%92%8C%E8%A1%97%E6%9C%BA%E5%8E%85/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            日记：日料和街机厅
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E6%97%A5%E8%AE%B0%EF%BC%9A%E8%B0%AD%E9%B8%AD%E8%A1%80%E5%92%8C%E9%87%91%E5%88%9A%E5%B7%9D/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            日记：谭鸭血和金刚川
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

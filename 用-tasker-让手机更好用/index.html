@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>用 Tasker 让手机更好用 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="手机, Tasker">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        用 Tasker 让手机更好用
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/01/" class="post-meta__date button">2020-01-09</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">使用前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%BC%80%E5%90%AF%E9%BB%91%E5%A4%9C%E6%A8%A1%E5%BC%8F%E5%B9%B6%E5%88%87%E6%8D%A2%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8"><span class="toc-text">自动开启黑夜模式并切换动态壁纸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1-%E6%94%AF%E4%BB%98%E5%AE%9D-%E6%94%AF%E4%BB%98%E5%AE%8C%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E5%88%B0%E8%AE%B0%E8%B4%A6%E7%95%8C%E9%9D%A2"><span class="toc-text">微信&#x2F;支付宝 支付完自动跳转到记账界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%AA%E5%B1%8F%E7%A6%81%E7%94%A8%E9%80%9A%E7%9F%A5%E5%BC%B9%E5%87%BA"><span class="toc-text">横屏禁用通知弹出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">使用前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%BC%80%E5%90%AF%E9%BB%91%E5%A4%9C%E6%A8%A1%E5%BC%8F%E5%B9%B6%E5%88%87%E6%8D%A2%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8"><span class="toc-text">自动开启黑夜模式并切换动态壁纸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1-%E6%94%AF%E4%BB%98%E5%AE%9D-%E6%94%AF%E4%BB%98%E5%AE%8C%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E5%88%B0%E8%AE%B0%E8%B4%A6%E7%95%8C%E9%9D%A2"><span class="toc-text">微信&#x2F;支付宝 支付完自动跳转到记账界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%AA%E5%B1%8F%E7%A6%81%E7%94%A8%E9%80%9A%E7%9F%A5%E5%BC%B9%E5%87%BA"><span class="toc-text">横屏禁用通知弹出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-203523.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-203523.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>最近又开始折腾 Tasker 了，主要是之前使用总有些地方用着不顺手，于是想着用 Tasker 改善下，体验了一个多月了，感觉挺不错的，分享下我做的一些功能。</p>
+<h2 id="使用前准备"><a href="#使用前准备" class="headerlink" title="使用前准备"></a>使用前准备</h2><p>为了保证我介绍的功能你都能使用，需要先做些准备：</p>
+<ul>
+<li>  Root</li>
+<li>  将 Tasker 改为系统应用</li>
+</ul>
+<p>将 Tasker 改为系统应用可以使用 Magisk 的 App Systemizer 模块做到。</p>
+<p>省电：点击 <strong>首选项</strong>，选择 <strong>监视器</strong>，将 <strong>使用可靠计时器</strong> 改为 <strong>从不</strong>，可以做到让 Tasker 几乎和没装之前一样。</p>
+<h2 id="自动开启黑夜模式并切换动态壁纸"><a href="#自动开启黑夜模式并切换动态壁纸" class="headerlink" title="自动开启黑夜模式并切换动态壁纸"></a>自动开启黑夜模式并切换动态壁纸</h2><p>首先自动开启黑夜模式，这很容易做到，根据时间或者外界亮度这都可以</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-204420_1.jpg"><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-204420_1.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-204420_1.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+<li><a target="_blank" rel="noopener" href="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-204437.png"><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-204437.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-204437.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></a></li>
+</ul>
+<p>难点就在自动切换动态壁纸，这个我也不会，好在<a target="_blank" rel="noopener" href="https://www.reddit.com/r/tasker/comments/d9zltw/howto_set_live_wallpaper_with_tasker_root_only/">有人在 reddit 上问了</a>，作者做了一个，在手机上点击这个 <a target="_blank" rel="noopener" href="https://taskernet.com/shares/?user=AS35m8ne7oO4s+aDx/wlzjdFTfVMWstg1ay5AkpiNdrLoSXEZdFfw1IpXiyJCVLNW0yn&id=Project:Live+Wallpaper">链接</a> ，就能导入配置文件到 Tasker</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-205203.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-205203.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这样就解决问题了，具体切换哪张壁纸取决于这个值，是多少就需要你自己测试了</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-205310_1.jpg" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-205310_1.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>切换就设置为当检测到 Dark mode 开启时切换</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-205655.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-205655.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>同时 Tasker 开启 Dark mode 需要额外设置，打开手机 ADB ，连接至电脑，复制以下命令到 cmd 执行</p>
+<p>adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS</p>
+<p>效果</p>
+<h2 id="微信-支付宝-支付完自动跳转到记账界面"><a href="#微信-支付宝-支付完自动跳转到记账界面" class="headerlink" title="微信/支付宝 支付完自动跳转到记账界面"></a>微信/支付宝 支付完自动跳转到记账界面</h2><p>在一年多以前我就开始了记账，但老是忘记，所以有了这个功能，实现也很简单，微信和支付宝的支付之后都有个固定的支付标题，检测这个即可。</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-211955.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-211955.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>打开记账不仅仅是打开软件，而是直达记账的那个界面</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-212144.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-212144.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这个命令很好理解，<strong>am start -n</strong> 就是打开 <strong>Activity</strong>，即记账页面</p>
+<p><strong>com.mutangtech.qianji</strong> ，就是要打开的软件的包名， <strong>com.mutangtech.qianji.bill.add.AddBillActivity</strong> ，这个就是记账的页面，这里我使用的是 <a target="_blank" rel="noopener" href="https://www.coolapk.com/apk/com.mutangtech.qianji">钱迹</a> 这个软件。</p>
+<p>具体的查看包名，和 Activity ，可以使用 <a target="_blank" rel="noopener" href="https://www.coolapk.com/apk/com.toshiba_dealin.developerhelper">开发者助手</a> 这个软件查看</p>
+<p>效果</p>
+<p>自动记录付款数字其实我也做了，支付宝的通知是包含支付数字的，只要用正则表达式匹配就好了，微信不显示数字就很麻烦，我没想到该怎么做，钱迹开发者说新版本会支持自动记账，看看吧。</p>
+<h2 id="横屏禁用通知弹出"><a href="#横屏禁用通知弹出" class="headerlink" title="横屏禁用通知弹出"></a>横屏禁用通知弹出</h2><p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-213926.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-213926.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>因为是原生系统，看视频时弹出的通知总是挡住内容。这个功能的作用就是手机横屏时，即视频/游戏时关闭通知弹出，但仍接收通知，这样结束视频后，能看接受的消息。</p>
+<p>原本我想用勿扰模式来做这个功能，但不知道为什么就是不行，于是采用了另一个办法：shell命令</p>
+<p><img src="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-214349.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/11/18/Screenshot_20191230-214349.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>执行这个命令就能关闭通知弹出，后面的0改成1就是打开</p>
+<p>settings put global heads_up_notifications_enabled 0</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>其实还有一些我做的没讲到，但都很简单，所以挑了这几个在做的时候困扰到我的来讲，Tasker 是个非常牛逼的软件，但非常可惜的是用的人没几个，所以它一直不温不火，希望还是多点人用，这样才能有更多的创意被分享出来。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/%E6%89%8B%E6%9C%BA/" class="post-tags__link button"># 手机</a><a href="/tags/Tasker/" class="post-tags__link button"># Tasker</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E6%87%92%E4%BA%BA%E7%BA%A2%E7%83%A7%E8%82%89/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            懒人红烧肉
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E5%B7%A5%E7%A8%8B%E8%AE%AD%E7%BB%83%E4%BD%93%E9%AA%8C%E6%97%A5%E8%AE%B0/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            工程训练体验日记
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>

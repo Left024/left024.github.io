@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Ubuntu 18.04 搭建 ASF | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="VPS, 笔记, 学习">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        Ubuntu 18.04 搭建 ASF
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/05/" class="post-meta__date button">2020-05-17</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-ASF"><span class="toc-text">配置 ASF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-text">小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-steam-%E7%BE%A4%E7%BB%84%E6%9F%A5%E7%9C%8B%E6%8C%82%E5%8D%A1%E6%88%96%E8%80%85%E5%85%B6%E5%AE%83%E5%91%BD%E4%BB%A4"><span class="toc-text">使用 steam 群组查看挂卡或者其它命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E5%8D%A1%E8%80%81%E6%98%AF%E8%A2%AB%E8%B8%A2%E4%B8%8B%E7%BA%BF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-text">挂卡老是被踢下线怎么办？</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-ASF"><span class="toc-text">配置 ASF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-text">小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-steam-%E7%BE%A4%E7%BB%84%E6%9F%A5%E7%9C%8B%E6%8C%82%E5%8D%A1%E6%88%96%E8%80%85%E5%85%B6%E5%AE%83%E5%91%BD%E4%BB%A4"><span class="toc-text">使用 steam 群组查看挂卡或者其它命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E5%8D%A1%E8%80%81%E6%98%AF%E8%A2%AB%E8%B8%A2%E4%B8%8B%E7%BA%BF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-text">挂卡老是被踢下线怎么办？</span></a></li></ol></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-04-12"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>昨天我的 Mountain 游戏时间破万了，所以写个搭建挂卡庆祝下（其实我也不熟，当个笔记写），另外还有一些使用的小技巧</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-15_22-00-29.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-15_22-00-29.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/JustArchiNET/ArchiSteamFarm">项目地址</a>，简单介绍下吧，这个程序通过模拟 steam 游戏运行达到挂卡的目的，还能挂游戏时长。其他的还有激活游戏啥的</p>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>搭建他需要微软的 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-linux">.Net Core</a> 依赖，执行如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">添加 Microsoft 存储库密钥和源</span><br><span class="line">wget https:&#x2F;&#x2F;packages.microsoft.com&#x2F;config&#x2F;ubuntu&#x2F;18.04&#x2F;packages-microsoft-prod.deb -O packages-microsoft-prod.deb</span><br><span class="line"></span><br><span class="line">sudo dpkg -i packages-microsoft-prod.deb</span><br><span class="line"></span><br><span class="line">安装 .Net Core</span><br><span class="line">sudo add-apt-repository universe</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install apt-transport-https</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install dotnet-sdk-3.1</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置-ASF"><a href="#配置-ASF" class="headerlink" title="配置 ASF"></a>配置 ASF</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir ASF</span><br><span class="line">cd ASF</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;JustArchiNET&#x2F;ArchiSteamFarm&#x2F;releases&#x2F;download&#x2F;4.2.0.6&#x2F;ASF-generic.zip   ##随着版本更新可能有所不同</span><br><span class="line">unzip ASF-generic.zip</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>进入配置文件夹</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;root&#x2F;ASF&#x2F;config</span><br></pre></td></tr></table></figure>
+
+<p>如果你想通过 Steam 群组聊天方式查看和控制挂卡的话（详见小技巧部分），创建 ASF.json，否则不需要创建</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim ASF.json</span><br><span class="line"></span><br><span class="line">以下为模板</span><br><span class="line">&#123;</span><br><span class="line">    &quot;AutoRestart&quot;: true,</span><br><span class="line">    &quot;Blacklist&quot;: [],</span><br><span class="line">    &quot;CommandPrefix&quot;: &quot;!&quot;,</span><br><span class="line">    &quot;ConfirmationsLimiterDelay&quot;: 10,</span><br><span class="line">    &quot;ConnectionTimeout&quot;: 90,</span><br><span class="line">    &quot;CurrentCulture&quot;: null,</span><br><span class="line">    &quot;Debug&quot;: false,</span><br><span class="line">    &quot;FarmingDelay&quot;: 15,</span><br><span class="line">    &quot;GiftsLimiterDelay&quot;: 1,</span><br><span class="line">    &quot;Headless&quot;: false,</span><br><span class="line">    &quot;IdleFarmingPeriod&quot;: 8,</span><br><span class="line">    &quot;InventoryLimiterDelay&quot;: 3,</span><br><span class="line">    &quot;IPC&quot;: false,</span><br><span class="line">    &quot;IPCPassword&quot;: null,</span><br><span class="line">    &quot;LoginLimiterDelay&quot;: 10,</span><br><span class="line">    &quot;MaxFarmingTime&quot;: 10,</span><br><span class="line">    &quot;MaxTradeHoldDuration&quot;: 15,</span><br><span class="line">    &quot;OptimizationMode&quot;: 0,</span><br><span class="line">    &quot;Statistics&quot;: true,</span><br><span class="line">    &quot;SteamMessagePrefix&quot;: &quot;&#x2F;me &quot;,</span><br><span class="line">    &quot;SteamOwnerID&quot;: 0,       ##此处需修改为自己的steam 64位 id</span><br><span class="line">    &quot;SteamProtocols&quot;: 7,</span><br><span class="line">    &quot;UpdateChannel&quot;: 1,</span><br><span class="line">    &quot;UpdatePeriod&quot;: 24,</span><br><span class="line">    &quot;WebLimiterDelay&quot;: 300,</span><br><span class="line">    &quot;WebProxy&quot;: null,</span><br><span class="line">    &quot;WebProxyPassword&quot;: null,</span><br><span class="line">    &quot;WebProxyUsername&quot;: null</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置自己的账号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim bot.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">&quot;CustomGamePlayedWhileFarming&quot;: &quot;&quot;, </span><br><span class="line">  &quot;CustomGamePlayedWhileIdle&quot;: &quot;&quot;, </span><br><span class="line">    &quot;SteamLogin&quot;: &quot;left024&quot;, </span><br><span class="line">        &quot;SteamPassword&quot;: &quot;xxxxxxxx&quot;,</span><br><span class="line">&quot;SteamMasterClanID&quot;: xxxxxxxxxxx,         详见小技巧部分</span><br><span class="line">        &quot;Enabled&quot;: true, </span><br><span class="line">&quot;Paused&quot;: false, </span><br><span class="line">&quot;GamesPlayedWhileIdle&quot;: [313340]    挂时长的游戏id</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多参数查看<a target="_blank" rel="noopener" href="https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Configuration-zh-CN">这里</a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>因为在启动后需要输入 Steam 令牌，所以采用 Screen 方式启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">screen -S ASF</span><br><span class="line">cd &#x2F;root&#x2F;ASF</span><br><span class="line">chmod +x ArchiSteamFarm.sh</span><br><span class="line">.&#x2F;ArchiSteamFarm.sh</span><br><span class="line"></span><br><span class="line">ctrl a+d 后台运行</span><br></pre></td></tr></table></figure>
+
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="使用-steam-群组查看挂卡或者其它命令"><a href="#使用-steam-群组查看挂卡或者其它命令" class="headerlink" title="使用 steam 群组查看挂卡或者其它命令"></a>使用 steam 群组查看挂卡或者其它命令</h3><p>首先在上面的 ASF.json 中你需要在 SteamOwnerID 中填入你的 steam 64位 ID，你可以在这个<a target="_blank" rel="noopener" href="https://steamrep.com/">网站</a>中查看。</p>
+<p>然后你需要在账号配置中的 SteamMasterClanID 中填入你的群组链接加上 /memberslistxml?xml=1，如图</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-16_20-46-43.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-16_20-46-43.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>groupID64即为要填写的内容。</p>
+<p>如果操控正确，你就可以在群组聊天中输入命令了</p>
+<p><img src="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-16_20-48-18.png" class="lazy" data-srcset="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-16_20-48-18.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>更多的命令你可以在<a target="_blank" rel="noopener" href="https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Commands-zh-CN">这里</a>查看</p>
+<h3 id="挂卡老是被踢下线怎么办？"><a href="#挂卡老是被踢下线怎么办？" class="headerlink" title="挂卡老是被踢下线怎么办？"></a>挂卡老是被踢下线怎么办？</h3><p>因为你的电脑长期使用steam，steam会认为你的电脑是主要电脑，当你电脑steam在线时，steam会认为挂卡的电脑不是主要电脑，为了安全会去验证令牌；</p>
+<p>如果你仅仅是短期的挂卡的话，电脑别上线，或者是在玩游戏之前先用命令暂停挂卡</p>
+<p>但如果你想像我一样不玩steam时挂时长，就需要让steam把你挂卡的机器认为是主要机器，为了达到这个目的，你需要清除所有设备的steam令牌验证，然后用挂卡机器登录验证，过几天不出意外应该就不会有问题了，缺点是你的其他电脑每次登录都需要你输令牌。</p>
+<p>这就看你如何取舍了。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%91%A8%E5%B9%B4%E5%95%A6%EF%BC%81/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            博客一周年啦！
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%A4%E4%B8%AA%E6%9C%88-spotify-%E5%90%8E%EF%BC%8C%E6%88%91%E7%94%A8%E5%9B%9E%E4%BA%86%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            使用了两个月 Spotify 后，我用回了网易云音乐
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPL22K9R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YSPL22K9R');
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
