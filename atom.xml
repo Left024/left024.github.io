@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Left&#39;s blog</title>
-  <icon>https://b.left.pink/icon.png</icon>
+  <icon>https://left024.github.io/icon.png</icon>
   
-  <link href="https://b.left.pink/atom.xml" rel="self"/>
+  <link href="https://left024.github.io/atom.xml" rel="self"/>
   
-  <link href="https://b.left.pink/"/>
+  <link href="https://left024.github.io/"/>
   <updated>2021-07-06T07:45:09.525Z</updated>
-  <id>https://b.left.pink/</id>
+  <id>https://left024.github.io/</id>
   
   <author>
     <name>Left</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Google Play 美区礼品卡无法支付的临时解决方案</title>
-    <link href="https://b.left.pink/Google%20Play%20%E7%BE%8E%E5%8C%BA%E7%A4%BC%E5%93%81%E5%8D%A1%E6%97%A0%E6%B3%95%E6%94%AF%E4%BB%98%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://b.left.pink/Google%20Play%20%E7%BE%8E%E5%8C%BA%E7%A4%BC%E5%93%81%E5%8D%A1%E6%97%A0%E6%B3%95%E6%94%AF%E4%BB%98%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <link href="https://left024.github.io/Google%20Play%20%E7%BE%8E%E5%8C%BA%E7%A4%BC%E5%93%81%E5%8D%A1%E6%97%A0%E6%B3%95%E6%94%AF%E4%BB%98%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://left024.github.io/Google%20Play%20%E7%BE%8E%E5%8C%BA%E7%A4%BC%E5%93%81%E5%8D%A1%E6%97%A0%E6%B3%95%E6%94%AF%E4%BB%98%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
     <published>2021-06-30T05:32:51.000Z</published>
     <updated>2021-07-06T07:45:09.525Z</updated>
     
@@ -34,19 +34,19 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="Google Play" scheme="https://b.left.pink/tags/Google-Play/"/>
+    <category term="Google Play" scheme="https://left024.github.io/tags/Google-Play/"/>
     
-    <category term="Android 软件" scheme="https://b.left.pink/tags/Android-%E8%BD%AF%E4%BB%B6/"/>
+    <category term="Android 软件" scheme="https://left024.github.io/tags/Android-%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>L-Clock | 让你的老旧设备重获新生</title>
-    <link href="https://b.left.pink/L-Clock/"/>
-    <id>https://b.left.pink/L-Clock/</id>
+    <link href="https://left024.github.io/L-Clock/"/>
+    <id>https://left024.github.io/L-Clock/</id>
     <published>2021-06-11T00:58:51.000Z</published>
     <updated>2021-07-06T07:47:52.974Z</updated>
     
@@ -62,19 +62,19 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="Android 软件" scheme="https://b.left.pink/tags/Android-%E8%BD%AF%E4%BB%B6/"/>
+    <category term="Android 软件" scheme="https://left024.github.io/tags/Android-%E8%BD%AF%E4%BB%B6/"/>
     
-    <category term="开发" scheme="https://b.left.pink/tags/%E5%BC%80%E5%8F%91/"/>
+    <category term="开发" scheme="https://left024.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>赏析 | The Handmaid&#39;s tale S04E04</title>
-    <link href="https://b.left.pink/%E8%B5%8F%E6%9E%90_%E4%BD%BF%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8BS04E04/"/>
-    <id>https://b.left.pink/%E8%B5%8F%E6%9E%90_%E4%BD%BF%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8BS04E04/</id>
+    <link href="https://left024.github.io/%E8%B5%8F%E6%9E%90_%E4%BD%BF%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8BS04E04/"/>
+    <id>https://left024.github.io/%E8%B5%8F%E6%9E%90_%E4%BD%BF%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8BS04E04/</id>
     <published>2021-05-06T17:37:11.000Z</published>
     <updated>2021-05-06T18:13:07.124Z</updated>
     
@@ -91,23 +91,23 @@
     
     
     
-    <category term="影/剧" scheme="https://b.left.pink/categories/%E5%BD%B1-%E5%89%A7/"/>
+    <category term="影/剧" scheme="https://left024.github.io/categories/%E5%BD%B1-%E5%89%A7/"/>
     
-    <category term="评价" scheme="https://b.left.pink/categories/%E8%AF%84%E4%BB%B7/"/>
+    <category term="评价" scheme="https://left024.github.io/categories/%E8%AF%84%E4%BB%B7/"/>
     
     
-    <category term="评价" scheme="https://b.left.pink/tags/%E8%AF%84%E4%BB%B7/"/>
+    <category term="评价" scheme="https://left024.github.io/tags/%E8%AF%84%E4%BB%B7/"/>
     
-    <category term="思考" scheme="https://b.left.pink/tags/%E6%80%9D%E8%80%83/"/>
+    <category term="思考" scheme="https://left024.github.io/tags/%E6%80%9D%E8%80%83/"/>
     
-    <category term="赏析" scheme="https://b.left.pink/tags/%E8%B5%8F%E6%9E%90/"/>
+    <category term="赏析" scheme="https://left024.github.io/tags/%E8%B5%8F%E6%9E%90/"/>
     
   </entry>
   
   <entry>
     <title>21岁</title>
-    <link href="https://b.left.pink/21%E5%B2%81/"/>
-    <id>https://b.left.pink/21%E5%B2%81/</id>
+    <link href="https://left024.github.io/21%E5%B2%81/"/>
+    <id>https://left024.github.io/21%E5%B2%81/</id>
     <published>2021-04-28T16:00:00.000Z</published>
     <updated>2021-07-05T10:37:23.416Z</updated>
     
@@ -116,19 +116,19 @@
     
     
     
-    <category term="思考" scheme="https://b.left.pink/categories/%E6%80%9D%E8%80%83/"/>
+    <category term="思考" scheme="https://left024.github.io/categories/%E6%80%9D%E8%80%83/"/>
     
-    <category term="生活" scheme="https://b.left.pink/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://left024.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="生日" scheme="https://b.left.pink/tags/%E7%94%9F%E6%97%A5/"/>
+    <category term="生日" scheme="https://left024.github.io/tags/%E7%94%9F%E6%97%A5/"/>
     
   </entry>
   
   <entry>
     <title>简评 | 双人成行</title>
-    <link href="https://b.left.pink/%E7%AE%80%E8%AF%84_%E5%8F%8C%E4%BA%BA%E6%88%90%E8%A1%8C/"/>
-    <id>https://b.left.pink/%E7%AE%80%E8%AF%84_%E5%8F%8C%E4%BA%BA%E6%88%90%E8%A1%8C/</id>
+    <link href="https://left024.github.io/%E7%AE%80%E8%AF%84_%E5%8F%8C%E4%BA%BA%E6%88%90%E8%A1%8C/"/>
+    <id>https://left024.github.io/%E7%AE%80%E8%AF%84_%E5%8F%8C%E4%BA%BA%E6%88%90%E8%A1%8C/</id>
     <published>2021-04-25T13:50:11.000Z</published>
     <updated>2021-04-25T14:31:55.370Z</updated>
     
@@ -145,25 +145,25 @@
     
     
     
-    <category term="游戏" scheme="https://b.left.pink/categories/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://left024.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="评价" scheme="https://b.left.pink/categories/%E8%AF%84%E4%BB%B7/"/>
+    <category term="评价" scheme="https://left024.github.io/categories/%E8%AF%84%E4%BB%B7/"/>
     
     
-    <category term="游戏" scheme="https://b.left.pink/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://left024.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="评价" scheme="https://b.left.pink/tags/%E8%AF%84%E4%BB%B7/"/>
+    <category term="评价" scheme="https://left024.github.io/tags/%E8%AF%84%E4%BB%B7/"/>
     
-    <category term="双人游戏" scheme="https://b.left.pink/tags/%E5%8F%8C%E4%BA%BA%E6%B8%B8%E6%88%8F/"/>
+    <category term="双人游戏" scheme="https://left024.github.io/tags/%E5%8F%8C%E4%BA%BA%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="steam" scheme="https://b.left.pink/tags/steam/"/>
+    <category term="steam" scheme="https://left024.github.io/tags/steam/"/>
     
   </entry>
   
   <entry>
     <title>整了个备用站</title>
-    <link href="https://b.left.pink/%E6%95%B4%E4%BA%86%E4%B8%AA%E5%A4%87%E7%94%A8%E7%AB%99/"/>
-    <id>https://b.left.pink/%E6%95%B4%E4%BA%86%E4%B8%AA%E5%A4%87%E7%94%A8%E7%AB%99/</id>
+    <link href="https://left024.github.io/%E6%95%B4%E4%BA%86%E4%B8%AA%E5%A4%87%E7%94%A8%E7%AB%99/"/>
+    <id>https://left024.github.io/%E6%95%B4%E4%BA%86%E4%B8%AA%E5%A4%87%E7%94%A8%E7%AB%99/</id>
     <published>2021-04-13T12:08:25.000Z</published>
     <updated>2021-04-13T12:50:16.428Z</updated>
     
@@ -178,23 +178,23 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="破事水" scheme="https://b.left.pink/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
+    <category term="破事水" scheme="https://left024.github.io/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
     
     
-    <category term="VPS" scheme="https://b.left.pink/tags/VPS/"/>
+    <category term="VPS" scheme="https://left024.github.io/tags/VPS/"/>
     
-    <category term="折腾" scheme="https://b.left.pink/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/tags/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="博客" scheme="https://b.left.pink/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="https://left024.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://b.left.pink/hello-world/"/>
-    <id>https://b.left.pink/hello-world/</id>
+    <link href="https://left024.github.io/hello-world/"/>
+    <id>https://left024.github.io/hello-world/</id>
     <published>2021-04-12T14:38:13.946Z</published>
     <updated>2021-04-14T03:43:59.065Z</updated>
     
@@ -214,8 +214,8 @@
   
   <entry>
     <title>解决 SS windows 端 PAC 规则问题</title>
-    <link href="https://b.left.pink/%E8%A7%A3%E5%86%B3-ss-windows-%E7%AB%AF-pac-%E8%A7%84%E5%88%99%E9%97%AE%E9%A2%98/"/>
-    <id>https://b.left.pink/%E8%A7%A3%E5%86%B3-ss-windows-%E7%AB%AF-pac-%E8%A7%84%E5%88%99%E9%97%AE%E9%A2%98/</id>
+    <link href="https://left024.github.io/%E8%A7%A3%E5%86%B3-ss-windows-%E7%AB%AF-pac-%E8%A7%84%E5%88%99%E9%97%AE%E9%A2%98/"/>
+    <id>https://left024.github.io/%E8%A7%A3%E5%86%B3-ss-windows-%E7%AB%AF-pac-%E8%A7%84%E5%88%99%E9%97%AE%E9%A2%98/</id>
     <published>2021-03-29T22:58:00.000Z</published>
     <updated>2021-04-12T14:57:20.229Z</updated>
     
@@ -231,17 +231,17 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="笔记" scheme="https://b.left.pink/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://left024.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>无题</title>
-    <link href="https://b.left.pink/%E6%97%A0%E9%A2%98/"/>
-    <id>https://b.left.pink/%E6%97%A0%E9%A2%98/</id>
+    <link href="https://left024.github.io/%E6%97%A0%E9%A2%98/"/>
+    <id>https://left024.github.io/%E6%97%A0%E9%A2%98/</id>
     <published>2021-03-15T22:17:00.000Z</published>
     <updated>2021-04-12T14:57:20.205Z</updated>
     
@@ -257,17 +257,17 @@
     
     
     
-    <category term="破事水" scheme="https://b.left.pink/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
+    <category term="破事水" scheme="https://left024.github.io/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
     
     
-    <category term="小说" scheme="https://b.left.pink/tags/%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://left024.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>解决 VS code Git 连接问题</title>
-    <link href="https://b.left.pink/%E8%A7%A3%E5%86%B3-vs-code-git-%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/"/>
-    <id>https://b.left.pink/%E8%A7%A3%E5%86%B3-vs-code-git-%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</id>
+    <link href="https://left024.github.io/%E8%A7%A3%E5%86%B3-vs-code-git-%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/"/>
+    <id>https://left024.github.io/%E8%A7%A3%E5%86%B3-vs-code-git-%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</id>
     <published>2021-03-09T05:27:14.000Z</published>
     <updated>2021-04-12T14:57:20.221Z</updated>
     
@@ -283,23 +283,23 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="破事水" scheme="https://b.left.pink/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
+    <category term="破事水" scheme="https://left024.github.io/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
     
     
-    <category term="笔记" scheme="https://b.left.pink/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://left024.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="Git" scheme="https://b.left.pink/tags/Git/"/>
+    <category term="Git" scheme="https://left024.github.io/tags/Git/"/>
     
-    <category term="VS code" scheme="https://b.left.pink/tags/VS-code/"/>
+    <category term="VS code" scheme="https://left024.github.io/tags/VS-code/"/>
     
   </entry>
   
   <entry>
     <title>如何优雅地记笔记2.0</title>
-    <link href="https://b.left.pink/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B02-0/"/>
-    <id>https://b.left.pink/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B02-0/</id>
+    <link href="https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B02-0/"/>
+    <id>https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B02-0/</id>
     <published>2021-03-04T08:50:11.000Z</published>
     <updated>2021-04-14T03:39:30.805Z</updated>
     
@@ -318,21 +318,21 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="学习" scheme="https://b.left.pink/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://left024.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="VPS" scheme="https://b.left.pink/tags/VPS/"/>
+    <category term="VPS" scheme="https://left024.github.io/tags/VPS/"/>
     
-    <category term="linux" scheme="https://b.left.pink/tags/linux/"/>
+    <category term="linux" scheme="https://left024.github.io/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>对子哈特G19七代 体验</title>
-    <link href="https://b.left.pink/%E5%AF%B9%E5%AD%90%E5%93%88%E7%89%B9g19%E4%B8%83%E4%BB%A3-%E4%BD%93%E9%AA%8C/"/>
-    <id>https://b.left.pink/%E5%AF%B9%E5%AD%90%E5%93%88%E7%89%B9g19%E4%B8%83%E4%BB%A3-%E4%BD%93%E9%AA%8C/</id>
+    <link href="https://left024.github.io/%E5%AF%B9%E5%AD%90%E5%93%88%E7%89%B9g19%E4%B8%83%E4%BB%A3-%E4%BD%93%E9%AA%8C/"/>
+    <id>https://left024.github.io/%E5%AF%B9%E5%AD%90%E5%93%88%E7%89%B9g19%E4%B8%83%E4%BB%A3-%E4%BD%93%E9%AA%8C/</id>
     <published>2021-03-01T14:14:48.000Z</published>
     <updated>2021-04-12T14:57:20.169Z</updated>
     
@@ -348,19 +348,19 @@
     
     
     
-    <category term="生活" scheme="https://b.left.pink/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://left024.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="评价" scheme="https://b.left.pink/categories/%E8%AF%84%E4%BB%B7/"/>
+    <category term="评价" scheme="https://left024.github.io/categories/%E8%AF%84%E4%BB%B7/"/>
     
     
-    <category term="飞机杯" scheme="https://b.left.pink/tags/%E9%A3%9E%E6%9C%BA%E6%9D%AF/"/>
+    <category term="飞机杯" scheme="https://left024.github.io/tags/%E9%A3%9E%E6%9C%BA%E6%9D%AF/"/>
     
   </entry>
   
   <entry>
     <title>如何优雅地接收QQ/微信消息</title>
-    <link href="https://b.left.pink/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/"/>
-    <id>https://b.left.pink/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/</id>
+    <link href="https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/"/>
+    <id>https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/</id>
     <published>2021-02-17T14:26:44.000Z</published>
     <updated>2021-04-12T14:57:20.149Z</updated>
     
@@ -377,21 +377,21 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="手机" scheme="https://b.left.pink/tags/%E6%89%8B%E6%9C%BA/"/>
+    <category term="手机" scheme="https://left024.github.io/tags/%E6%89%8B%E6%9C%BA/"/>
     
-    <category term="折腾" scheme="https://b.left.pink/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/tags/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="FCM" scheme="https://b.left.pink/tags/FCM/"/>
+    <category term="FCM" scheme="https://left024.github.io/tags/FCM/"/>
     
   </entry>
   
   <entry>
     <title>自建 Calibre 管理书籍</title>
-    <link href="https://b.left.pink/%E8%87%AA%E5%BB%BA-calibre-%E7%AE%A1%E7%90%86%E4%B9%A6%E7%B1%8D/"/>
-    <id>https://b.left.pink/%E8%87%AA%E5%BB%BA-calibre-%E7%AE%A1%E7%90%86%E4%B9%A6%E7%B1%8D/</id>
+    <link href="https://left024.github.io/%E8%87%AA%E5%BB%BA-calibre-%E7%AE%A1%E7%90%86%E4%B9%A6%E7%B1%8D/"/>
+    <id>https://left024.github.io/%E8%87%AA%E5%BB%BA-calibre-%E7%AE%A1%E7%90%86%E4%B9%A6%E7%B1%8D/</id>
     <published>2021-02-03T08:37:40.000Z</published>
     <updated>2021-04-12T14:57:20.133Z</updated>
     
@@ -406,19 +406,19 @@
     
     
     
-    <category term="折腾" scheme="https://b.left.pink/categories/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="学习" scheme="https://b.left.pink/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://left024.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="VPS" scheme="https://b.left.pink/tags/VPS/"/>
+    <category term="VPS" scheme="https://left024.github.io/tags/VPS/"/>
     
   </entry>
   
   <entry>
     <title>Pixel 5 开箱</title>
-    <link href="https://b.left.pink/pixel-5-%E5%BC%80%E7%AE%B1/"/>
-    <id>https://b.left.pink/pixel-5-%E5%BC%80%E7%AE%B1/</id>
+    <link href="https://left024.github.io/pixel-5-%E5%BC%80%E7%AE%B1/"/>
+    <id>https://left024.github.io/pixel-5-%E5%BC%80%E7%AE%B1/</id>
     <published>2021-01-20T08:36:00.000Z</published>
     <updated>2021-04-12T14:57:20.121Z</updated>
     
@@ -433,19 +433,19 @@
     
     
     
-    <category term="电子数码" scheme="https://b.left.pink/categories/%E7%94%B5%E5%AD%90%E6%95%B0%E7%A0%81/"/>
+    <category term="电子数码" scheme="https://left024.github.io/categories/%E7%94%B5%E5%AD%90%E6%95%B0%E7%A0%81/"/>
     
-    <category term="破事水" scheme="https://b.left.pink/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
+    <category term="破事水" scheme="https://left024.github.io/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
     
     
-    <category term="开箱" scheme="https://b.left.pink/tags/%E5%BC%80%E7%AE%B1/"/>
+    <category term="开箱" scheme="https://left024.github.io/tags/%E5%BC%80%E7%AE%B1/"/>
     
   </entry>
   
   <entry>
     <title>无纸化学习经验分享（Surface）</title>
-    <link href="https://b.left.pink/%E6%97%A0%E7%BA%B8%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%88surface%EF%BC%89/"/>
-    <id>https://b.left.pink/%E6%97%A0%E7%BA%B8%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%88surface%EF%BC%89/</id>
+    <link href="https://left024.github.io/%E6%97%A0%E7%BA%B8%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%88surface%EF%BC%89/"/>
+    <id>https://left024.github.io/%E6%97%A0%E7%BA%B8%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%88surface%EF%BC%89/</id>
     <published>2021-01-12T08:43:25.000Z</published>
     <updated>2021-04-12T14:57:20.105Z</updated>
     
@@ -462,17 +462,17 @@
     
     
     
-    <category term="学习" scheme="https://b.left.pink/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://left024.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="经验" scheme="https://b.left.pink/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="经验" scheme="https://left024.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
   <entry>
     <title>年轻人的第一次当家教</title>
-    <link href="https://b.left.pink/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%BD%93%E5%AE%B6%E6%95%99/"/>
-    <id>https://b.left.pink/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%BD%93%E5%AE%B6%E6%95%99/</id>
+    <link href="https://left024.github.io/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%BD%93%E5%AE%B6%E6%95%99/"/>
+    <id>https://left024.github.io/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%BD%93%E5%AE%B6%E6%95%99/</id>
     <published>2021-01-03T12:32:39.000Z</published>
     <updated>2021-04-12T14:57:20.097Z</updated>
     
@@ -491,19 +491,19 @@
     
     
     
-    <category term="生活" scheme="https://b.left.pink/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://left024.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="破事水" scheme="https://b.left.pink/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
+    <category term="破事水" scheme="https://left024.github.io/categories/%E7%A0%B4%E4%BA%8B%E6%B0%B4/"/>
     
     
-    <category term="生活" scheme="https://b.left.pink/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://left024.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>开发：校园网客户端</title>
-    <link href="https://b.left.pink/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
-    <id>https://b.left.pink/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
+    <link href="https://left024.github.io/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
+    <id>https://left024.github.io/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
     <published>2020-12-14T02:30:47.000Z</published>
     <updated>2021-04-12T14:57:20.085Z</updated>
     
@@ -518,23 +518,23 @@
     
     
     
-    <category term="学习" scheme="https://b.left.pink/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://left024.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="开发日记" scheme="https://b.left.pink/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
+    <category term="开发日记" scheme="https://left024.github.io/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="开发" scheme="https://b.left.pink/tags/%E5%BC%80%E5%8F%91/"/>
+    <category term="开发" scheme="https://left024.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
-    <category term="C#" scheme="https://b.left.pink/tags/C/"/>
+    <category term="C#" scheme="https://left024.github.io/tags/C/"/>
     
-    <category term="编程" scheme="https://b.left.pink/tags/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="https://left024.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>死亡搁浅</title>
-    <link href="https://b.left.pink/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/"/>
-    <id>https://b.left.pink/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/</id>
+    <link href="https://left024.github.io/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/"/>
+    <id>https://left024.github.io/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/</id>
     <published>2020-11-27T07:49:37.000Z</published>
     <updated>2021-06-11T11:13:11.795Z</updated>
     
@@ -550,19 +550,19 @@
     
     
     
-    <category term="游戏" scheme="https://b.left.pink/categories/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://left024.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
     
     
-    <category term="游戏" scheme="https://b.left.pink/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://left024.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="评测" scheme="https://b.left.pink/tags/%E8%AF%84%E6%B5%8B/"/>
+    <category term="评测" scheme="https://left024.github.io/tags/%E8%AF%84%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
     <title>单片机原理及其应用基础实验（C语言版）</title>
-    <link href="https://b.left.pink/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%EF%BC%88c%E8%AF%AD%E8%A8%80%E7%89%88%EF%BC%89/"/>
-    <id>https://b.left.pink/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%EF%BC%88c%E8%AF%AD%E8%A8%80%E7%89%88%EF%BC%89/</id>
+    <link href="https://left024.github.io/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%EF%BC%88c%E8%AF%AD%E8%A8%80%E7%89%88%EF%BC%89/"/>
+    <id>https://left024.github.io/%E5%8D%95%E7%89%87%E6%9C%BA%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%EF%BC%88c%E8%AF%AD%E8%A8%80%E7%89%88%EF%BC%89/</id>
     <published>2020-11-20T15:04:36.000Z</published>
     <updated>2021-06-11T10:48:59.510Z</updated>
     
@@ -579,10 +579,10 @@
     
     
     
-    <category term="学习" scheme="https://b.left.pink/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://left024.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="单片机" scheme="https://b.left.pink/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="单片机" scheme="https://left024.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
