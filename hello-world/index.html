@@ -390,8 +390,7 @@
 
     
     
-    <script src="js/md5.min.js"></script>
-
+    
     <script>
         function loadComment() {
             let e, i;
@@ -404,7 +403,7 @@
                     repo: 'left024.github.io',
                     owner: 'left024',
                     admin: 'left024',
-                    id: md5(window.location.pathname),
+                    id: decodeURI(window.location.pathname),
                     distractionFreeMode: false
                 });
                 gitalk.render('gitalk-container');
