@@ -505,7 +505,7 @@
                     repo: 'left024.github.io',
                     owner: 'left024',
                     admin: 'left024',
-                    id: md5(window.location.pathname),
+                    id: md5(location.href),
                     distractionFreeMode: false
                 });
                 gitalk.render('gitalk-container');
