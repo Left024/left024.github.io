@@ -44,17 +44,36 @@
 
 
     <!-- OpenGraph -->
+ 
+    <meta name="description" content="不知道为什么最近老是出现这个问题，网上搜了一堆方法全都解决不了，最后自己误打误撞解决了。 我也不知道导致这个问题的原因是什么，网上的说法是端口被占用，抛去原因，按照我这几个步骤就应该能解决。 1，断开手机和电脑连接，然后随便创建一个虚拟机启动  启动完成后应该能看到日志窗口：  2，把虚拟机关掉，连接手机，这时就应该成功连上了，如果不行照着步骤多来几遍  我觉得原因应该是端口被占用了，当你启动虚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决 Android Studio “failed to start daemon”">
+<meta property="og:url" content="https://left024.github.io/%E8%A7%A3%E5%86%B3-android-studio-failed-to-start-daemon/index.html">
+<meta property="og:site_name" content="Left&#39;s blog">
+<meta property="og:description" content="不知道为什么最近老是出现这个问题，网上搜了一堆方法全都解决不了，最后自己误打误撞解决了。 我也不知道导致这个问题的原因是什么，网上的说法是端口被占用，抛去原因，按照我这几个步骤就应该能解决。 1，断开手机和电脑连接，然后随便创建一个虚拟机启动  启动完成后应该能看到日志窗口：  2，把虚拟机关掉，连接手机，这时就应该成功连上了，如果不行照着步骤多来几遍  我觉得原因应该是端口被占用了，当你启动虚">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-11-23_16-19-42.png">
+<meta property="og:image" content="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-11-23_16-19-53.png">
+<meta property="og:image" content="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-11-23_16-20-04.png">
+<meta property="og:image" content="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-11-23_16-21-25.png">
+<meta property="article:published_time" content="2019-11-23T08:31:40.000Z">
+<meta property="article:modified_time" content="2021-08-17T04:58:21.277Z">
+<meta property="article:author" content="Left">
+<meta property="article:tag" content="技巧">
+<meta property="article:tag" content="电脑">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chevereto.left.pink/images/2021/02/05/Snipaste_2019-11-23_16-19-42.png">
 
 
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+<link rel="stylesheet" href="/css/style/main.css">
  
 
     
     
-        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/github.css" media="none" >
         
-            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/atom-one-dark-reasonable.css" media="none">
         
     
 
@@ -63,10 +82,10 @@
 
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+<link rel="stylesheet" href="/css/style/dark.css">
 
     
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+<script src="/js/darkmode.js"></script>
 
 
 
@@ -110,14 +129,6 @@
         
     <a href="javaScript:void(0);" id="btn-toggle-dark">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </a>
-
-
-         
-    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
-            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
-        </svg>
     </a>
 
 
@@ -189,7 +200,7 @@
     </div>
     <script>
         (() => {
-            var update = Date.parse("2021-04-12"),
+            var update = Date.parse("2021-08-17"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -215,8 +226,8 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
-    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/%E6%8A%80%E5%B7%A7/" class="post-tags__link button"># 技巧</a><a href="/tags/%E7%94%B5%E8%84%91/" class="post-tags__link button"># 电脑</a></div> 
+    <div class="post-footer__meta"><p>updated at 2021-08-17</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E6%8A%80%E5%B7%A7/" class="post-tags__link button"># 技巧</a><a href="/tags/%E7%94%B5%E8%84%91/" class="post-tags__link button"># 电脑</a></div> 
 </article>
 
 
@@ -284,6 +295,13 @@
 </main>
 
             <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
     
 
 
@@ -328,6 +346,8 @@
  
 
  
+
+
 
  
 
@@ -382,6 +402,8 @@
 
  
 
+ 
+
 
     
 
@@ -400,8 +422,8 @@
             document.body.appendChild(e);
             e.onload = () => {
                 var gitalk = new Gitalk({
-                    clientID: '273a38b3b3be9bc0166d',
-                    clientSecret: '6c01f74f5de2d549173d7ae394fd1f359092ed45',
+                    clientID: '${{ secrets.CLIENTID }}',
+                    clientSecret: '${{ secrets.CLIENTSECRET }}',
                     repo: 'left024.github.io',
                     owner: 'left024',
                     admin: 'left024',
@@ -433,7 +455,6 @@
             }
         }, 1);
     </script>
-
 
     
     

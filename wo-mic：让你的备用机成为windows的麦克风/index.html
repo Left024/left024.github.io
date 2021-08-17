@@ -44,17 +44,40 @@
 
 
     <!-- OpenGraph -->
+ 
+    <meta name="description" content="其实早在那篇指纹解锁Windows的文章之前，我的备用机便已经使用了这个软件，为贫穷的我剩下了一笔购买麦克风的钱。同样的，这个软件使用起来也非常简单，只需要几步简单的操作，就可以使用。 首先是手机端，一定要打开USB调试模式，安装完软件打开是这个样子的：  点击右上角齿轮设置，选择USB。  回到主界面，将手机连接电脑，点击齿轮旁边的播放键，同意麦克风权限，至此手机端就配置好了。 接下来配置电脑端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wo Mic：让你的备用机成为Windows的麦克风">
+<meta property="og:url" content="https://left024.github.io/wo-mic%EF%BC%9A%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%A4%87%E7%94%A8%E6%9C%BA%E6%88%90%E4%B8%BAwindows%E7%9A%84%E9%BA%A6%E5%85%8B%E9%A3%8E/index.html">
+<meta property="og:site_name" content="Left&#39;s blog">
+<meta property="og:description" content="其实早在那篇指纹解锁Windows的文章之前，我的备用机便已经使用了这个软件，为贫穷的我剩下了一笔购买麦克风的钱。同样的，这个软件使用起来也非常简单，只需要几步简单的操作，就可以使用。 首先是手机端，一定要打开USB调试模式，安装完软件打开是这个样子的：  点击右上角齿轮设置，选择USB。  回到主界面，将手机连接电脑，点击齿轮旁边的播放键，同意麦克风权限，至此手机端就配置好了。 接下来配置电脑端">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Screenshot_20190530-181759-576x1024.png">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Screenshot_20190530-181804-576x1024.png">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Snipaste_2019-05-30_21-20-00.png">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Snipaste_2019-05-30_21-20-14.png">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Snipaste_2019-05-30_21-20-32.png">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Snipaste_2019-05-30_21-22-54.png">
+<meta property="og:image" content="https://left.pink/wp-content/uploads/2019/05/Snipaste_2019-05-30_21-26-25.png">
+<meta property="article:published_time" content="2019-05-30T13:27:46.000Z">
+<meta property="article:modified_time" content="2021-08-17T04:58:21.273Z">
+<meta property="article:author" content="Left">
+<meta property="article:tag" content="手机">
+<meta property="article:tag" content="软件">
+<meta property="article:tag" content="电脑">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://left.pink/wp-content/uploads/2019/05/Screenshot_20190530-181759-576x1024.png">
 
 
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/main.min.css">
+<link rel="stylesheet" href="/css/style/main.css">
  
 
     
     
-        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/github.min.css" media="none">
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/github.css" media="none" >
         
-            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/highlight/atom-one-dark-reasonable.min.css" media="none">
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/atom-one-dark-reasonable.css" media="none">
         
     
 
@@ -63,10 +86,10 @@
 
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/css/style/dark.min.css">
+<link rel="stylesheet" href="/css/style/dark.css">
 
     
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-cards@1.2/dist/js/darkmode.min.js"></script>
+<script src="/js/darkmode.js"></script>
 
 
 
@@ -110,14 +133,6 @@
         
     <a href="javaScript:void(0);" id="btn-toggle-dark">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </a>
-
-
-         
-    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
-            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
-        </svg>
     </a>
 
 
@@ -189,7 +204,7 @@
     </div>
     <script>
         (() => {
-            var update = Date.parse("2021-04-12"),
+            var update = Date.parse("2021-08-17"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -206,8 +221,8 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2021-04-12</p></div> 
-    <div class="post-meta__cats"><a href="/categories/%E6%8A%98%E8%85%BE/" class="post-cats__link button">折腾</a><a href="/tags/%E6%89%8B%E6%9C%BA/" class="post-tags__link button"># 手机</a><a href="/tags/%E8%BD%AF%E4%BB%B6/" class="post-tags__link button"># 软件</a><a href="/tags/%E7%94%B5%E8%84%91/" class="post-tags__link button"># 电脑</a></div> 
+    <div class="post-footer__meta"><p>updated at 2021-08-17</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E6%89%8B%E6%9C%BA/" class="post-tags__link button"># 手机</a><a href="/tags/%E8%BD%AF%E4%BB%B6/" class="post-tags__link button"># 软件</a><a href="/tags/%E7%94%B5%E8%84%91/" class="post-tags__link button"># 电脑</a></div> 
 </article>
 
 
@@ -275,6 +290,13 @@
 </main>
 
             <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
     
 
 
@@ -319,6 +341,8 @@
  
 
  
+
+
 
  
 
@@ -373,6 +397,8 @@
 
  
 
+ 
+
 
     
 
@@ -391,8 +417,8 @@
             document.body.appendChild(e);
             e.onload = () => {
                 var gitalk = new Gitalk({
-                    clientID: '273a38b3b3be9bc0166d',
-                    clientSecret: '6c01f74f5de2d549173d7ae394fd1f359092ed45',
+                    clientID: '${{ secrets.CLIENTID }}',
+                    clientSecret: '${{ secrets.CLIENTSECRET }}',
                     repo: 'left024.github.io',
                     owner: 'left024',
                     admin: 'left024',
@@ -424,7 +450,6 @@
             }
         }, 1);
     </script>
-
 
     
     
