@@ -6,7 +6,7 @@
   <link href="https://left024.github.io/atom.xml" rel="self"/>
   
   <link href="https://left024.github.io/"/>
-  <updated>2021-11-05T02:45:09.907Z</updated>
+  <updated>2021-11-06T16:17:48.855Z</updated>
   <id>https://left024.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Pixel 5 Android 12 Magisk 食用指南</title>
+    <link href="https://left024.github.io/pixel5_android12_magisk/"/>
+    <id>https://left024.github.io/pixel5_android12_magisk/</id>
+    <published>2021-11-05T17:00:20.000Z</published>
+    <updated>2021-11-06T16:17:48.855Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;不同以往，这次 Android 12 正式版出了后我马上就更新了，更新完一起正常，然后我像以往一般将打好 Magisk 补丁的 boot</summary>
+        
+      
+    
+    
+    
+    <category term="折腾" scheme="https://left024.github.io/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+    <category term="Android 12" scheme="https://left024.github.io/tags/Android-12/"/>
+    
+    <category term="root" scheme="https://left024.github.io/tags/root/"/>
+    
+    <category term="Magisk" scheme="https://left024.github.io/tags/Magisk/"/>
+    
+  </entry>
+  
+  <entry>
     <title>踩坑记 | 软件著作权申请</title>
     <link href="https://left024.github.io/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E8%B8%A9%E5%9D%91%E8%AE%B0/"/>
     <id>https://left024.github.io/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E8%B8%A9%E5%9D%91%E8%AE%B0/</id>
     <published>2021-10-30T02:07:11.000Z</published>
-    <updated>2021-11-05T02:45:09.907Z</updated>
+    <updated>2021-11-06T16:17:48.859Z</updated>
     
     
       
@@ -51,7 +80,7 @@
     <link href="https://left024.github.io/Google%20Play%20%E7%BE%8E%E5%8C%BA%E7%A4%BC%E5%93%81%E5%8D%A1%E6%97%A0%E6%B3%95%E6%94%AF%E4%BB%98%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>https://left024.github.io/Google%20Play%20%E7%BE%8E%E5%8C%BA%E7%A4%BC%E5%93%81%E5%8D%A1%E6%97%A0%E6%B3%95%E6%94%AF%E4%BB%98%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
     <published>2021-06-30T05:32:51.000Z</published>
-    <updated>2021-11-05T02:45:09.899Z</updated>
+    <updated>2021-11-06T16:17:48.851Z</updated>
     
     
       
@@ -78,7 +107,7 @@
     <link href="https://left024.github.io/L-Clock/"/>
     <id>https://left024.github.io/L-Clock/</id>
     <published>2021-06-11T00:58:51.000Z</published>
-    <updated>2021-11-05T02:45:09.899Z</updated>
+    <updated>2021-11-06T16:17:48.851Z</updated>
     
     
       
@@ -106,7 +135,7 @@
     <link href="https://left024.github.io/%E8%B5%8F%E6%9E%90_%E4%BD%BF%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8BS04E04/"/>
     <id>https://left024.github.io/%E8%B5%8F%E6%9E%90_%E4%BD%BF%E5%A5%B3%E7%9A%84%E6%95%85%E4%BA%8BS04E04/</id>
     <published>2021-05-06T17:37:11.000Z</published>
-    <updated>2021-11-05T02:45:09.907Z</updated>
+    <updated>2021-11-06T16:17:48.859Z</updated>
     
     
       
@@ -139,7 +168,7 @@
     <link href="https://left024.github.io/21%E5%B2%81/"/>
     <id>https://left024.github.io/21%E5%B2%81/</id>
     <published>2021-04-28T16:00:00.000Z</published>
-    <updated>2021-11-05T02:45:09.899Z</updated>
+    <updated>2021-11-06T16:17:48.851Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -160,7 +189,7 @@
     <link href="https://left024.github.io/%E7%AE%80%E8%AF%84_%E5%8F%8C%E4%BA%BA%E6%88%90%E8%A1%8C/"/>
     <id>https://left024.github.io/%E7%AE%80%E8%AF%84_%E5%8F%8C%E4%BA%BA%E6%88%90%E8%A1%8C/</id>
     <published>2021-04-25T13:50:11.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.859Z</updated>
     
     
       
@@ -195,7 +224,7 @@
     <link href="https://left024.github.io/hello-world/"/>
     <id>https://left024.github.io/hello-world/</id>
     <published>2021-04-13T13:01:13.000Z</published>
-    <updated>2021-11-05T02:45:09.899Z</updated>
+    <updated>2021-11-06T16:17:48.851Z</updated>
     
     
       
@@ -216,7 +245,7 @@
     <link href="https://left024.github.io/%E6%95%B4%E4%BA%86%E4%B8%AA%E5%A4%87%E7%94%A8%E7%AB%99/"/>
     <id>https://left024.github.io/%E6%95%B4%E4%BA%86%E4%B8%AA%E5%A4%87%E7%94%A8%E7%AB%99/</id>
     <published>2021-04-13T12:08:25.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -247,7 +276,7 @@
     <link href="https://left024.github.io/%E8%A7%A3%E5%86%B3-ss-windows-%E7%AB%AF-pac-%E8%A7%84%E5%88%99%E9%97%AE%E9%A2%98/"/>
     <id>https://left024.github.io/%E8%A7%A3%E5%86%B3-ss-windows-%E7%AB%AF-pac-%E8%A7%84%E5%88%99%E9%97%AE%E9%A2%98/</id>
     <published>2021-03-29T22:58:00.000Z</published>
-    <updated>2021-11-05T02:45:09.907Z</updated>
+    <updated>2021-11-06T16:17:48.859Z</updated>
     
     
       
@@ -273,7 +302,7 @@
     <link href="https://left024.github.io/%E6%97%A0%E9%A2%98/"/>
     <id>https://left024.github.io/%E6%97%A0%E9%A2%98/</id>
     <published>2021-03-15T22:17:00.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -299,7 +328,7 @@
     <link href="https://left024.github.io/%E8%A7%A3%E5%86%B3-vs-code-git-%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/"/>
     <id>https://left024.github.io/%E8%A7%A3%E5%86%B3-vs-code-git-%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</id>
     <published>2021-03-09T05:27:14.000Z</published>
-    <updated>2021-11-05T02:45:09.907Z</updated>
+    <updated>2021-11-06T16:17:48.859Z</updated>
     
     
       
@@ -331,7 +360,7 @@
     <link href="https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B02-0/"/>
     <id>https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B02-0/</id>
     <published>2021-03-04T08:50:11.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -364,7 +393,7 @@
     <link href="https://left024.github.io/%E5%AF%B9%E5%AD%90%E5%93%88%E7%89%B9g19%E4%B8%83%E4%BB%A3-%E4%BD%93%E9%AA%8C/"/>
     <id>https://left024.github.io/%E5%AF%B9%E5%AD%90%E5%93%88%E7%89%B9g19%E4%B8%83%E4%BB%A3-%E4%BD%93%E9%AA%8C/</id>
     <published>2021-03-01T14:14:48.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -392,7 +421,7 @@
     <link href="https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/"/>
     <id>https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/</id>
     <published>2021-02-17T14:26:44.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -423,7 +452,7 @@
     <link href="https://left024.github.io/%E8%87%AA%E5%BB%BA-calibre-%E7%AE%A1%E7%90%86%E4%B9%A6%E7%B1%8D/"/>
     <id>https://left024.github.io/%E8%87%AA%E5%BB%BA-calibre-%E7%AE%A1%E7%90%86%E4%B9%A6%E7%B1%8D/</id>
     <published>2021-02-03T08:37:40.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.859Z</updated>
     
     
       
@@ -450,7 +479,7 @@
     <link href="https://left024.github.io/pixel-5-%E5%BC%80%E7%AE%B1/"/>
     <id>https://left024.github.io/pixel-5-%E5%BC%80%E7%AE%B1/</id>
     <published>2021-01-20T08:36:00.000Z</published>
-    <updated>2021-11-05T02:45:09.899Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -477,7 +506,7 @@
     <link href="https://left024.github.io/%E6%97%A0%E7%BA%B8%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%88surface%EF%BC%89/"/>
     <id>https://left024.github.io/%E6%97%A0%E7%BA%B8%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%88surface%EF%BC%89/</id>
     <published>2021-01-12T08:43:25.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -504,7 +533,7 @@
     <link href="https://left024.github.io/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%BD%93%E5%AE%B6%E6%95%99/"/>
     <id>https://left024.github.io/%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%BD%93%E5%AE%B6%E6%95%99/</id>
     <published>2021-01-03T12:32:39.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -535,7 +564,7 @@
     <link href="https://left024.github.io/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
     <id>https://left024.github.io/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
     <published>2020-12-14T02:30:47.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
+    <updated>2021-11-06T16:17:48.855Z</updated>
     
     
       
@@ -558,34 +587,6 @@
     <category term="C#" scheme="https://left024.github.io/tags/C/"/>
     
     <category term="编程" scheme="https://left024.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>死亡搁浅</title>
-    <link href="https://left024.github.io/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/"/>
-    <id>https://left024.github.io/%E6%AD%BB%E4%BA%A1%E6%90%81%E6%B5%85/</id>
-    <published>2020-11-27T07:49:37.000Z</published>
-    <updated>2021-11-05T02:45:09.903Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前段时间我把《死亡搁浅》全成就了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://chevereto.left.pink/images/2020/11/26/Snipaste_2020-11-27_10-45-37.png&quot; class=&quot;lazy&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="游戏" scheme="https://left024.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="游戏" scheme="https://left024.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-    <category term="评测" scheme="https://left024.github.io/tags/%E8%AF%84%E6%B5%8B/"/>
     
   </entry>
   

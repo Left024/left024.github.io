@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Pixel 5 Android 12 Magisk 食用指南 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="Android 12, root, Magisk">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="前言不同以往，这次 Android 12 正式版出了后我马上就更新了，更新完一起正常，然后我像以往一般将打好 Magisk 补丁的 boot 刷入，刷完就开不了机了，网上一番寻找后按照 这篇文章 操作成功升级了，当然代价是要清除数据，不过文末也说仅需这一次，后面更新就不需要了所以我也就清除数据更新了。 前两天是 11 月更新，我像之前一样：下载 - 提取 boot 打 Magisk 补丁- 线刷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pixel 5 Android 12 Magisk 食用指南">
+<meta property="og:url" content="https://left024.github.io/pixel5_android12_magisk/index.html">
+<meta property="og:site_name" content="Left&#39;s blog">
+<meta property="og:description" content="前言不同以往，这次 Android 12 正式版出了后我马上就更新了，更新完一起正常，然后我像以往一般将打好 Magisk 补丁的 boot 刷入，刷完就开不了机了，网上一番寻找后按照 这篇文章 操作成功升级了，当然代价是要清除数据，不过文末也说仅需这一次，后面更新就不需要了所以我也就清除数据更新了。 前两天是 11 月更新，我像之前一样：下载 - 提取 boot 打 Magisk 补丁- 线刷">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-05T17:00:20.000Z">
+<meta property="article:modified_time" content="2021-11-06T16:17:48.855Z">
+<meta property="article:author" content="Left">
+<meta property="article:tag" content="Android 12">
+<meta property="article:tag" content="root">
+<meta property="article:tag" content="Magisk">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/github.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/atom-one-dark-reasonable.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+    
+        <script async defer data-website-id="10bdbc20-ef2e-4f93-9d54-5ddc71e4f257" src="https://umami.left.pink/umami.js"></script> 
+    
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/categories/" class="navbar-menu button">分类</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/categories/" class="dropdown-menu button">分类</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        Pixel 5 Android 12 Magisk 食用指南
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/11/" class="post-meta__date button">2021-11-06</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
+
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">食用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-number">3.</span> <span class="toc-text">补充说明</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">食用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-number">3.</span> <span class="toc-text">补充说明</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-11-07"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不同以往，这次 Android 12 正式版出了后我马上就更新了，更新完一起正常，然后我像以往一般将打好 Magisk 补丁的 boot 刷入，刷完就开不了机了，网上一番寻找后按照 <a target="_blank" rel="noopener" href="https://telegra.ph/Pixel-5-%E5%9C%A8-Android-12-%E4%B8%8B%E7%9A%84-Magisk-%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97-06-20">这篇文章</a> 操作成功升级了，当然代价是要清除数据，不过文末也说仅需这一次，后面更新就不需要了所以我也就清除数据更新了。</p>
+<p>前两天是 11 月更新，我像之前一样：下载 - 提取 boot 打 Magisk 补丁- 线刷 - 刷入补丁 boot</p>
+<p>如我担心的一样，开机失败，好在经过一番搜寻，最终还是找到了<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/rooting-android-12-on-sd765g-and-tensor-pixels.4354083/">解决办法</a></p>
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><p><strong>注意</strong>：升级至 Android 12 必定需要清除一次数据，这个无法避免，请做好数据备份</p>
+<p>下载 <code>Factory Images</code> 后提取出 <code>boot</code> 打补丁，这个和之前的步骤一致；</p>
+<p>然后修改 <code>flash-all.bat</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PATH=%PATH%;&quot;%SYSTEMROOT%\System32&quot;</span><br><span class="line">fastboot flash bootloader bootloader-redfin-r3-0.4-7617468.img</span><br><span class="line">fastboot reboot-bootloader</span><br><span class="line">ping -n 5 127.0.0.1 &gt;nul</span><br><span class="line">fastboot flash radio radio-redfin-g7250-00147-210811-b-7631450.img</span><br><span class="line">fastboot reboot-bootloader</span><br><span class="line">ping -n 5 127.0.0.1 &gt;nul</span><br><span class="line">:: fastboot -w update image-redfin-sp1a.210812.015.zip</span><br><span class="line"></span><br><span class="line">:: echo Press any key to exit...</span><br><span class="line">:: pause &gt;nul</span><br><span class="line">:: exit</span><br><span class="line"></span><br><span class="line">fastboot --disable-verity --disable-verification --skip-reboot -w update image-redfin-sp1a.210812.015.zip</span><br><span class="line">echo Rebooting to bootloader...</span><br><span class="line">fastboot reboot-bootloader</span><br><span class="line">pause &gt;nul</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p>此处省略了前面的说明部分，自行对照区别；</p>
+<p>之后执行这个脚本文件就会开始线刷，线刷完成后应该会进入 <code>bootloader</code> ，执行命令刷入上面一步打好补丁的 <code>boot</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fastboot flash boot patched_boot.img</span><br></pre></td></tr></table></figure>
+
+<p>执行完 Bootloader 界面选择 Start 开机，开机后 Magisk 就已经部分安装上了。接下来需要做的就是联网、点击 Magisk 进行安装、进入 Magisk 进行额外安装并自动重启。重启后 Magisk 就正常安装上了。</p>
+<p>后续更新同样也是修改脚本，记得去掉 <code>-w</code> ，不然就清除数据了</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>理论上这个方法适用于 pixel 4a 之后的机器，另外因为目前 Android 12 就更新了两个版本，我是清除数据从十月版本，更新到十一版本，按照上面的方法是没有问题的，后续不知道会不会有变化（按照常理来说不会）</p>
+<p>如果非常不幸在某次更新后按照如上步骤开不了机，也不要惊慌，先刷回未打补丁的 boot </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fastboot flash boot boot.img</span><br></pre></td></tr></table></figure>
+
+<p>然后用打好补丁的 boot 启动（注意命令区别，没有 <code>falsh</code>）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">fastboot boot patched_boot.img</span><br></pre></td></tr></table></figure>
+
+<p>这样是能开机并且是 root 状态的，可以看作是临时 root ，重启就没了，可以这样先用着看看之后有没有什么解决办法。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2021-11-07</p></div> 
+    <div class="post-entry__tags"><a href="/tags/Android-12/" class="post-tags__link button"># Android 12</a><a href="/tags/root/" class="post-tags__link button"># root</a><a href="/tags/Magisk/" class="post-tags__link button"># Magisk</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E8%B8%A9%E5%9D%91%E8%AE%B0/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            踩坑记 | 软件著作权申请
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>Comments</h4>
+    
+    
+    
+    
+    
+    <div id="gitalk-container"></div>
+
+    
+    
+    
+    
+    
+    
+
+
+    </div>
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="/js/md5.min.js"></script>
+
+    <script>
+        function loadComment() {
+            let e, i;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                var gitalk = new Gitalk({
+                    clientID: '${{ secrets.CLIENTID }}',
+                    clientSecret: '${{ secrets.CLIENTSECRET }}',
+                    repo: 'left024.github.io',
+                    owner: 'left024',
+                    admin: 'left024',
+                    id: md5(window.location.pathname),
+                    distractionFreeMode: false
+                });
+                gitalk.render('gitalk-container');
+            };
+            (i = document.createElement("link")).rel = "stylesheet",
+            i.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css',
+            document.head.appendChild(i);
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+    </body>
+</html>
