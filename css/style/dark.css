@@ -4,14 +4,14 @@
   }
   :root:not([data-user-color-scheme]) {
     --main-color: #e5e5e5;
-    --bg-color: #121212;
-    --bg-content-color: #1e1e1e;
+    --bg-color: #1f1f1f;
+    --bg-content-color: #1f1f1f;
     --bg-menu: #363636;
-    --bg-tag-color: #696969;
+    --bg-tag-color: #232323;
     --bg-codeblock: #000;
     --bg-code: rgba(240,246,252,0.149);
-    --body-color: rgba(255,255,255,0.8);
-    --title-color: rgba(252,252,252,0.9);
+    --body-color: rgba(255,255,255,0.6);
+    --title-color: rgba(252,252,252,0.72);
     --border-color: rgba(255,255,255,0.1);
   }
   :root:not([data-user-color-scheme]) blockquote {
@@ -19,7 +19,7 @@
     color: rgba(255,255,255,0.5);
   }
   :root:not([data-user-color-scheme]) .post__license {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
   }
   :root:not([data-user-color-scheme]) .post__content img {
     opacity: 0.8;
@@ -42,14 +42,14 @@
 [data-user-color-scheme="dark"] {
   --color-mode: 'dark';
   --main-color: #e5e5e5;
-  --bg-color: #121212;
-  --bg-content-color: #1e1e1e;
+  --bg-color: #1f1f1f;
+  --bg-content-color: #1f1f1f;
   --bg-menu: #363636;
-  --bg-tag-color: #696969;
+  --bg-tag-color: #232323;
   --bg-codeblock: #000;
   --bg-code: rgba(240,246,252,0.149);
-  --body-color: rgba(255,255,255,0.8);
-  --title-color: rgba(252,252,252,0.9);
+  --body-color: rgba(255,255,255,0.6);
+  --title-color: rgba(252,252,252,0.72);
   --border-color: rgba(255,255,255,0.1);
 }
 [data-user-color-scheme="dark"] blockquote {
@@ -57,7 +57,7 @@
   color: rgba(255,255,255,0.5);
 }
 [data-user-color-scheme="dark"] .post__license {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
 }
 [data-user-color-scheme="dark"] .post__content img {
   opacity: 0.8;
@@ -75,4 +75,28 @@
 }
 [data-user-color-scheme="dark"] table tr:not(.code):not(.gutter):nth-child(2n) {
   background-color: #272727;
+}
+[data-user-color-scheme="dark"] .content-card {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+[data-user-color-scheme="dark"] .header {
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+[data-user-color-scheme="dark"] .header * {
+  color: var(--title-color);
+}
+[data-user-color-scheme="dark"] #b2t {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+[data-user-color-scheme="dark"] .links-card {
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+[data-user-color-scheme="dark"] p.links-name {
+  color: var(--body-color);
+}
+[data-user-color-scheme="dark"] .cover__intro * {
+  color: var(--body-color);
+}
+[data-user-color-scheme="dark"] .highlight {
+  background-color: #1c1c1c;
 }

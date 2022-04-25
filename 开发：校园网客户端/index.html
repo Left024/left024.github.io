@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
     <meta charset="utf-8">
 
@@ -51,11 +51,11 @@
 <meta property="og:url" content="https://left024.github.io/%E5%BC%80%E5%8F%91%EF%BC%9A%E6%A0%A1%E5%9B%AD%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF/index.html">
 <meta property="og:site_name" content="Left&#39;s blog">
 <meta property="og:description" content="之前在 如何优雅的连接校园网 中写过一个客户端，用的VB，但并不好用。 我复制给室友用的时候，要装一个远古依赖，而且还时不时的报错，并且关闭窗口后程序依然在后运行，等等问题。 总而言之用了不到一个星期我就很不满意了，但我又很懒，编程相关的知识也只是懂些皮毛（指Ctrl C + Ctrl V），所以又回归到了 开机——手动连接Wifi——打开Chrome——输入账号密码登录 的状态 直到两周前的数据">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://camo.githubusercontent.com/5d3b7cc76184238d0bd70b7af4aab83f14c4c3fca37e8b04bae1db3dc32f6466/68747470733a2f2f63686576657265746f2e6c6566742e70696e6b2f696d616765732f323032302f31322f31332f536e6970617374655f323032302d31322d31335f32312d35372d34342e706e67">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/12/14/20201214102922.png">
 <meta property="article:published_time" content="2020-12-14T02:30:47.000Z">
-<meta property="article:modified_time" content="2022-04-25T12:21:41.483Z">
+<meta property="article:modified_time" content="2022-04-25T18:42:36.162Z">
 <meta property="article:author" content="Left">
 <meta property="article:tag" content="开发">
 <meta property="article:tag" content="C#">
@@ -161,25 +161,31 @@
     
 
 <div class="post-title">
-    <h1 class="post-title__text">
-        开发：校园网客户端
-    </h1>
+    <div class="cover">
+        <div class="cover__logo">
+            <h1>开发：校园网客户端</h1>
+        </div>
+        <div class="cover__intro">
+            <p> <a href="/archives/2020/12/" class="post-meta__date button">2020-12-14</a>
+                
+    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+
+    <span class="separate-dot"></span><a href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/">开发日记</a>
+
+ 
+                
+    
+    
+
+
+ 
+
+ 
+            </p>
+        </div>
+    </div>
     <div class="post-title__meta">
-        <a href="/archives/2020/12/" class="post-meta__date button">2020-12-14</a>
-        
-    <span class="separate-dot"></span><a href="/categories/%E5%AD%A6%E4%B9%A0/" class="button">学习</a>
 
-    <span class="separate-dot"></span><a href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" class="button">开发日记</a>
-
- 
-        
-    
-    
-
-
- 
-
- 
     </div>
 </div>
 
@@ -195,7 +201,7 @@
         </svg>
     </a>
     <div class="toc-menus" id="toc-menus">
-        <div class="toc-title">Article Directory</div>
+        <div class="toc-title">文章目录</div>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">下载</span></a></li></ol>
     </div>
 
@@ -204,12 +210,12 @@
     <div class="post__header">
     <div class="post__expire" id="post-expired-notify">
         <p>
-            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
         </p>
     </div>
     <script>
         (() => {
-            var update = Date.parse("2022-04-25"),
+            var update = Date.parse("2022-04-26"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -241,7 +247,7 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-04-25</p></div> 
+    <div class="post-footer__meta"><p>更新于 2022-04-26</p></div> 
     <div class="post-entry__tags"><a href="/tags/%E5%BC%80%E5%8F%91/" class="post-tags__link button"># 开发</a><a href="/tags/C/" class="post-tags__link button"># C#</a><a href="/tags/%E7%BC%96%E7%A8%8B/" class="post-tags__link button"># 编程</a></div> 
 </article>
 
@@ -287,7 +293,7 @@
 
     <div class="post__comments post__with-toc content-card" id="comment">
         
-    <h4>Comments</h4>
+    <h4>评论</h4>
     
     
     
@@ -311,7 +317,7 @@
 
             <footer class="footer">
      
-    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
             <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
         </svg>

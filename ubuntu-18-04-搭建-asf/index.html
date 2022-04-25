@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
     <meta charset="utf-8">
 
@@ -51,12 +51,12 @@
 <meta property="og:url" content="https://left024.github.io/ubuntu-18-04-%E6%90%AD%E5%BB%BA-asf/index.html">
 <meta property="og:site_name" content="Left&#39;s blog">
 <meta property="og:description" content="昨天我的 Mountain 游戏时间破万了，所以写个搭建挂卡庆祝下（其实我也不熟，当个笔记写），另外还有一些使用的小技巧  项目地址，简单介绍下吧，这个程序通过模拟 steam 游戏运行达到挂卡的目的，还能挂游戏时长。其他的还有激活游戏啥的 安装依赖搭建他需要微软的 .Net Core 依赖，执行如下代码 添加 Microsoft 存储库密钥和源wget https:&#x2F;&#x2F;pac">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-15_22-00-29.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-16_20-46-43.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/09/25/Snipaste_2020-05-16_20-48-18.png">
 <meta property="article:published_time" content="2020-05-17T00:07:38.000Z">
-<meta property="article:modified_time" content="2022-04-25T12:21:41.479Z">
+<meta property="article:modified_time" content="2022-04-25T18:42:36.158Z">
 <meta property="article:author" content="Left">
 <meta property="article:tag" content="VPS">
 <meta property="article:tag" content="笔记">
@@ -162,23 +162,29 @@
     
 
 <div class="post-title">
-    <h1 class="post-title__text">
-        Ubuntu 18.04 搭建 ASF
-    </h1>
+    <div class="cover">
+        <div class="cover__logo">
+            <h1>Ubuntu 18.04 搭建 ASF</h1>
+        </div>
+        <div class="cover__intro">
+            <p> <a href="/archives/2020/05/" class="post-meta__date button">2020-05-17</a>
+                
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+
+ 
+                
+    
+    
+
+
+ 
+
+ 
+            </p>
+        </div>
+    </div>
     <div class="post-title__meta">
-        <a href="/archives/2020/05/" class="post-meta__date button">2020-05-17</a>
-        
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
 
- 
-        
-    
-    
-
-
- 
-
- 
     </div>
 </div>
 
@@ -194,7 +200,7 @@
         </svg>
     </a>
     <div class="toc-menus" id="toc-menus">
-        <div class="toc-title">Article Directory</div>
+        <div class="toc-title">文章目录</div>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number">1.</span> <span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-ASF"><span class="toc-number">2.</span> <span class="toc-text">配置 ASF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-number">4.</span> <span class="toc-text">小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-steam-%E7%BE%A4%E7%BB%84%E6%9F%A5%E7%9C%8B%E6%8C%82%E5%8D%A1%E6%88%96%E8%80%85%E5%85%B6%E5%AE%83%E5%91%BD%E4%BB%A4"><span class="toc-number">4.1.</span> <span class="toc-text">使用 steam 群组查看挂卡或者其它命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E5%8D%A1%E8%80%81%E6%98%AF%E8%A2%AB%E8%B8%A2%E4%B8%8B%E7%BA%BF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">4.2.</span> <span class="toc-text">挂卡老是被踢下线怎么办？</span></a></li></ol></li></ol>
     </div>
 
@@ -203,12 +209,12 @@
     <div class="post__header">
     <div class="post__expire" id="post-expired-notify">
         <p>
-            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
         </p>
     </div>
     <script>
         (() => {
-            var update = Date.parse("2022-04-25"),
+            var update = Date.parse("2022-04-26"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -256,7 +262,7 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-04-25</p></div> 
+    <div class="post-footer__meta"><p>更新于 2022-04-26</p></div> 
     <div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a><a href="/tags/%E7%AC%94%E8%AE%B0/" class="post-tags__link button"># 笔记</a><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
 </article>
 
@@ -302,7 +308,7 @@
 
     <div class="post__comments post__with-toc content-card" id="comment">
         
-    <h4>Comments</h4>
+    <h4>评论</h4>
     
     
     
@@ -326,7 +332,7 @@
 
             <footer class="footer">
      
-    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
             <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
         </svg>

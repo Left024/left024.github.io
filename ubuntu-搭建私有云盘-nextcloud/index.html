@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
     <meta charset="utf-8">
 
@@ -51,7 +51,7 @@
 <meta property="og:url" content="https://left024.github.io/ubuntu-%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98-nextcloud/index.html">
 <meta property="og:site_name" content="Left&#39;s blog">
 <meta property="og:description" content="百度云不好用且有审查，google drive空间太小切要翻墙，我寻思着为啥不自己整一个呢？  VPS 商家推荐云盘要求自然是存储空间大，网络不翻墙速度过得去就行。最重要的是还得便宜，这两天我试用了两个，感觉还不错，建议你先买一个月试试，好用再年付。 Hostsolutions.月付5.4刀，年付55刀，1T空间，10t流量。  优点是抗投诉，无版权，存什么都没问题，缺点是商家在罗马尼亚，ip也是">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_11-27-02.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/10/21/20201021181543.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_14-30-06.png">
@@ -61,7 +61,7 @@
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-10_13-54-26.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2020/10/21/Snipaste_2020-02-11_15-45-02.png">
 <meta property="article:published_time" content="2020-02-11T08:07:00.000Z">
-<meta property="article:modified_time" content="2022-04-25T12:21:41.479Z">
+<meta property="article:modified_time" content="2022-04-25T18:42:36.158Z">
 <meta property="article:author" content="Left">
 <meta property="article:tag" content="VPS">
 <meta name="twitter:card" content="summary_large_image">
@@ -165,23 +165,29 @@
     
 
 <div class="post-title">
-    <h1 class="post-title__text">
-        ubuntu 搭建私有云盘 nextcloud
-    </h1>
+    <div class="cover">
+        <div class="cover__logo">
+            <h1>ubuntu 搭建私有云盘 nextcloud</h1>
+        </div>
+        <div class="cover__intro">
+            <p> <a href="/archives/2020/02/" class="post-meta__date button">2020-02-11</a>
+                
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+
+ 
+                
+    
+    
+
+
+ 
+
+ 
+            </p>
+        </div>
+    </div>
     <div class="post-title__meta">
-        <a href="/archives/2020/02/" class="post-meta__date button">2020-02-11</a>
-        
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
 
- 
-        
-    
-    
-
-
- 
-
- 
     </div>
 </div>
 
@@ -197,7 +203,7 @@
         </svg>
     </a>
     <div class="toc-menus" id="toc-menus">
-        <div class="toc-title">Article Directory</div>
+        <div class="toc-title">文章目录</div>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPS-%E5%95%86%E5%AE%B6%E6%8E%A8%E8%8D%90"><span class="toc-number">1.</span> <span class="toc-text">VPS 商家推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">2.1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-apache2"><span class="toc-number">2.2.</span> <span class="toc-text">安装 apache2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-MySQL"><span class="toc-number">2.3.</span> <span class="toc-text">配置 MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-PHP"><span class="toc-number">2.4.</span> <span class="toc-text">配置 PHP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-phpMyAdmin"><span class="toc-number">2.5.</span> <span class="toc-text">安装 phpMyAdmin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-nextcloud"><span class="toc-number">2.6.</span> <span class="toc-text">安装 nextcloud</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3"><span class="toc-number">3.</span> <span class="toc-text">一些问题的解决</span></a></li></ol>
     </div>
 
@@ -206,12 +212,12 @@
     <div class="post__header">
     <div class="post__expire" id="post-expired-notify">
         <p>
-            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
         </p>
     </div>
     <script>
         (() => {
-            var update = Date.parse("2022-04-25"),
+            var update = Date.parse("2022-04-26"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -287,7 +293,7 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-04-25</p></div> 
+    <div class="post-footer__meta"><p>更新于 2022-04-26</p></div> 
     <div class="post-entry__tags"><a href="/tags/VPS/" class="post-tags__link button"># VPS</a></div> 
 </article>
 
@@ -333,7 +339,7 @@
 
     <div class="post__comments post__with-toc content-card" id="comment">
         
-    <h4>Comments</h4>
+    <h4>评论</h4>
     
     
     
@@ -357,7 +363,7 @@
 
             <footer class="footer">
      
-    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
             <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
         </svg>

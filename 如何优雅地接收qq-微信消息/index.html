@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
     <meta charset="utf-8">
 
@@ -51,7 +51,7 @@
 <meta property="og:url" content="https://left024.github.io/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E6%8E%A5%E6%94%B6qq-%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF/index.html">
 <meta property="og:site_name" content="Left&#39;s blog">
 <meta property="og:description" content="我很早就向这两个软件屈服了，直接取消任何系统层面的限制，随便他耗不耗电，只要别错过消息就行，毕竟在国内是不可能不用的。 之前我也研究过用 Telegram 机器人代收消息，麻烦就不说了，还不符合我的需求。 QQ 用的是手机的 api ，意味着用了 TG 之后手机客户端就不能登录了，但是 TG 本身功能是缺失的，而且用起来并不方便 微信就更难了，QQ 好歹还能用 TG ，微信只要网页版登不上，TG">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chevereto.left.pink/images/2021/02/17/Screenshot_20210217-215338.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2021/02/17/Screenshot_20210217-215852.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2021/02/17/20210217220228.png">
@@ -59,7 +59,7 @@
 <meta property="og:image" content="https://chevereto.left.pink/images/2021/02/17/Screenshot_20210217-221731.png">
 <meta property="og:image" content="https://chevereto.left.pink/images/2021/02/17/20210217221911.png">
 <meta property="article:published_time" content="2021-02-17T14:26:44.000Z">
-<meta property="article:modified_time" content="2022-04-25T12:21:41.483Z">
+<meta property="article:modified_time" content="2022-04-25T18:42:36.158Z">
 <meta property="article:author" content="Left">
 <meta property="article:tag" content="手机">
 <meta property="article:tag" content="折腾">
@@ -165,23 +165,29 @@
     
 
 <div class="post-title">
-    <h1 class="post-title__text">
-        如何优雅地接收QQ/微信消息
-    </h1>
+    <div class="cover">
+        <div class="cover__logo">
+            <h1>如何优雅地接收QQ/微信消息</h1>
+        </div>
+        <div class="cover__intro">
+            <p> <a href="/archives/2021/02/" class="post-meta__date button">2021-02-17</a>
+                
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+
+ 
+                
+    
+    
+
+
+ 
+
+ 
+            </p>
+        </div>
+    </div>
     <div class="post-title__meta">
-        <a href="/archives/2021/02/" class="post-meta__date button">2021-02-17</a>
-        
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/" class="button">折腾</a>
 
- 
-        
-    
-    
-
-
- 
-
- 
     </div>
 </div>
 
@@ -197,7 +203,7 @@
         </svg>
     </a>
     <div class="toc-menus" id="toc-menus">
-        <div class="toc-title">Article Directory</div>
+        <div class="toc-title">文章目录</div>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fcm-%E9%80%9A%E7%9F%A5%E8%BD%AC%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">Fcm 通知转发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
     </div>
 
@@ -206,12 +212,12 @@
     <div class="post__header">
     <div class="post__expire" id="post-expired-notify">
         <p>
-            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
         </p>
     </div>
     <script>
         (() => {
-            var update = Date.parse("2022-04-25"),
+            var update = Date.parse("2022-04-26"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -260,7 +266,7 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2022-04-25</p></div> 
+    <div class="post-footer__meta"><p>更新于 2022-04-26</p></div> 
     <div class="post-entry__tags"><a href="/tags/%E6%89%8B%E6%9C%BA/" class="post-tags__link button"># 手机</a><a href="/tags/%E6%8A%98%E8%85%BE/" class="post-tags__link button"># 折腾</a><a href="/tags/FCM/" class="post-tags__link button"># FCM</a></div> 
 </article>
 
@@ -306,7 +312,7 @@
 
     <div class="post__comments post__with-toc content-card" id="comment">
         
-    <h4>Comments</h4>
+    <h4>评论</h4>
     
     
     
@@ -330,7 +336,7 @@
 
             <footer class="footer">
      
-    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
             <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
         </svg>
