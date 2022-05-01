@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>RetroArch 上手指南 | Left&#39;s blog</title>
+
+
+    <meta name="keywords" content="游戏, 模拟器, 怀旧">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="RetroArch 是一个掌机&#x2F;街机&#x2F;家用主机模拟器，它可以模拟几乎所有（不提供近世代）的掌机，街机，家用主机。如果你喜欢 All in one 的游戏体验，归档分类自己收藏的老游戏，并且你还是一个成就党的话，那么这款模拟器是一个不错的选择； 虽然 RetroArch 自带中文语言，且 UI 现代化，我用的时候还是遇到了许多的坑，官方文档没有中文写的也比较深奥难懂。网上也没有比较完整系统的中文教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RetroArch 上手指南">
+<meta property="og:url" content="https://left024.github.io/retroarch/index.html">
+<meta property="og:site_name" content="Left&#39;s blog">
+<meta property="og:description" content="RetroArch 是一个掌机&#x2F;街机&#x2F;家用主机模拟器，它可以模拟几乎所有（不提供近世代）的掌机，街机，家用主机。如果你喜欢 All in one 的游戏体验，归档分类自己收藏的老游戏，并且你还是一个成就党的话，那么这款模拟器是一个不错的选择； 虽然 RetroArch 自带中文语言，且 UI 现代化，我用的时候还是遇到了许多的坑，官方文档没有中文写的也比较深奥难懂。网上也没有比较完整系统的中文教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220501235510.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220501235814.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502000822.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502001944.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502002449.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502004134.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502004231.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/Snipaste_2022-05-02_00-08-06.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005353.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005652.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005801.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/20220502010847.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/FQxhJTfVIAUnlAX.jfif">
+<meta property="article:published_time" content="2022-05-01T14:45:32.000Z">
+<meta property="article:modified_time" content="2022-05-01T17:54:04.773Z">
+<meta property="article:author" content="Left">
+<meta property="article:tag" content="游戏">
+<meta property="article:tag" content="模拟器">
+<meta property="article:tag" content="怀旧">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng1.png">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/github.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/atom-one-dark-reasonable.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+    
+        <script async defer data-website-id="10bdbc20-ef2e-4f93-9d54-5ddc71e4f257" src="https://umami.left.pink/umami.js"></script> 
+    
+
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Left's blog" type="application/atom+xml">
+</head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Left&#39;s blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a target="_blank" rel="noopener" href="https://ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.ooo/" class="navbar-menu button">首页</a>
+                
+                    <a href="/categories/" class="navbar-menu button">分类</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="navbar-menu button">RSS</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a target="_blank" rel="noopener" href="https://ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.ooo/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/categories/" class="dropdown-menu button">分类</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/atom.xml" class="dropdown-menu button">RSS</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <div class="cover">
+        <div class="cover__logo">
+            <h1>RetroArch 上手指南</h1>
+        </div>
+        <div class="cover__intro">
+            <p> <a href="/archives/2022/05/" class="post-meta__date button">2022-05-01</a>
+                
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+
+ 
+                
+    
+    
+
+
+ 
+
+ 
+            </p>
+        </div>
+    </div>
+    <div class="post-title__meta">
+
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E9%94%AE%E4%BD%8D"><span class="toc-number">2.</span> <span class="toc-text">软件键位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%B8%B8%E6%88%8F"><span class="toc-number">3.</span> <span class="toc-text">运行游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E6%83%85%E5%86%B5"><span class="toc-number">3.1.</span> <span class="toc-text">一般情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5"><span class="toc-number">3.2.</span> <span class="toc-text">特殊情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E9%94%AE%E4%BD%8D"><span class="toc-number">4.</span> <span class="toc-text">游戏键位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E5%8F%91%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.1.</span> <span class="toc-text">连发设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%88%90%E5%B0%B1%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.</span> <span class="toc-text">设置成就系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E6%B8%B8%E6%88%8F%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text">整理游戏库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">7.</span> <span class="toc-text">最后</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E9%94%AE%E4%BD%8D"><span class="toc-number">2.</span> <span class="toc-text">软件键位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%B8%B8%E6%88%8F"><span class="toc-number">3.</span> <span class="toc-text">运行游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E6%83%85%E5%86%B5"><span class="toc-number">3.1.</span> <span class="toc-text">一般情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5"><span class="toc-number">3.2.</span> <span class="toc-text">特殊情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E9%94%AE%E4%BD%8D"><span class="toc-number">4.</span> <span class="toc-text">游戏键位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E5%8F%91%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.1.</span> <span class="toc-text">连发设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%88%90%E5%B0%B1%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.</span> <span class="toc-text">设置成就系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E6%B8%B8%E6%88%8F%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text">整理游戏库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">7.</span> <span class="toc-text">最后</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2022-05-02"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 60) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>RetroArch 是一个掌机/街机/家用主机模拟器，它可以模拟几乎所有（不提供近世代）的掌机，街机，家用主机。如果你喜欢 All in one 的游戏体验，归档分类自己收藏的老游戏，并且你还是一个成就党的话，那么这款模拟器是一个不错的选择；</p>
+<p>虽然 RetroArch 自带中文语言，且 UI 现代化，我用的时候还是遇到了许多的坑，<a target="_blank" rel="noopener" href="https://docs.libretro.com/guides/install-windows/">官方文档</a>没有中文写的也比较深奥难懂。网上也没有比较完整系统的中文教程，使我花了比较多的时间研究如何使用。</p>
+<p>所以就有了这篇文章，这篇文章会把一些关键点讲到，如运行游戏，设置键位（连发设置），也会讲到进阶功能，如成就系统设置（软件特点），不保证精通（我也没有），但上手是绝对没问题的。</p>
+<p><strong>注意：</strong> 本文以 Windows 平台为例，其它平台不会有太大区别</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>RetroArch 是有 <a target="_blank" rel="noopener" href="https://store.steampowered.com/app/1118310/RetroArch/">Steam</a> 版本的，但是更推荐使用<a target="_blank" rel="noopener" href="https://www.retroarch.com/index.php?page=platforms">官网安装</a>版本，功能和内核都更多，下文也将以官网安装版本为例进行演示。</p>
+<p>安装直接选择对应系统版本下载安装即可。</p>
+<h2 id="软件键位"><a href="#软件键位" class="headerlink" title="软件键位"></a>软件键位</h2><p>无论有没有检测到手柄连接，软件界面显示的操作提示都是以手柄显示的，如果是键盘不知道键位的话，可以通过如下步骤查看键位：</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng1.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="运行游戏"><a href="#运行游戏" class="headerlink" title="运行游戏"></a>运行游戏</h2><h3 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h3><p>通常情况下运行游戏是很简单的，以运行 GBA 平台的星之卡比为例，软件首页打开 <strong>菜单 → 加载核心</strong> 拉到底下载，搜索对应内核名字下载即可</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng2.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>下载完之后<strong>加载游戏</strong>中找到游戏文件设置对应内核即可开始运行</p>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>另一种情况则是选择对应游戏和内核后，运行游戏时提示缺少文件，如下为运行 FDS 平台 <code>超级马里欧兄弟</code> 时遇到的错误</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220501235510.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220501235510.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>提示缺少 BIOS 文件，这里需要下载一个放到对应文件夹才可以运行，你可以在<a target="_blank" rel="noopener" href="https://github.com/archtaurus/RetroPieBIOS">这里下载</a>，基本上涵盖了所有平台。</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220501235814.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220501235814.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>下载完之后，将文件放到 <code>RetaoArch 安装目录\system</code> 目录下即可</p>
+<p>如果依然无法运行，可以去<a target="_blank" rel="noopener" href="https://docs.libretro.com/library/bios/">官方文档</a>查看对应内核的 BIOS ，检查 MD5 是否正确</p>
+<h2 id="游戏键位"><a href="#游戏键位" class="headerlink" title="游戏键位"></a>游戏键位</h2><p>上文的键位为软件的键位，并不是游戏的键位，游戏键位需要在游戏设置后，呼出菜单（默认情况下为键盘 M 键）</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502000822.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502000822.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>拉到底找到 <strong>控制 → 端口1控制</strong>，剩下的都很清楚了，自行按照个人喜好配置映射</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng3.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng3.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>配置完后，需要设置保存手柄映射文件，在 <strong>控制 → Manage Remap Files</strong>，这样下次打开就会自动加载了，哪种保存方式，就看个人喜好了</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502001944.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502001944.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h3 id="连发设置"><a href="#连发设置" class="headerlink" title="连发设置"></a>连发设置</h3><p>上面的游戏暂停菜单，有个连发设置，但是那个是<strong>没有用的</strong>，你要在软件的 <strong>设置 → 输入 → 连发中</strong> 设置，也就是文章开头介绍软件界面键位时图片所演示位置。</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502002449.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502002449.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>一个需要连发的例子：某游戏枪的射击键为 A 键，长按 A 键时只会发射一下，要连点 A 键才能不断发射，非常影响游戏体验</p>
+<p><strong>连发的逻辑是：</strong> 当需要模拟连点 A 的效果时，先长按住 R3 (上图设置的连发按钮) ，再按住 A 键，即可实现连发的效果</p>
+<p>所以最好的设置方案就是把连发键和射击键都设置成 A 键，唯一比较麻烦的就是不同的游戏每次都需要在这里单独设置</p>
+<h2 id="设置成就系统"><a href="#设置成就系统" class="headerlink" title="设置成就系统"></a>设置成就系统</h2><p>RetroArch 与其它模拟器比较大的区别就是他有一个成就系统，可以让老游戏更加有趣，不过要求也比较苛刻：</p>
+<ul>
+<li>retroachievements 账号</li>
+<li>特定的 Rom ，魔改的无法识别，如汉化版</li>
+<li>全程联网</li>
+</ul>
+<p>账号在 <a target="_blank" rel="noopener" href="https://retroachievements.org/">retroachievements</a> 注册即可，注册完成后在软件的 <strong>设置 → 成就</strong> 和 <strong>设置 → 用户 → 账户 → RetroAchievements</strong> 中分别填写即可</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng4.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>游戏文件则需要使用 RetroAchievements 网站指定的 Rom ，以下以星之卡比为例，在网站中搜索游戏，在游戏详情页面点击 <strong>Linked Hashes</strong></p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502004134.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502004134.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>即可看到游戏 Rom 的 MD5 值</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502004231.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502004231.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>如果你的 Rom 的 MD5 值和它的相同（网站不提供下载，需要自行寻找），即可激活成就系统</p>
+<p>假定你已经拥有了正确的 Rom ，用户密码也输入正确，你仍然可能激活不了</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/Snipaste_2022-05-02_00-08-06.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/Snipaste_2022-05-02_00-08-06.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>坑的地方就是软件并不会提醒你是 Rom 文件错误还是账号输入错误，其实根本问题是网络不行。</p>
+<p>软件内有代理选项，但是我试了很多种输入都没有用，所以最后的解决方案是用 proxifier 让模拟器走代理，网上都有教程，此处不再赘述</p>
+<p>如果一切顺利，你应该会看到如下画面：</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng5.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/hecheng5.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<h2 id="整理游戏库"><a href="#整理游戏库" class="headerlink" title="整理游戏库"></a>整理游戏库</h2><p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005353.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005353.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>一般情况下如果你电脑上文件夹分好了类，直接使用<strong>导入</strong>功能，软件会自动将游戏文件按照平台分类，如上图</p>
+<p>但这个功能并不是所有时候都能按照预期工作，如果你需要更细致的操作，可以选择 <strong>Windows → Toggle Desktop Menu</strong></p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005652.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005652.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>打开详细设置菜单</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005801.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502005801.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>左侧为游戏列表，如果你的列表为 <a target="_blank" rel="noopener" href="https://db.libretro.com/">RetroArch数据库</a> 中的名字，会自动给列表对应平台的图片</p>
+<p>游戏的信息设置，右键编辑即可</p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/20220502010847.png" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/20220502010847.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>如果想进行更细致的设置，参考<a target="_blank" rel="noopener" href="https://docs.libretro.com/guides/roms-playlists-thumbnails/">官方文档</a>，此处不再赘述</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>虽然确实通关了一个游戏<a target="_blank" rel="noopener" href="https://twitter.com/Left024/status/1516694061523955714">回味了童年</a></p>
+<p><img src="https://raw.githubusercontent.com/left916/images/main/picgo/FQxhJTfVIAUnlAX.jfif" class="lazy" data-srcset="https://raw.githubusercontent.com/left916/images/main/picgo/FQxhJTfVIAUnlAX.jfif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>但老实说，不如折腾这软件好玩</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>更新于 2022-05-02</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E6%B8%B8%E6%88%8F/" class="post-tags__link button"># 游戏</a><a href="/tags/%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="post-tags__link button"># 模拟器</a><a href="/tags/%E6%80%80%E6%97%A7/" class="post-tags__link button"># 怀旧</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/22/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            22
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>评论</h4>
+    
+    
+    
+    
+    
+    <div id="gitalk-container"></div>
+
+    
+    
+    
+    
+    
+    
+
+
+    </div>
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">Left&#39;s blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="/js/md5.min.js"></script>
+
+    <script>
+        function loadComment() {
+            let e, i;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                var gitalk = new Gitalk({
+                    clientID: '273a38b3b3be9bc0166d',
+                    clientSecret: '6c01f74f5de2d549173d7ae394fd1f359092ed45',
+                    repo: 'left024.github.io',
+                    owner: 'Left024',
+                    admin: 'Left024',
+                    id: md5(window.location.pathname),
+                    distractionFreeMode: false
+                });
+                gitalk.render('gitalk-container');
+            };
+            (i = document.createElement("link")).rel = "stylesheet",
+            i.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css',
+            document.head.appendChild(i);
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+    </body>
+</html>
